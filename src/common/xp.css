@@ -1,0 +1,31 @@
+.xp {
+  background: #177EC1;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  text-align: center;
+  color: #FFFFFF;
+}
+.xp:before, .xp:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #177EC1;
+}
+.xp:before {
+  transform: rotate(30deg);
+}
+.xp:after {
+  transform: rotate(60deg);
+}
+.xp .text {
+  z-index: 100;
+  color: #FFFFFF;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  font-size: 12px;
+}
