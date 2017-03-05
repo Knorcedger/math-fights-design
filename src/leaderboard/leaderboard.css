@@ -1,3 +1,7 @@
+.container {
+  flex-direction: column;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -62,7 +66,7 @@
   border-radius: 4px;
   /*border: 1px solid black;*/
   overflow: hidden;
-  padding-right: 15px;
+  padding-right: 13px;
 }
 
 .name {
