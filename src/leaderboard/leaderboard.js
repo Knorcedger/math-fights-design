@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './leaderboard.css';
-import '../common/xp.css';
+import XP from '../components/XP/XP';
 import photo from './mark.jpg';
 // http://www.flaticon.com/free-icon/trophy_321773
 import trophy from './trophy.svg';
@@ -39,9 +39,7 @@ class Leaderboard extends Component {
                     <span className='photo'>
                       <img src={photo} width='30' alt='t' />
                     </span>
-                    <span className='xp'>
-                      <span className='text'>{item.xp}</span>
-                    </span>
+                    <XP level={item.xp} />
                     <span className='name'>{item.name}</span>
                     <span className='points'>{item.points}</span>
                   </div>

@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import './home.css';
-import '../common/xp.css';
+import XP from '../components/XP/XP';
 // import photo from '../leaderboard/mark.jpg';
 
 class Leaderboard extends Component {
   render() {
     return (
       <div className='container'>
-        <span className='xp'>
-          <span className='text'>{14}</span>
-        </span>
+        <XP level={14} />
       </div>
     );
   }
