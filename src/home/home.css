@@ -1,7 +1,33 @@
+body {
+  background: #008B8D;
+}
+
 .container {
+  overflow: hidden;
   display: flex;
+  background: white;
+  height: 100px;
 }
 
 .xp {
   margin-left: 10px;
+}
+
+.semi-circle {
+  display: flex;
+  background-color: red;
+  width: 134%;
+  height: 100%;
+  border-radius: 50% / 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom: 0;
+  position: relative;
+  left: -17%;
+}
+
+.full-width-div {
+  margin-top: 80px;
+  height: 90px;
+  background: blue;
 }

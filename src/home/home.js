@@ -10,6 +10,9 @@ class Leaderboard extends Component {
         <span className='xp'>
           <span className='text'>{14}</span>
         </span>
+        <div className='full-width-div'>
+        <span className='semi-circle'></span>
+        </div>
       </div>
     );
   }
