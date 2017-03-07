@@ -1,16 +1,25 @@
+<<<<<<< HEAD
 body {
   background: #008B8D;
 }
 
-.container {
+.home-container {
   overflow: hidden;
   display: flex;
   background: white;
   height: 100px;
 }
-
 .xp {
-  margin-left: 10px;
+  margin: 10px;
+}
+
+.hexagon .content {
+  z-index: 100;
+  color: #FFFFFF;
+  position: absolute;
+  top: -2px !important;
+  left: 7px !important;
+  font-size: 12px;
 }
 
 .semi-circle {

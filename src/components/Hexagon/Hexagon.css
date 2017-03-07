@@ -1,0 +1,50 @@
+/*http://csshexagon.com/*/
+
+.hexagon {
+  position: relative;
+  width: 50px;
+  height: 28.87px;
+  background-color: #64C7CC;
+  margin: 14.43px 0;
+}
+
+.hexagon.red {
+  background-color: #FF5151;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 14.43px solid #64C7CC;
+}
+
+.hexagon.red:before {
+  border-bottom-color: #FF5151;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 14.43px solid #64C7CC;
+}
+
+.hexagon.red:after {
+  border-top-color: #FF5151;
+}
+
+.hexagon .content {
+  z-index: 100;
+  color: #FFFFFF;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  font-size: 12px;
+}
