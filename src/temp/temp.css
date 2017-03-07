@@ -1,0 +1,17 @@
+.temp-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.xp {
+  margin: 10px;
+}
+
+.hexagon .content {
+  z-index: 100;
+  color: #FFFFFF;
+  position: absolute;
+  top: -2px !important;
+  left: 7px !important;
+  font-size: 12px;
+}
