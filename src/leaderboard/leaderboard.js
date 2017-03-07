@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './leaderboard.css';
 import XP from '../components/XP/XP';
-import photo from './mark.jpg';
+import photo from '../assets/mark.jpg';
 // http://www.flaticon.com/free-icon/trophy_321773
-import trophy from './trophy.svg';
+import trophy from '../assets/trophy.svg';
 
 class Leaderboard extends Component {
   constructor(props) {
