@@ -11,13 +11,40 @@ class Leaderboard extends Component {
   render() {
     return (
       <div className='home-container'>
-        <span className='xp'>
-          <span className='text'>{14}</span>
-        </span>
-        <div className="circle-div">
-          <div className="circle"></div>
+        <div className='home-header'>
+          <Hexagon
+            bar={true}
+            barColor={'#64C7CC'}
+            barPercent={30}
+            barSize={50}
+            mainColor='#177EC1'
+            size={30}>
+            14
+          </Hexagon>
+          <Hexagon
+            bar={true}
+            barColor={'#64C7CC'}
+            barPercent={30}
+            barSize={50}
+            mainColor='#F25F5C'
+            size={30}>
+            Gems
+          </Hexagon>
+          <Hexagon
+            bar={true}
+            barColor={'#64C7CC'}
+            barPercent={30}
+            barSize={50}
+            mainColor='#F25F5C'
+            size={30}>
+            Gold
+          </Hexagon>
         </div>
-        <div className="home-menu">
+        <div className='circle-div'>
+          <div className='circle'></div>
+        </div>
+        <div className='home-menu'>
+          <Hexagon mainColor='#FF5151' size={50}><img src={trophy} width='35' alt='trophy' /></Hexagon>
           <Hexagon bg='red'><img src={profile} width='35' alt='profile' /></Hexagon>
           <Hexagon><img src={history} width='34' alt='history' /></Hexagon>
           <Hexagon bg='red'><img src={trophy} width='32' alt='trophy' /></Hexagon>
@@ -25,6 +52,9 @@ class Leaderboard extends Component {
         </div>
         <div className='full-width-div'>
           <span className='semi-circle'></span>
+        </div>
+        <div className='body'>
+          body
         </div>
       </div>
     );

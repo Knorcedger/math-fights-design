@@ -73,10 +73,10 @@ const Hexagon = ({bar, barColor, barPercent, barSize, mainColor, size, children}
   const barElement = bar ? (<span className={css(getBarStyle(relativeBarPercent, mainColor, size).bar)}></span>) : '';
 
   return (
-    <span className={classes}>
+    <div className={classes}>
       <span className={css(styles.content)}>{children}</span>
       {barElement}
-    </span>
+    </div>
   );
 }
 
