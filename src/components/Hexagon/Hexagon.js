@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Hexagon = ({bar, barColor, barPercent, barSize, mainColor, size, children}) => {
+const Hexagon = ({bar, barColor, barContent, barPercent, barSize, mainColor, size, children}) => {
   const hexagonStyle = getHexagonStyle(size, mainColor, barSize, barColor);
   const classes = css(
     hexagonStyle.hexagon,
@@ -70,7 +70,9 @@ const Hexagon = ({bar, barColor, barPercent, barSize, mainColor, size, children}
 
   // calculate the correct percent relative to the size
   const relativeBarPercent = (barSize / size) * barPercent;
-  const barElement = bar ? (<span className={css(getBarStyle(relativeBarPercent, mainColor, size).bar)}></span>) : '';
+  const barElement = bar
+    ? (<span className={css(getBarStyle(relativeBarPercent, mainColor, size).bar)}>{barContent}</span>)
+    : '';
 
   return (
     <div className={classes}>
@@ -83,6 +85,7 @@ const Hexagon = ({bar, barColor, barPercent, barSize, mainColor, size, children}
 Hexagon.props = {
   bar: PropTypes.bool,
   barColor: PropTypes.string,
+  barContent: PropTypes.element,
   barPercent: PropTypes.number,
   barSize: PropTypes.number,
   mainColor: PropTypes.string,
