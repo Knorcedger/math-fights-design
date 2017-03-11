@@ -22,7 +22,7 @@ class Leaderboard extends Component {
   }
   render() {
     return (
-      <div className='container'>
+      <div className='Leaderboard-container'>
          <div className='header'>
             <div className='title'>Leaderboard</div>
             <div className='details'>

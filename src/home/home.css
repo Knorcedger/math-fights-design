@@ -1,25 +1,12 @@
-<<<<<<< HEAD
-body {
-  background: #008B8D;
-}
-
-.home-container {
+.container {
   overflow: hidden;
   display: flex;
   background: white;
   height: 100px;
 }
-.xp {
-  margin: 10px;
-}
 
-.hexagon .content {
-  z-index: 100;
-  color: #FFFFFF;
-  position: absolute;
-  top: -2px !important;
-  left: 7px !important;
-  font-size: 12px;
+.xp {
+  margin-left: 10px;
 }
 
 .semi-circle {
@@ -36,7 +23,37 @@ body {
 }
 
 .full-width-div {
-  margin-top: 80px;
   height: 90px;
   background: blue;
+}
+
+.circle-div {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 70px;
+  background: url('../assets/mark.jpg');
+  background-size: contain;
+}
+
+
+.home-hexagon .home-content {
+  z-index: 100;
+  color: #FFFFFF;
+  position: absolute;
+  top: -2px !important;
+  left: 7px !important;
+  font-size: 12px;
+}
+
+.home-menu {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 35px;
+  z-index: 10;
 }

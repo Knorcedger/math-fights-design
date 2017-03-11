@@ -4,6 +4,9 @@ import XP from '../components/XP/XP';
 import Hexagon from '../components/Hexagon/Hexagon';
 import badge from '../assets/badge.svg';
 import trophy from '../assets/trophy.svg';
+// import history from '../assets/history.svg'; // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
+// import shop from '../assets/shop.svg'; // http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
+// import profile from '../assets/profile.svg';
 
 class Temp extends Component {
   render() {

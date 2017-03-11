@@ -3,34 +3,6 @@
 import React, {PropTypes} from 'react';
 import {StyleSheet, css} from 'aphrodite';
 
-const Hexagon = ({bar, barColor, barPercent, barSize, mainColor, size, children}) => {
-  const hexagonStyle = getHexagonStyle(size, mainColor, barSize, barColor);
-  const classes = css(
-    hexagonStyle.hexagon,
-    bar && hexagonStyle.bar,
-  );
-
-  // calculate the correct percent relative to the size
-  const relativeBarPercent = (barSize / size) * barPercent;
-  const barElement = bar ? (<span className={css(getBarStyle(relativeBarPercent, mainColor, size).bar)}></span>) : '';
-
-  return (
-    <span className={classes}>
-      <span className={css(styles.content)}>{children}</span>
-      {barElement}
-    </span>
-  );
-}
-
-Hexagon.props = {
-  bar: PropTypes.bool,
-  barColor: PropTypes.string,
-  barPercent: PropTypes.number,
-  barSize: PropTypes.number,
-  mainColor: PropTypes.string,
-  size: PropTypes.number
-};
-
 const getHexagonStyle = (size, mainColor, barSize, barColor) => {
   return StyleSheet.create({
     hexagon: {
@@ -55,7 +27,6 @@ const getHexagonStyle = (size, mainColor, barSize, barColor) => {
         borderLeft: `${size / 2}px solid transparent`,
         borderRight: `${size / 2}px solid transparent`,
         top: '100%',
-        width: 0,
         borderTop: `${(size * 0.5775) / 2}px solid ${mainColor}`
       }
     },
@@ -89,5 +60,33 @@ const styles = StyleSheet.create({
     left: 7
   }
 });
+
+const Hexagon = ({bar, barColor, barPercent, barSize, mainColor, size, children}) => {
+  const hexagonStyle = getHexagonStyle(size, mainColor, barSize, barColor);
+  const classes = css(
+    hexagonStyle.hexagon,
+    bar && hexagonStyle.bar,
+  );
+
+  // calculate the correct percent relative to the size
+  const relativeBarPercent = (barSize / size) * barPercent;
+  const barElement = bar ? (<span className={css(getBarStyle(relativeBarPercent, mainColor, size).bar)}></span>) : '';
+
+  return (
+    <span className={classes}>
+      <span className={css(styles.content)}>{children}</span>
+      {barElement}
+    </span>
+  );
+}
+
+Hexagon.props = {
+  bar: PropTypes.bool,
+  barColor: PropTypes.string,
+  barPercent: PropTypes.number,
+  barSize: PropTypes.number,
+  mainColor: PropTypes.string,
+  size: PropTypes.number
+};
 
 export default Hexagon;
