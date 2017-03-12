@@ -13,7 +13,7 @@
   height: 100%;
   opacity: .4;
   z-index: -1;
-  background: url('../assets/pattern.svg') no-repeat;
+  background: url('../assets/sayagata-400px.png') repeat;
 }
 
 .home-header {

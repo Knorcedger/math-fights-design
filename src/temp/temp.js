@@ -9,6 +9,16 @@ import shop from '../assets/shop.svg'; // http://www.flaticon.com/free-icon/shop
 // import profile from '../assets/profile.svg';
 
 class Temp extends Component {
+
+  goldBar() {
+    return (
+      <span>
+        <span>1253</span>
+        <span><img src={trophy} width='35' alt='trophy' /></span>
+      </span>
+    );
+  }
+
   render() {
     return (
       <div className='temp-container'>
