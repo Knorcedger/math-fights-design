@@ -47,21 +47,31 @@ const getBarStyle = (barPercent, mainColor, size) => {
       zIndex: 10,
       display: 'inherit',
       position: 'relative',
-      left: size
+      left: size,
+      top: '-100%'
+    }
+  });
+};
+
+const getImageStyle = image => {
+  return StyleSheet.create({
+    image: {
+      backgroundImage: `url(${image})`,
+      backgroundSize: 'cover',
+      height: '100%',
     }
   });
 };
 
 const styles = StyleSheet.create({
   content: {
-    zIndex: 100,
-    position: 'absolute',
-    top: -2,
-    left: 7
+    width: '60%',
+    height: '100%',
+    marginLeft: '20%'
   }
 });
 
-const Hexagon = ({bar, barColor, barPercent, barSize, mainColor, size, children}) => {
+const Hexagon = ({bar, barColor, barPercent, barSize, image, mainColor, size}) => {
   const hexagonStyle = getHexagonStyle(size, mainColor, barSize, barColor);
   const classes = css(
     hexagonStyle.hexagon,
@@ -74,7 +84,10 @@ const Hexagon = ({bar, barColor, barPercent, barSize, mainColor, size, children}
 
   return (
     <div className={classes}>
-      <span className={css(styles.content)}>{children}</span>
+      <div className={css(styles.content)}>
+        <div className={css(getImageStyle(image).image)}>
+        </div>
+      </div>
       {barElement}
     </div>
   );
@@ -85,6 +98,7 @@ Hexagon.props = {
   barColor: PropTypes.string,
   barPercent: PropTypes.number,
   barSize: PropTypes.number,
+  image: PropTypes.element,
   mainColor: PropTypes.string,
   size: PropTypes.number
 };
