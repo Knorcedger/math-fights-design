@@ -1,5 +1,5 @@
 .home-container {
-  /*background-color: white;*/
+  background-color: linen;
   overflow-x: hidden;
   /*background: url('../assets/pattern.svg');*/
 }
@@ -13,7 +13,7 @@
   height: 100%;
   opacity: .4;
   z-index: -1;
-  background: url('../assets/sayagata-400px.png') repeat;
+  // background: url('../assets/sayagata-400px.png') repeat;
 }
 
 .home-header {
@@ -24,9 +24,9 @@
 
 .semi-circle {
   display: flex;
-  background-color: white;
+  background-color: linen;
   width: 134%;
-  height: 100%;
+  height: 65%;
   border-radius: 50% / 100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -40,15 +40,15 @@
   background: #F25F5C;
 }
 
-.circle-div {
-  height: 120px;
+.home-profile-image-container {
+  height: 80px;
   display: flex;
   justify-content: center;
 }
 
-.circle {
+.home-profile-image {
   border-radius: 50%;
-  width: 120px;
+  width: 80px;
   background: url('../assets/mark.jpg');
   background-size: contain;
 }
@@ -73,4 +73,22 @@
   position: relative;
   top: 35px;
   z-index: 10;
+}
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.play-button {
+  height: 40px;
+  width: 100px;
+  background: #64C7CC;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding-top: 21px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 20px;
 }

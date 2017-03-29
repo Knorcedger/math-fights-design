@@ -6,6 +6,7 @@ import trophy from '../assets/trophy.svg';
 import history from '../assets/history.svg'; // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
 import shop from '../assets/shop.svg'; // http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
 import profile from '../assets/profile.svg';
+import badge from '../assets/badge.svg';
 
 class Leaderboard extends Component {
   render() {
@@ -40,21 +41,36 @@ class Leaderboard extends Component {
             Gold
           </Hexagon>
         </div>
-        <div className='circle-div'>
-          <div className='circle'></div>
+        <div className='home-profile-image-container'>
+          <div className='home-profile-image'></div>
         </div>
         <div className='home-menu'>
-          <Hexagon mainColor='#FF5151' size={50}><img src={trophy} width='35' alt='trophy' /></Hexagon>
-          <Hexagon bg='red'><img src={profile} width='35' alt='profile' /></Hexagon>
-          <Hexagon><img src={history} width='34' alt='history' /></Hexagon>
-          <Hexagon bg='red'><img src={trophy} width='32' alt='trophy' /></Hexagon>
-          <Hexagon><img src={shop} width='32' alt='shop' /></Hexagon>
+          <Hexagon
+            mainColor='#64C7CC'
+            image={badge}
+            size={50}>
+          </Hexagon>
+          <Hexagon
+            mainColor='#64C7CC'
+            image={shop}
+            size={50}>
+          </Hexagon>
+          <Hexagon
+            mainColor='#64C7CC'
+            image={trophy}
+            size={50}>
+          </Hexagon>
+          <Hexagon
+            mainColor='#64C7CC'
+            image={history}
+            size={50}>
+          </Hexagon>
         </div>
         <div className='full-width-div'>
           <span className='semi-circle'></span>
         </div>
         <div className='body'>
-          body
+          <div className="play-button">Start Game!</div>
         </div>
       </div>
     );
