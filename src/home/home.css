@@ -81,14 +81,16 @@
 }
 .play-button {
   height: 40px;
-  width: 100px;
+  width: 140px;
   background: #64C7CC;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
   text-align: center;
-  padding-top: 21px;
-  padding-left: 40px;
-  padding-right: 40px;
-  border-radius: 20px;
+  padding-top: 17px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+  border: 3px solid;
+
 }

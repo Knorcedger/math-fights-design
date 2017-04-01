@@ -19,7 +19,6 @@ class App extends Component {
             <li><Link to='/leaderboard'>Leaderboard</Link></li>
             <li><Link to='/temp'>Temp</Link></li>
           </ul>
-
           <hr/>
 
           <Route exact path='/' component={Home} />
