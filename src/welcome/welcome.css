@@ -89,13 +89,13 @@
 
 .welcome-register-button {
   height: 40px;
-  width: 150px;
+  width: 180px;
   background: #247BA0;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: white;
   text-align: center;
-  padding-top: 17px;
+  padding-top: 18px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 30px;
@@ -104,13 +104,13 @@
 
 .welcome-login-button {
   height: 40px;
-  width: 150px;
+  width: 180px;
   background: #F25F5C;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: white;
   text-align: center;
-  padding-top: 17px;
+  padding-top: 18px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 30px;

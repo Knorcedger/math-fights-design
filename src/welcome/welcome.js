@@ -19,8 +19,8 @@ class Leaderboard extends Component {
           <span className='welcome-semi-circle'></span>
         </div>
         <div className='welcome-body'>
-          <div className="welcome-register-button">Register</div>
-          <div className="welcome-login-button">Login</div>
+          <div className="welcome-register-button">Login with facebook</div>
+          <div className="welcome-login-button">Login with email</div>
         </div>
         <div className='welcome-footer'>
         </div>
