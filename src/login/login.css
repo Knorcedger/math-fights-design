@@ -1,0 +1,134 @@
+.login-container {
+  background-color: #F25F5C;
+  overflow-x: hidden;
+  /*background: url('../assets/pattern.svg');*/
+}
+
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .4;
+  z-index: -1;
+  // background: url('../assets/sayagata-400px.png') repeat;
+}
+
+.login-header {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-semi-circle {
+  display: flex;
+  background-color: #F25F5C;
+  width: 134%;
+  height: 80%;
+  border-radius: 50% / 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom: 0;
+  position: relative;
+  left: -17%;
+}
+
+.login-full-width-div {
+  height: 100px;
+  background: linen;
+}
+
+.login-logo-container {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  background: linen;
+  width: 25%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 35px;
+  border: 3px solid darkgray;
+}
+
+.login-logo {
+  border-radius: 50%;
+  width: 80px;
+  background: url('../assets/sword.svg');
+  background-size: contain;
+}
+
+.login-body {
+  background-color: linen;
+  height: 208px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: -40px;
+}
+
+.login-hexagon .login-content {
+  z-index: 100;
+  color: #FFFFFF;
+  position: absolute;
+  top: -2px !important;
+  left: 7px !important;
+  font-size: 12px;
+}
+
+.login-menu {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 35px;
+  z-index: 10;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 70%;
+  height: 100px;
+  justify-content: center;
+  padding: 2%;
+  border-radius: 10px;
+}
+
+.login-username {
+  margin-bottom: 10px;
+}
+
+.login-tabs {
+  width: 70%;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-tab {
+  background: white;
+  width: 50%;
+  text-align: center;
+  border-radius: 5px;
+  position: relative;
+  bottom: -2px;
+}
+
+.register-tab {
+  background: #F25F5C;
+  width: 50%;
+  text-align: center;
+  border-radius: 5px;
+  position: relative;
+  bottom: -2px;
+}
+
+.login-footer {
+  background: linen;
+  width: 100%;
+  height: 500px;
+}
