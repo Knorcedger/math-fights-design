@@ -1,5 +1,9 @@
+@font-face {
+  font-family: Kano;
+  src: url(assets/Kano.otf);
+}
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Kano', 'Roboto', sans-serif;
 }
