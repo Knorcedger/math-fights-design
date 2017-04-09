@@ -47,7 +47,7 @@
   margin: auto;
   padding: 20px;
   border-radius: 20px;
-  margin-top: 35px;
+  margin-top: 20px;
   border: 3px solid darkgray;
 }
 
@@ -62,7 +62,7 @@
   background-color: linen;
   height: 208px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   margin-bottom: -40px;
@@ -97,7 +97,6 @@
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 30px;
-  margin-bottom: 10px;
 }
 
 .welcome-login-button {
@@ -112,7 +111,7 @@
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 30px;
-  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .welcome-footer {
