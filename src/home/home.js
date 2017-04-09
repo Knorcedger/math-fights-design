@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import './home.css';
 import Hexagon from '../components/Hexagon/Hexagon';
 // import badge from '../assets/badge.svg';
@@ -6,50 +6,60 @@ import trophy from '../assets/trophy.svg';
 import history from '../assets/history.svg'; // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
 import shop from '../assets/shop.svg'; // http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
 // import profile from '../assets/profile.svg';
-import badge from '../assets/badge.svg';
+// import badge from '../assets/badge.svg';
+import coin from '../assets/coin.svg';
+import diamond from '../assets/diamond.svg';
+import leaderboard from '../assets/leaderboard.svg';
 
-class Leaderboard extends Component {
+class Home extends Component {
   render() {
     return (
       <div className='home-container'>
         <div className='home-header'>
           <Hexagon
             bar={true}
-            barColor={'#64C7CC'}
+            barColor='#64C7CC'
             barPercent={30}
-            barSize={50}
+            barSize={80}
+            content={14}
             mainColor='#177EC1'
             size={30}>
-            14
           </Hexagon>
           <Hexagon
             bar={true}
-            barColor={'#64C7CC'}
-            barPercent={30}
-            barSize={50}
+            barColor='#f7c4bc'
+            barContent={12632}
+            barPercent={0}
+            barSize={80}
+            image={coin}
             mainColor='#F25F5C'
             size={30}>
-            Gems
           </Hexagon>
           <Hexagon
             bar={true}
-            barColor={'#64C7CC'}
-            barPercent={30}
-            barSize={50}
-            mainColor='#F25F5C'
+            barColor='#c3c7cc'
+            barContent={211}
+            barPercent={0}
+            barSize={80}
+            image={diamond}
+            mainColor='#456990'
             size={30}>
-            Gold
           </Hexagon>
         </div>
         <div className='home-profile-image-container'>
           <div className='home-profile-image'></div>
+          <Hexagon
+            bar={true}
+            barColor='#c7c0b8'
+            barContent={1535}
+            barPercent={0}
+            barSize={80}
+            image={trophy}
+            mainColor='#50514F'
+            size={30}>
+          </Hexagon>
         </div>
         <div className='home-menu'>
-          <Hexagon
-            mainColor='#64C7CC'
-            image={badge}
-            size={50}>
-          </Hexagon>
           <Hexagon
             mainColor='#64C7CC'
             image={shop}
@@ -57,7 +67,8 @@ class Leaderboard extends Component {
           </Hexagon>
           <Hexagon
             mainColor='#64C7CC'
-            image={trophy}
+            image={leaderboard}
+            onClick={() => this.context.history.push('leaderboard')}
             size={50}>
           </Hexagon>
           <Hexagon
@@ -75,6 +86,10 @@ class Leaderboard extends Component {
       </div>
     );
   }
-}
+};
 
-export default Leaderboard;
+Home.contextTypes = {
+  history: PropTypes.object
+};
+
+export default Home;

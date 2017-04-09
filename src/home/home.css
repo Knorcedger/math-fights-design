@@ -1,7 +1,6 @@
 .home-container {
   background-color: linen;
   overflow-x: hidden;
-  /*background: url('../assets/pattern.svg');*/
 }
 
 .home-container::before {
@@ -13,7 +12,6 @@
   height: 100%;
   opacity: .4;
   z-index: -1;
-  // background: url('../assets/sayagata-400px.png') repeat;
 }
 
 .home-header {
@@ -41,14 +39,15 @@
 }
 
 .home-profile-image-container {
-  height: 80px;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .home-profile-image {
   border-radius: 50%;
-  width: 80px;
+  width: 100px;
+  height: 100px;
   background: url('../assets/mark.jpg');
   background-size: contain;
 }
@@ -71,7 +70,7 @@
   display: flex;
   justify-content: space-around;
   position: relative;
-  top: 35px;
+  top: 30px;
   z-index: 10;
 }
 .body {
@@ -82,15 +81,14 @@
 .play-button {
   height: 40px;
   width: 140px;
-  background: #64C7CC;
+  background: #FFE066;
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: #50514F;
   text-align: center;
   padding-top: 17px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 30px;
-  border: 3px solid;
-
+  border: 3px solid #50514F;
 }

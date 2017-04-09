@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Hexagon = ({bar, barColor, barContent, barPercent, barSize, image, mainColor, size}) => {
+const Hexagon = ({bar, barColor, barContent, barPercent, barSize, clickData, content, image, mainColor, onClick, size}) => {
   const hexagonStyle = getHexagonStyle(size, mainColor, barSize, barColor);
   const classes = css(
     hexagonStyle.hexagon,
@@ -85,9 +85,10 @@ const Hexagon = ({bar, barColor, barContent, barPercent, barSize, image, mainCol
     : '';
 
   return (
-    <div className={classes}>
+    <div className={classes} onClick={onClick}>
       <div className={css(styles.content)}>
         <div className={css(getImageStyle(image).image)}>
+          {content}
         </div>
       </div>
       {barElement}
@@ -101,8 +102,11 @@ Hexagon.props = {
   barContent: PropTypes.element,
   barPercent: PropTypes.number,
   barSize: PropTypes.number,
+  clickData: PropTypes.any,
+  content: PropTypes.string,
   image: PropTypes.element,
   mainColor: PropTypes.string,
+  onClick: PropTypes.func,
   size: PropTypes.number
 };
 
