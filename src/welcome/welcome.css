@@ -60,12 +60,12 @@
 
 .welcome-body {
   background-color: linen;
-  height: 208px;
+  height: 308px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
-  margin-bottom: -40px;
+  padding-bottom: 100px;
 }
 
 .welcome-hexagon .welcome-content {
