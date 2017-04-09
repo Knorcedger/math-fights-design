@@ -28,6 +28,9 @@ const getHexagonStyle = (size, mainColor, barSize, barColor) => {
         borderRight: `${size / 2}px solid transparent`,
         top: '100%',
         borderTop: `${(size * 0.5775) / 2}px solid ${mainColor}`
+      },
+      ':active': {
+        opacity: 0.5
       }
     },
     bar: {
