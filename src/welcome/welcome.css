@@ -54,7 +54,7 @@
 .welcome-logo {
   border-radius: 50%;
   width: 80px;
-  background: url('../assets/sword.svg');
+  background: url('../assets/images/sword.svg');
   background-size: contain;
 }
 
@@ -86,31 +86,24 @@
 }
 
 .welcome-register-button {
+  background: #247BA0;
+}
+
+.welcome-button {
   height: 40px;
   width: 180px;
   background: #247BA0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
   text-align: center;
-  padding-top: 18px;
+  padding-top: 16px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 30px;
 }
-
 .welcome-login-button {
-  height: 40px;
-  width: 180px;
   background: #F25F5C;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  padding-top: 18px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 30px;
   margin-top: 20px;
 }
 

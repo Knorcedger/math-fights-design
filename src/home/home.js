@@ -1,15 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import './home.css';
 import Hexagon from '../components/Hexagon/Hexagon';
-// import badge from '../assets/badge.svg';
-import trophy from '../assets/trophy.svg';
-import history from '../assets/history.svg'; // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
-import shop from '../assets/shop.svg'; // http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
-// import profile from '../assets/profile.svg';
-// import badge from '../assets/badge.svg';
-import coin from '../assets/coin.svg';
-import diamond from '../assets/diamond.svg';
-import leaderboard from '../assets/leaderboard.svg';
+// import badge from '../assets/images/badge.svg';
+import trophy from '../assets/images/trophy.svg';
+import history from '../assets/images/history.svg'; // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
+import shop from '../assets/images/shop.svg'; // http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
+// import profile from '../assets/images/profile.svg';
+// import badge from '../assets/images/badge.svg';
+import coin from '../assets/images/coin.svg';
+import diamond from '../assets/images/diamond.svg';
+import leaderboard from '../assets/images/leaderboard.svg';
 
 class Home extends Component {
   render() {
