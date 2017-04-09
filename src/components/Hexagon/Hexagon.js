@@ -85,7 +85,7 @@ const Hexagon = ({bar, barColor, barContent, barPercent, barSize, clickData, con
     : '';
 
   return (
-    <div className={classes} onClick={onClick}>
+    <div className={classes} onClick={() => onClick(clickData)}>
       <div className={css(styles.content)}>
         <div className={css(getImageStyle(image).image)}>
           {content}
