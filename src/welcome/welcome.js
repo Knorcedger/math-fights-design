@@ -16,8 +16,6 @@ class Welcome extends Component {
           <div className="welcome-register-button">Login with facebook</div>
           <div className="welcome-login-button">Login with email</div>
         </div>
-        <div className='welcome-footer'>
-        </div>
       </div>
     );
   }
