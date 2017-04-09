@@ -97,16 +97,49 @@ const Hexagon = ({bar, barColor, barContent, barPercent, barSize, clickData, con
 }
 
 Hexagon.props = {
+  /**
+   * Display a bar or not
+   */
   bar: PropTypes.bool,
+  /**
+   * Colour of the bar if this one is visible
+   */
   barColor: PropTypes.string,
+  /**
+   * Component to render over the bar
+   */
   barContent: PropTypes.element,
+  /**
+   * Percentage of bar that is full
+   */
   barPercent: PropTypes.number,
+  /**
+   * Width of bar in px
+   */
   barSize: PropTypes.number,
+  /**
+   * Data passed on click of hexagon
+   */
   clickData: PropTypes.any,
+  /**
+   * Text shown inside hegaxon.
+   */
   content: PropTypes.string,
+  /**
+   * Image shown inside hegaxon
+   */
   image: PropTypes.element,
+  /**
+   * Color of hexagon
+   */
   mainColor: PropTypes.string,
+  /**
+   * On click of the component, the function that will run
+   */
   onClick: PropTypes.func,
+  /**
+   * Size of the hexagon in px
+   */
   size: PropTypes.number
 };
 
