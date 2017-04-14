@@ -30,14 +30,12 @@ class Login extends Component {
           </div>
           {
             this.state.activeTab === 'login'
-            ?
-              (<div className='login box'>
+            ? (<div className='login box'>
                 <input name='login-username' className='username' placeholder='Username'></input>
                 <input name='login-password' placeholder='Password'></input>
                 <button>Login</button>
               </div>)
-            :
-              (<div className='register box'>
+            : (<div className='register box'>
                 <input name='register-username' className='username' placeholder='Username'></input>
                 <input name='register-password' placeholder='Password'></input>
                 <button>Register</button>
