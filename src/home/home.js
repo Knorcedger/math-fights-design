@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import './home.css';
+import Button from '../components/Button/Button';
 import Hexagon from '../components/Hexagon/Hexagon';
 // import badge from '../assets/images/badge.svg';
 import trophy from '../assets/images/trophy.svg';
@@ -81,7 +82,13 @@ class Home extends Component {
           <span className='semi-circle'></span>
         </div>
         <div className='body'>
-          <div className="play-button">Start Game!</div>
+          <Button
+            backgroundColor='#FFE066'
+            borderColor='#50514F'
+            text='Start Game!'
+            textColor='#50514F'
+            width={140}>
+          </Button>
         </div>
       </div>
     );

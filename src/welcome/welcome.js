@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './welcome.css';
+import Button from '../components/Button/Button';
+
 
 
 class Welcome extends Component {
@@ -13,8 +15,18 @@ class Welcome extends Component {
           <span className='welcome-semi-circle'></span>
         </div>
         <div className='welcome-body'>
-          <div className="welcome-button welcome-register-button">Login with facebook</div>
-          <div className="welcome-button welcome-login-button">Login with email</div>
+        <Button
+          backgroundColor='#247BA0'
+          text='Login with facebook'
+          textColor='#FFFFFF'
+          width={180}>
+        </Button>
+        <Button
+          backgroundColor='#F25F5C'
+          text='Login with email'
+          textColor='#FFFFFF'
+          width={180}>
+        </Button>
         </div>
       </div>
     );
