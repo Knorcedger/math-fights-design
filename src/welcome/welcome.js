@@ -55,13 +55,15 @@ class Welcome extends Component {
             backgroundColor='#247BA0'
             text='Login with facebook'
             textColor='#FFFFFF'
-            width={180}>
+            width={180}
+            onClick={() => console.log('Login via fb clicked')}>
           </Button>
           <Button
             backgroundColor='#F25F5C'
             text='Login with email'
             textColor='#FFFFFF'
-            width={180}>
+            width={180}
+            onClick={() => console.log('Login via email clicked')}>
           </Button>
         </Body>
       </Container>

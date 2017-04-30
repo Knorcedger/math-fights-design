@@ -12,30 +12,24 @@ const Wrapper = styled.div`
   :active: {
     opacity: 0.5;
   }
-  ${props => props.bar && `border-right: ${props.barSize}px solid ${props.barColor};`}
-  ${props => props.bar && 'border-bottom-right-radius: 5px;'}
-  ${props => props.bar && 'border-top-right-radius: 5px;'}
+  ${props => props.bar &&
+    `border-right: ${props.barSize}px solid ${props.barColor};
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;`
+  }
 `;
 
-const Top = styled.div`
+const Edge = styled.div`
   position: absolute;
   left: 0;
   width: 0;
   border-left: ${props => props.size / 2}px solid transparent;
   border-right: ${props => props.size / 2}px solid transparent;
-  bottom: 100%;
-  border-bottom: ${props => (props.size * 0.5775) / 2}px solid ${props => props.mainColor}
-`;
-
-const Bottom = styled.div`
-  position: absolute;
-  left: 0;
-  width: 0;
-  border-left: ${props => props.size / 2}px solid transparent;
-  border-right: ${props => props.size / 2}px solid transparent;
-  top: 100%;
-  border-top: ${props => (props.size * 0.5775) / 2}px solid ${props => props.mainColor}
-`;
+  ${props => {
+    const borderStyle = `${(props.size * 0.5775) / 2}px solid ${props.mainColor}`;
+    return props.top ? `border-top: ${borderStyle}; top: 100%;` : `border-bottom: ${borderStyle}; bottom: 100%;`;
+  }};
+`
 
 const Bar = styled.span`
   height: 100%;
@@ -71,11 +65,11 @@ const Hexagon = ({bar, barColor, barContent, barPercent, barSize, clickData, con
   return (
     <Wrapper {...{bar, barColor, barSize, mainColor, size}} onClick={() => onClick(clickData)}>
       <Middle>
-        <Top {...{mainColor, size}} />
+        <Edge top {...{mainColor, size}} />
         <Image image={image}>
           {content}
         </Image>
-        <Bottom {...{mainColor, size}} />
+        <Edge bottom {...{mainColor, size}} />
       </Middle>
       {barElement}
     </Wrapper>
@@ -106,7 +100,7 @@ Hexagon.propTypes = {
   /**
    * Component to render over the bar
    */
-  barContent: PropTypes.element,
+  barContent: PropTypes.number,
   /**
    * Percentage of bar that is full
    */
