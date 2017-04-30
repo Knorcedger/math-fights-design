@@ -45,6 +45,7 @@ class Temp extends Component {
         <Hexagon
           mainColor='#295'
           image={trophy}
+          content='14'
           size={50}>
         </Hexagon>
       </div>
