@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Text = styled.div`
     width: ${props => props.width}px;
-    background-color: ${props => props.disabled && 'gray' || props.backgroundColor};
+    background-color: ${props => props.disabled ? 'gray' : props.backgroundColor};
     font-size: 20px;
     font-weight: bold;
     color: ${props => props.textColor};

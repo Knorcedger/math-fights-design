@@ -10,13 +10,53 @@ import shop from '../assets/images/shop.svg'; // http://www.flaticon.com/free-ic
 // import badge from '../assets/images/badge.svg';
 import coin from '../assets/images/coin.svg';
 import diamond from '../assets/images/diamond.svg';
+import profile from '../assets/images/mark.jpg';
 import leaderboard from '../assets/images/leaderboard.svg';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  background-color: linen;
+  overflow-x: hidden;
+`;
+const Header = styled.div`
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+`;
+const Body = styled.div`
+  background-color: #F25F5C;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const ProfileArea = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+`;
+
+const ProfileImage = styled.div`
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background: url(${profile});
+  background-size: contain;
+`;
+
+const Menu = styled.div`
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 30px;
+  z-index: 10;
+`;
 
 class Home extends Component {
   render() {
     return (
-      <div className='home-container'>
-        <div className='home-header'>
+      <Container>
+        <Header>
           <Hexagon
             bar={true}
             barColor='#64C7CC'
@@ -46,9 +86,9 @@ class Home extends Component {
             mainColor='#456990'
             size={30}>
           </Hexagon>
-        </div>
-        <div className='home-profile-image-container'>
-          <div className='home-profile-image'></div>
+        </Header>
+        <ProfileArea>
+          <ProfileImage/>
           <Hexagon
             bar={true}
             barColor='#c7c0b8'
@@ -59,8 +99,8 @@ class Home extends Component {
             mainColor='#50514F'
             size={30}>
           </Hexagon>
-        </div>
-        <div className='home-menu'>
+          </ProfileArea>
+        <Menu>
           <Hexagon
             mainColor='#64C7CC'
             image={shop}
@@ -77,11 +117,11 @@ class Home extends Component {
             image={history}
             size={50}>
           </Hexagon>
-        </div>
+        </Menu>
         <div className='full-width-div'>
           <span className='semi-circle'></span>
         </div>
-        <div className='body'>
+        <Body>
           <Button
             backgroundColor='#FFE066'
             borderColor='#50514F'
@@ -89,8 +129,8 @@ class Home extends Component {
             textColor='#50514F'
             width={140}>
           </Button>
-        </div>
-      </div>
+        </Body>
+      </Container>
     );
   }
 };
