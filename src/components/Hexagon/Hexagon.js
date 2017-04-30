@@ -94,7 +94,7 @@ Hexagon.defaultProps = {
   text: null
 };
 
-Hexagon.props = {
+Hexagon.propTypes = {
   /**
    * Display a bar or not
    */
@@ -122,7 +122,7 @@ Hexagon.props = {
   /**
    * Image shown inside hegaxon
    */
-  image: PropTypes.element,
+  image: PropTypes.string,
   /**
    * Color of hexagon
    */
