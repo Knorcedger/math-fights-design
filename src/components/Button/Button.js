@@ -1,45 +1,34 @@
-/*http://cssbutton.com/*/
-
 import React, {PropTypes} from 'react';
-import {StyleSheet, css} from 'aphrodite';
+import styled from 'styled-components';
 
-const getButtonStyle = (backgroundColor, borderColor, textColor, width) => {
-  return StyleSheet.create({
-    button: {
-      height: '40px',
-      width: width,
-      backgroundColor: backgroundColor,
-      fontSize: '20px',
-      fontWeight: 'bold',
-      color: textColor,
-      textAlign: 'center',
-      paddingTop: '17px',
-      paddingLeft: '20px',
-      paddingRight: '20px',
-      borderRadius: '30px',
-      marginBottom: '20px',
-      borderWidth: 3,
-      borderStyle: 'solid',
-      borderColor: borderColor,
-    }
-  });
-};
+const Text = styled.div`
+    width: ${props => props.width}px;
+    background-color: ${props => props.disabled && 'gray' || props.backgroundColor};
+    font-size: 20px;
+    font-weight: bold;
+    color: ${props => props.textColor};
+    text-align: center;
+    padding: 17px 20px;
+    ${props => props.borderColor && `border: 3px solid ${props.borderColor}`};
+    border-radius: 30px;
+`;
 
-
-const Button = ({backgroundColor, borderColor, clickData, onClick, text, textColor, width}) => {
-  const buttonStyle = getButtonStyle(backgroundColor, borderColor, textColor, width);
+const Button = (props) => {
   return (
-    <div onClick={() => onClick(clickData)}>
-      <div className={css(buttonStyle.button)}> {text}</div>
-    </div>
+    <Text {...props} onClick={() => props.onClick(props.clickData)}>{props.text}</Text>
   );
 }
 
+Button.defaultProps = {
+  borderColor: null,
+  clickData: null,
+  disabled: false
+}
 Button.props = {
   /**
    * Colour of background
    */
-  backgroundColor: PropTypes.string,
+  backgroundColor: PropTypes.string.isRequired,
   /**
    * Colour of border
    */
@@ -55,19 +44,19 @@ Button.props = {
   /**
    * On click of the component, the function that will run
    */
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   /**
    * Text shown in the button
    */
-  text: PropTypes.string,
+  text: PropTypes.string.isRequired,
   /**
    * Colour of text of button
    */
-  textColor: PropTypes.string,
+  textColor: PropTypes.string.isRequired,
   /**
    * Width of button
    */
-  width: PropTypes.number
+  width: PropTypes.number.isRequired
 };
 
 export default Button;
