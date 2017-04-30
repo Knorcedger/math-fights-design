@@ -1,105 +1,94 @@
 /*http://csshexagon.com/*/
 
 import React, {PropTypes} from 'react';
-import {StyleSheet, css} from 'aphrodite';
+import styled from 'styled-components';
 
-const getHexagonStyle = (size, mainColor, barSize, barColor) => {
-  return StyleSheet.create({
-    hexagon: {
-      position: 'relative',
-      width: size,
-      height: size * 0.5775,
-      backgroundColor: mainColor,
-      margin: `${(size * 0.5775) / 2}px 0`,
-      ':before': {
-        content: '""',
-        position: 'absolute',
-        width: 0,
-        borderLeft: `${size / 2}px solid transparent`,
-        borderRight: `${size / 2}px solid transparent`,
-        bottom: '100%',
-        borderBottom: `${(size * 0.5775) / 2}px solid ${mainColor}`
-      },
-      ':after': {
-        content: '""',
-        position: 'absolute',
-        width: 0,
-        borderLeft: `${size / 2}px solid transparent`,
-        borderRight: `${size / 2}px solid transparent`,
-        top: '100%',
-        borderTop: `${(size * 0.5775) / 2}px solid ${mainColor}`
-      },
-      ':active': {
-        opacity: 0.5
-      }
-    },
-    bar: {
-      borderRight: `${barSize}px solid ${barColor}`,
-      borderBottomRightRadius: 5,
-      borderTopRightRadius: 5
-    }
-  });
-};
-
-const getBarStyle = (barPercent, mainColor, size) => {
-  return StyleSheet.create({
-    bar: {
-      height: '100%',
-      width: barPercent + '%',
-      backgroundColor: mainColor,
-      zIndex: 10,
-      display: 'inherit',
-      position: 'relative',
-      left: size,
-      top: '-100%'
-    }
-  });
-};
-
-const getImageStyle = image => {
-  return StyleSheet.create({
-    image: {
-      backgroundImage: `url(${image})`,
-      backgroundSize: 'cover',
-      height: '100%',
-    }
-  });
-};
-
-const styles = StyleSheet.create({
-  content: {
-    width: '60%',
-    height: '100%',
-    marginLeft: '20%'
+const Wrapper = styled.div`
+  position: relative;
+  width: ${props => props.size}px;
+  height: ${props => props.size * 0.5775}px;
+  background-color: ${props => props.mainColor};
+  margin: ${props => (props.size * 0.5775) / 2}px 0;
+  :active: {
+    opacity: 0.5;
   }
-});
+  ${props => props.bar &&
+    `border-right: ${props.barSize}px solid ${props.barColor};
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;`
+  }
+`;
+
+const Edge = styled.div`
+  position: absolute;
+  left: 0;
+  width: 0;
+  border-left: ${props => props.size / 2}px solid transparent;
+  border-right: ${props => props.size / 2}px solid transparent;
+  ${props => {
+    const borderStyle = `${(props.size * 0.5775) / 2}px solid ${props.mainColor}`;
+    return props.top ? `border-top: ${borderStyle}; top: 100%;` : `border-bottom: ${borderStyle}; bottom: 100%;`;
+  }};
+`
+
+const Bar = styled.span`
+  height: 100%;
+  width: ${props => props.relativeBarPercent}%;
+  background-color: ${props => props.mainColor};
+  z-index: 10;
+  display: inherit;
+  position: relative;
+  left: ${props => props.size}px;
+  top: -100%
+`;
+
+const Image = styled.div`
+  background-image: url(${props => props.image});
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Middle = styled.div`
+  width: 60%;
+  height: 100%;
+  margin-left: 20%;
+`;
 
 const Hexagon = ({bar, barColor, barContent, barPercent, barSize, clickData, content, image, mainColor, onClick, size}) => {
-  const hexagonStyle = getHexagonStyle(size, mainColor, barSize, barColor);
-  const classes = css(
-    hexagonStyle.hexagon,
-    bar && hexagonStyle.bar,
-  );
-
-  // calculate the correct percent relative to the size
+  // calculate the correct percentage relative to the size
   const relativeBarPercent = (barSize / size) * barPercent;
-  const barElement = bar
-    ? (<span className={css(getBarStyle(relativeBarPercent, mainColor, size).bar)}>{barContent}</span>)
-    : '';
+  const barElement = bar && <Bar {...{relativeBarPercent, mainColor, size}}>{barContent}</Bar>;
 
   return (
-    <div className={classes} onClick={() => onClick(clickData)}>
-      <div className={css(styles.content)}>
-        <div className={css(getImageStyle(image).image)}>
+    <Wrapper {...{bar, barColor, barSize, mainColor, size}} onClick={() => onClick(clickData)}>
+      <Middle>
+        <Edge top {...{mainColor, size}} />
+        <Image image={image}>
           {content}
-        </div>
-      </div>
+        </Image>
+        <Edge bottom {...{mainColor, size}} />
+      </Middle>
       {barElement}
-    </div>
+    </Wrapper>
   );
 }
 
-Hexagon.props = {
+Hexagon.defaultProps = {
+  bar: false,
+  barColor: 'black',
+  barContent: null,
+  barPercent: 0,
+  barSize: 0,
+  clickData: null,
+  image: null,
+  onClick: null,
+  text: null
+};
+
+Hexagon.propTypes = {
   /**
    * Display a bar or not
    */
@@ -111,7 +100,7 @@ Hexagon.props = {
   /**
    * Component to render over the bar
    */
-  barContent: PropTypes.element,
+  barContent: PropTypes.number,
   /**
    * Percentage of bar that is full
    */
@@ -125,17 +114,13 @@ Hexagon.props = {
    */
   clickData: PropTypes.any,
   /**
-   * Text shown inside hegaxon.
-   */
-  content: PropTypes.string,
-  /**
    * Image shown inside hegaxon
    */
-  image: PropTypes.element,
+  image: PropTypes.string,
   /**
    * Color of hexagon
    */
-  mainColor: PropTypes.string,
+  mainColor: PropTypes.string.isRequired,
   /**
    * On click of the component, the function that will run
    */
@@ -143,7 +128,11 @@ Hexagon.props = {
   /**
    * Size of the hexagon in px
    */
-  size: PropTypes.number
+  size: PropTypes.number.isRequired,
+  /**
+   * Text shown inside hegaxon.
+   */
+  text: PropTypes.string
 };
 
 export default Hexagon;

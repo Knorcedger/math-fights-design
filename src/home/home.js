@@ -127,7 +127,8 @@ class Home extends Component {
             borderColor='#50514F'
             text='Start Game!'
             textColor='#50514F'
-            width={140}>
+            width={140}
+            onClick={() => console.log('Start Game! clicked')}>
           </Button>
         </Body>
       </Container>

@@ -24,7 +24,7 @@ Button.defaultProps = {
   clickData: null,
   disabled: false
 }
-Button.props = {
+Button.propTypes = {
   /**
    * Colour of background
    */
