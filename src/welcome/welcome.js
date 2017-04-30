@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './welcome.css';
 import Button from '../components/Button/Button';
 import styled from 'styled-components';
@@ -56,14 +56,14 @@ class Welcome extends Component {
             text='Login with facebook'
             textColor='#FFFFFF'
             width={180}
-            onClick={() => console.log('Login via fb clicked')}>
+            onClick={() => {}}>
           </Button>
           <Button
             backgroundColor='#F25F5C'
             text='Login with email'
             textColor='#FFFFFF'
             width={180}
-            onClick={() => console.log('Login via email clicked')}>
+            onClick={() => {}}>
           </Button>
         </Body>
       </Container>

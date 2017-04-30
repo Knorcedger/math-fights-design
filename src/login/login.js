@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import classNames from 'classnames';
 import './login.css';
 import styled from 'styled-components';
@@ -55,9 +55,9 @@ class Login extends Component {
     const registerClasses = classNames('tab', 'login', {active: this.state.activeTab === 'register'});
     return (
       <Container>
-      <Logo>
-        <div/>
-      </Logo>
+        <Logo>
+          <div/>
+        </Logo>
         <div className='login-full-width-div'>
           <span className='login-semi-circle'></span>
         </div>
@@ -68,7 +68,8 @@ class Login extends Component {
           </div>
           {
             this.state.activeTab === 'login'
-            ? (<div className='login box'>
+            ? (
+              <div className='login box'>
                 <input name='login-username' className='username' placeholder='Username'></input>
                 <input name='login-password' placeholder='Password'></input>
                 <Button
@@ -78,7 +79,8 @@ class Login extends Component {
                   width={180}>
                 </Button>
               </div>)
-            : (<div className='register box'>
+            : (
+              <div className='register box'>
                 <input name='register-username' className='username' placeholder='Username'></input>
                 <input name='register-password' placeholder='Password'></input>
                 <Button

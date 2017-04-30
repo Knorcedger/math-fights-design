@@ -1,11 +1,13 @@
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import './home.css';
 import Button from '../components/Button/Button';
 import Hexagon from '../components/Hexagon/Hexagon';
 // import badge from '../assets/images/badge.svg';
 import trophy from '../assets/images/trophy.svg';
-import history from '../assets/images/history.svg'; // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
-import shop from '../assets/images/shop.svg'; // http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
+// http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
+import history from '../assets/images/history.svg';
+// http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
+import shop from '../assets/images/shop.svg';
 // import profile from '../assets/images/profile.svg';
 // import badge from '../assets/images/badge.svg';
 import coin from '../assets/images/coin.svg';
@@ -99,7 +101,7 @@ class Home extends Component {
             mainColor='#50514F'
             size={30}>
           </Hexagon>
-          </ProfileArea>
+        </ProfileArea>
         <Menu>
           <Hexagon
             mainColor='#64C7CC'
@@ -128,7 +130,7 @@ class Home extends Component {
             text='Start Game!'
             textColor='#50514F'
             width={140}
-            onClick={() => console.log('Start Game! clicked')}>
+            onClick={() => {}}>
           </Button>
         </Body>
       </Container>

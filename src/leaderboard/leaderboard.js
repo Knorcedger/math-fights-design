@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './leaderboard.css';
 import XP from '../components/XP/XP';
 import photo from '../assets/images/mark.jpg';
@@ -23,15 +23,15 @@ class Leaderboard extends Component {
   render() {
     return (
       <div className='Leaderboard-container'>
-         <div className='header'>
-            <div className='title'>Leaderboard</div>
-            <div className='details'>
-              <img src={trophy} alt='trophy' />
-              <span className='text'>Top Math Masters</span>
-            </div>
-         </div>
-         <div className='list'>
-            {
+        <div className='header'>
+          <div className='title'>Leaderboard</div>
+          <div className='details'>
+            <img src={trophy} alt='trophy' />
+            <span className='text'>Top Math Masters</span>
+          </div>
+        </div>
+        <div className='list'>
+          {
               this.state.data.map((item, index) => {
                 return (
                   <div className='item' key={item.name}>
@@ -46,7 +46,7 @@ class Leaderboard extends Component {
                 );
               })
             }
-         </div>
+        </div>
       </div>
     );
   }
