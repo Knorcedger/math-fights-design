@@ -16,7 +16,6 @@
   background: #F25F5C;
 }
 
-
 .home-hexagon .home-content {
   z-index: 100;
   color: #FFFFFF;
@@ -24,12 +23,4 @@
   top: -2px !important;
   left: 7px !important;
   font-size: 12px;
-}
-
-.home-menu {
-  display: flex;
-  justify-content: space-around;
-  position: relative;
-  top: 30px;
-  z-index: 10;
 }
