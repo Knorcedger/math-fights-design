@@ -40,7 +40,14 @@ const Body = styled.div`
   }
 `;
 
+/**
+ * This is the initial view that will run and check if the user is already loggd in:
+ **/
 class Welcome extends Component {
+/**
+* Render the welcome view to the user's screen
+* @return {object} the view displayed
+**/
   render() {
     return (
       <Container>

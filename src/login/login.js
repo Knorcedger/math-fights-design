@@ -40,8 +40,16 @@ const Body = styled.div`
   }
 `;
 
+/**
+* User Login View
+**/
 class Login extends Component {
-
+  /**
+  * The constructor of UserLogin View
+  * @param {object} props props
+  *
+  * activeTab: {string} activeTab the tab that is active {register or login}
+  **/
   constructor() {
     super();
 
@@ -49,7 +57,10 @@ class Login extends Component {
       activeTab: 'login'
     };
   }
-
+  /**
+   * Render the login/register view to the user's screen
+   * @return {object} the view displayed
+  **/
   render() {
     const loginClasses = classNames('tab', 'login', {active: this.state.activeTab === 'login'});
     const registerClasses = classNames('tab', 'login', {active: this.state.activeTab === 'register'});

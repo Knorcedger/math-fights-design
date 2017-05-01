@@ -53,8 +53,14 @@ const Menu = styled.div`
   top: 30px;
   z-index: 10;
 `;
-
+/**
+* Home View
+**/
 class Home extends Component {
+  /**
+   * Render the home view to the user's screen
+   * @return {object} the displayed view
+  **/
   render() {
     return (
       <Container>

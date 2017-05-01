@@ -8,8 +8,14 @@ import trophy from '../assets/images/trophy.svg';
 // http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
 import shop from '../assets/images/shop.svg';
 
+/**
+ * This is a temp view in which example designs are added
+ **/
 class Temp extends Component {
-
+  /**
+  * returns the gold bar view
+  * @return {object} the view displayed
+  **/
   goldBar() {
     return (
       <span>
@@ -18,7 +24,10 @@ class Temp extends Component {
       </span>
     );
   }
-
+  /**
+  * Render the temp view to the user's screen
+  * @return {object} the view displayed
+  **/
   render() {
     return (
       <div className='temp-container'>

@@ -4,8 +4,16 @@ import XP from '../components/XP/XP';
 import photo from '../assets/images/mark.jpg';
 // http://www.flaticon.com/free-icon/trophy_321773
 import trophy from '../assets/images/trophy.svg';
-
+/**
+ * This is the leaderboard view
+ **/
 class Leaderboard extends Component {
+  /**
+  * The constructor of Leaderboard View
+  * @param {object} props props
+  *
+  * {object} leaderboard The leaderboard that displayed
+  **/
   constructor(props) {
     super(props);
 
@@ -20,6 +28,10 @@ class Leaderboard extends Component {
 
     this.state = {data: data};
   }
+    /**
+    * Render the leaderboard view to the user's screen
+    * @return {object} the view displayed
+    **/
   render() {
     return (
       <div className='Leaderboard-container'>
