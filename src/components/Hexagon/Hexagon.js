@@ -1,4 +1,4 @@
-/*http://csshexagon.com/*/
+/* http://csshexagon.com/ */
 
 import React, {PropTypes} from 'react';
 import styled from 'styled-components';
@@ -29,7 +29,7 @@ const Edge = styled.div`
     const borderStyle = `${(props.size * 0.5775) / 2}px solid ${props.mainColor}`;
     return props.top ? `border-top: ${borderStyle}; top: 100%;` : `border-bottom: ${borderStyle}; bottom: 100%;`;
   }};
-`
+`;
 
 const Bar = styled.span`
   height: 100%;
@@ -57,7 +57,19 @@ const Middle = styled.div`
   margin-left: 20%;
 `;
 
-const Hexagon = ({bar, barColor, barContent, barPercent, barSize, clickData, content, image, mainColor, onClick, size}) => {
+const Hexagon = ({
+  bar,
+  barColor,
+  barContent,
+  barPercent,
+  barSize,
+  clickData,
+  image,
+  mainColor,
+  onClick,
+  size,
+  text
+}) => {
   // calculate the correct percentage relative to the size
   const relativeBarPercent = (barSize / size) * barPercent;
   const barElement = bar && <Bar {...{relativeBarPercent, mainColor, size}}>{barContent}</Bar>;
@@ -67,14 +79,14 @@ const Hexagon = ({bar, barColor, barContent, barPercent, barSize, clickData, con
       <Middle>
         <Edge top {...{mainColor, size}} />
         <Image image={image}>
-          {content}
+          {text}
         </Image>
         <Edge bottom {...{mainColor, size}} />
       </Middle>
       {barElement}
     </Wrapper>
   );
-}
+};
 
 Hexagon.defaultProps = {
   bar: false,

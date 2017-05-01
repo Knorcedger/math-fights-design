@@ -1,11 +1,13 @@
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import Button from '../components/Button/Button';
 import Hexagon from '../components/Hexagon/Hexagon';
 import Smile from '../components/Smile/Smile';
 // import badge from '../assets/images/badge.svg';
 import trophy from '../assets/images/trophy.svg';
-import history from '../assets/images/history.svg'; // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
-import shop from '../assets/images/shop.svg'; // http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
+// http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
+import history from '../assets/images/history.svg';
+// http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
+import shop from '../assets/images/shop.svg';
 // import profile from '../assets/images/profile.svg';
 // import badge from '../assets/images/badge.svg';
 import coin from '../assets/images/coin.svg';
@@ -52,8 +54,14 @@ const Menu = styled.div`
   top: 30px;
   z-index: 10;
 `;
-
+/**
+* Home View
+**/
 class Home extends Component {
+  /**
+   * Render the home view to the user's screen
+   * @return {object} the displayed view
+  **/
   render() {
     return (
       <Container>
@@ -100,7 +108,7 @@ class Home extends Component {
             mainColor={colors.gray}
             size={30}>
           </Hexagon>
-          </ProfileArea>
+        </ProfileArea>
         <Menu>
           <Hexagon
             mainColor={colors.lightBlue}
@@ -127,7 +135,7 @@ class Home extends Component {
             text='Start Game!'
             textColor={colors.gray}
             width={140}
-            onClick={() => console.log('Start Game! clicked')}>
+            onClick={() => {}}>
           </Button>
         </Body>
       </Container>
