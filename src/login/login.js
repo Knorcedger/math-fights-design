@@ -4,6 +4,7 @@ import './login.css';
 import styled from 'styled-components';
 import logo from '../assets/images/sword.svg';
 import Button from '../components/Button/Button';
+import Smile from '../components/Smile/Smile';
 import colors from '../modules/colors';
 
 const Container = styled.div`
@@ -59,9 +60,7 @@ class Login extends Component {
       <Logo>
         <div/>
       </Logo>
-        <div className='login-full-width-div'>
-          <span className='login-semi-circle'></span>
-        </div>
+        <Smile colorUp={colors.red} colorDown={colors.linen} />
         <Body>
           <div className='tabs'>
             <div className={loginClasses} onClick={() => this.setState({activeTab: 'login'})}>Login</div>
@@ -76,7 +75,8 @@ class Login extends Component {
                   backgroundColor={colors.blue}
                   text='Login'
                   textColor={colors.white}
-                  width={180}>
+                  width={180}
+                  onClick={() => {}}>
                 </Button>
               </div>)
             : (<div className='register box'>
@@ -86,7 +86,8 @@ class Login extends Component {
                   backgroundColor={colors.blue}
                   text='Register'
                   textColor={colors.white}
-                  width={180}>
+                  width={180}
+                  onClick={() => {}}>
                 </Button>
               </div>)
           }

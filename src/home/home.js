@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import './home.css';
 import Button from '../components/Button/Button';
 import Hexagon from '../components/Hexagon/Hexagon';
+import Smile from '../components/Smile/Smile';
 // import badge from '../assets/images/badge.svg';
 import trophy from '../assets/images/trophy.svg';
 import history from '../assets/images/history.svg'; // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
@@ -119,9 +119,7 @@ class Home extends Component {
             size={50}>
           </Hexagon>
         </Menu>
-        <div className='full-width-div'>
-          <span className='semi-circle'></span>
-        </div>
+        <Smile colorUp={colors.linen} colorDown={colors.red} />
         <Body>
           <Button
             backgroundColor={colors.yellow}

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './welcome.css';
 import Button from '../components/Button/Button';
 import styled from 'styled-components';
 import logo from '../assets/images/sword.svg';
 import colors from '../modules/colors';
+import Smile from '../components/Smile/Smile';
 
 const Container = styled.div`
   background-color: ${colors.red};
@@ -48,9 +48,7 @@ class Welcome extends Component {
         <Logo>
           <div/>
         </Logo>
-        <div className='welcome-full-width-div'>
-          <span className='welcome-semi-circle'></span>
-        </div>
+        <Smile colorUp={colors.red} colorDown={colors.linen} />
         <Body>
           <Button
             backgroundColor={colors.blue}
