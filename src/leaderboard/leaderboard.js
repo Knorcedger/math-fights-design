@@ -1,11 +1,19 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './leaderboard.css';
 import XP from '../components/XP/XP';
 import photo from '../assets/images/mark.jpg';
 // http://www.flaticon.com/free-icon/trophy_321773
 import trophy from '../assets/images/trophy.svg';
-
+/**
+ * This is the leaderboard view
+ **/
 class Leaderboard extends Component {
+  /**
+  * The constructor of Leaderboard View
+  * @param {object} props props
+  *
+  * {object} leaderboard The leaderboard that displayed
+  **/
   constructor(props) {
     super(props);
 
@@ -20,18 +28,22 @@ class Leaderboard extends Component {
 
     this.state = {data: data};
   }
+    /**
+    * Render the leaderboard view to the user's screen
+    * @return {object} the view displayed
+    **/
   render() {
     return (
       <div className='Leaderboard-container'>
-         <div className='header'>
-            <div className='title'>Leaderboard</div>
-            <div className='details'>
-              <img src={trophy} alt='trophy' />
-              <span className='text'>Top Math Masters</span>
-            </div>
-         </div>
-         <div className='list'>
-            {
+        <div className='header'>
+          <div className='title'>Leaderboard</div>
+          <div className='details'>
+            <img src={trophy} alt='trophy' />
+            <span className='text'>Top Math Masters</span>
+          </div>
+        </div>
+        <div className='list'>
+          {
               this.state.data.map((item, index) => {
                 return (
                   <div className='item' key={item.name}>
@@ -46,7 +58,7 @@ class Leaderboard extends Component {
                 );
               })
             }
-         </div>
+        </div>
       </div>
     );
   }

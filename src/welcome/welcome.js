@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './welcome.css';
 import Button from '../components/Button/Button';
 import styled from 'styled-components';
@@ -41,7 +41,14 @@ const Body = styled.div`
   }
 `;
 
+/**
+ * This is the initial view that will run and check if the user is already loggd in:
+ **/
 class Welcome extends Component {
+/**
+* Render the welcome view to the user's screen
+* @return {object} the view displayed
+**/
   render() {
     return (
       <Container>
@@ -57,14 +64,14 @@ class Welcome extends Component {
             text='Login with facebook'
             textColor={colors.white}
             width={180}
-            onClick={() => console.log('Login via fb clicked')}>
+            onClick={() => {}}>
           </Button>
           <Button
             backgroundColor={colors.red}
             text='Login with email'
             textColor={colors.white}
             width={180}
-            onClick={() => console.log('Login via email clicked')}>
+            onClick={() => {}}>
           </Button>
         </Body>
       </Container>

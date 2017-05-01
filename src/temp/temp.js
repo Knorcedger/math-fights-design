@@ -1,16 +1,24 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './temp.css';
 import XP from '../components/XP/XP';
 import Hexagon from '../components/Hexagon/Hexagon';
 import badge from '../assets/images/badge.svg';
 import trophy from '../assets/images/trophy.svg';
-// import history from '../assets/images/history.svg'; // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
-import shop from '../assets/images/shop.svg'; // http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
+// import history from '../assets/images/history.svg';
+// http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
+import shop from '../assets/images/shop.svg';
+// http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
 // import profile from '../assets/images/profile.svg';
 import colors from '../modules/colors';
 
+/**
+ * This is a temp view in which example designs are added
+ **/
 class Temp extends Component {
-
+  /**
+  * returns the gold bar view
+  * @return {object} the view displayed
+  **/
   goldBar() {
     return (
       <span>
@@ -19,7 +27,10 @@ class Temp extends Component {
       </span>
     );
   }
-
+  /**
+  * Render the temp view to the user's screen
+  * @return {object} the view displayed
+  **/
   render() {
     return (
       <div className='temp-container'>

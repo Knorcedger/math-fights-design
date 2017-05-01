@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import classNames from 'classnames';
 import './login.css';
 import styled from 'styled-components';
@@ -41,8 +41,16 @@ const Body = styled.div`
   }
 `;
 
+/**
+* User Login View
+**/
 class Login extends Component {
-
+  /**
+  * The constructor of UserLogin View
+  * @param {object} props props
+  *
+  * activeTab: {string} activeTab the tab that is active {register or login}
+  **/
   constructor() {
     super();
 
@@ -50,15 +58,18 @@ class Login extends Component {
       activeTab: 'login'
     };
   }
-
+  /**
+   * Render the login/register view to the user's screen
+   * @return {object} the view displayed
+  **/
   render() {
     const loginClasses = classNames('tab', 'login', {active: this.state.activeTab === 'login'});
     const registerClasses = classNames('tab', 'login', {active: this.state.activeTab === 'register'});
     return (
       <Container>
-      <Logo>
-        <div/>
-      </Logo>
+        <Logo>
+          <div/>
+        </Logo>
         <div className='login-full-width-div'>
           <span className='login-semi-circle'></span>
         </div>
@@ -69,7 +80,8 @@ class Login extends Component {
           </div>
           {
             this.state.activeTab === 'login'
-            ? (<div className='login box'>
+            ? (
+              <div className='login box'>
                 <input name='login-username' className='username' placeholder='Username'></input>
                 <input name='login-password' placeholder='Password'></input>
                 <Button
@@ -79,7 +91,8 @@ class Login extends Component {
                   width={180}>
                 </Button>
               </div>)
-            : (<div className='register box'>
+            : (
+              <div className='register box'>
                 <input name='register-username' className='username' placeholder='Username'></input>
                 <input name='register-password' placeholder='Password'></input>
                 <Button

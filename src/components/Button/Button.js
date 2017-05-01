@@ -13,17 +13,18 @@ const Text = styled.div`
     border-radius: 30px;
 `;
 
-const Button = (props) => {
+const Button = props => {
   return (
     <Text {...props} onClick={() => props.onClick(props.clickData)}>{props.text}</Text>
   );
-}
+};
 
 Button.defaultProps = {
   borderColor: null,
   clickData: null,
   disabled: false
-}
+};
+
 Button.propTypes = {
   /**
    * Colour of background
