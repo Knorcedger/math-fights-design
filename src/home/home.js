@@ -13,6 +13,7 @@ import diamond from '../assets/images/diamond.svg';
 import profile from '../assets/images/mark.jpg';
 import leaderboard from '../assets/images/leaderboard.svg';
 import styled from 'styled-components';
+import colors from '../modules/colors';
 
 const Container = styled.div`
   background-color: linen;
@@ -24,7 +25,7 @@ const Header = styled.div`
   justify-content: space-between;
 `;
 const Body = styled.div`
-  background-color: #F25F5C;
+  background-color: ${colors.red};
   height: 300px;
   display: flex;
   justify-content: center;
@@ -59,31 +60,31 @@ class Home extends Component {
         <Header>
           <Hexagon
             bar={true}
-            barColor='#64C7CC'
+            barColor={colors.lightBlue}
             barPercent={30}
             barSize={80}
             content={14}
-            mainColor='#177EC1'
+            mainColor={colors.blue}
             size={30}>
           </Hexagon>
           <Hexagon
             bar={true}
-            barColor='#f7c4bc'
+            barColor={colors.pink}
             barContent={12632}
             barPercent={0}
             barSize={80}
             image={coin}
-            mainColor='#F25F5C'
+            mainColor={colors.red}
             size={30}>
           </Hexagon>
           <Hexagon
             bar={true}
-            barColor='#c3c7cc'
+            barColor={colors.gray1}
             barContent={211}
             barPercent={0}
             barSize={80}
             image={diamond}
-            mainColor='#456990'
+            mainColor={colors.darkBlue}
             size={30}>
           </Hexagon>
         </Header>
@@ -91,29 +92,29 @@ class Home extends Component {
           <ProfileImage/>
           <Hexagon
             bar={true}
-            barColor='#c7c0b8'
+            barColor={colors.gray1}
             barContent={1535}
             barPercent={0}
             barSize={80}
             image={trophy}
-            mainColor='#50514F'
+            mainColor={colors.gray}
             size={30}>
           </Hexagon>
           </ProfileArea>
         <Menu>
           <Hexagon
-            mainColor='#64C7CC'
+            mainColor={colors.lightBlue}
             image={shop}
             size={50}>
           </Hexagon>
           <Hexagon
-            mainColor='#64C7CC'
+            mainColor={colors.lightBlue}
             image={leaderboard}
             onClick={() => this.context.history.push('leaderboard')}
             size={50}>
           </Hexagon>
           <Hexagon
-            mainColor='#64C7CC'
+            mainColor={colors.lightBlue}
             image={history}
             size={50}>
           </Hexagon>
@@ -123,10 +124,10 @@ class Home extends Component {
         </div>
         <Body>
           <Button
-            backgroundColor='#FFE066'
-            borderColor='#50514F'
+            backgroundColor={colors.yellow}
+            borderColor={colors.gray}
             text='Start Game!'
-            textColor='#50514F'
+            textColor={colors.gray}
             width={140}
             onClick={() => console.log('Start Game! clicked')}>
           </Button>

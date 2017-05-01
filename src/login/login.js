@@ -4,9 +4,10 @@ import './login.css';
 import styled from 'styled-components';
 import logo from '../assets/images/sword.svg';
 import Button from '../components/Button/Button';
+import colors from '../modules/colors';
 
 const Container = styled.div`
-  background-color: #F25F5C;
+  background-color: ${colors.red};
   overflow-x: hidden;
 `;
 const Logo = styled.div`
@@ -72,9 +73,9 @@ class Login extends Component {
                 <input name='login-username' className='username' placeholder='Username'></input>
                 <input name='login-password' placeholder='Password'></input>
                 <Button
-                  backgroundColor='#247BA0'
+                  backgroundColor={colors.blue}
                   text='Login'
-                  textColor='#FFFFFF'
+                  textColor={colors.white}
                   width={180}>
                 </Button>
               </div>)
@@ -82,9 +83,9 @@ class Login extends Component {
                 <input name='register-username' className='username' placeholder='Username'></input>
                 <input name='register-password' placeholder='Password'></input>
                 <Button
-                  backgroundColor='#247BA0'
+                  backgroundColor={colors.blue}
                   text='Register'
-                  textColor='#FFFFFF'
+                  textColor={colors.white}
                   width={180}>
                 </Button>
               </div>)

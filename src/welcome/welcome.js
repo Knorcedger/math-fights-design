@@ -3,9 +3,10 @@ import './welcome.css';
 import Button from '../components/Button/Button';
 import styled from 'styled-components';
 import logo from '../assets/images/sword.svg';
+import colors from '../modules/colors';
 
 const Container = styled.div`
-  background-color: #F25F5C;
+  background-color: ${colors.red};
   overflow-x: hidden;
 `;
 const Logo = styled.div`
@@ -52,16 +53,16 @@ class Welcome extends Component {
         </div>
         <Body>
           <Button
-            backgroundColor='#247BA0'
+            backgroundColor={colors.blue}
             text='Login with facebook'
-            textColor='#FFFFFF'
+            textColor={colors.white}
             width={180}
             onClick={() => console.log('Login via fb clicked')}>
           </Button>
           <Button
-            backgroundColor='#F25F5C'
+            backgroundColor={colors.red}
             text='Login with email'
-            textColor='#FFFFFF'
+            textColor={colors.white}
             width={180}
             onClick={() => console.log('Login via email clicked')}>
           </Button>

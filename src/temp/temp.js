@@ -7,6 +7,7 @@ import trophy from '../assets/images/trophy.svg';
 // import history from '../assets/images/history.svg'; // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
 import shop from '../assets/images/shop.svg'; // http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
 // import profile from '../assets/images/profile.svg';
+import colors from '../modules/colors';
 
 class Temp extends Component {
 
@@ -25,25 +26,25 @@ class Temp extends Component {
         <XP level={14} />
         <Hexagon
           bar={true}
-          barColor={'#64C7CC'}
+          barColor={colors.lightBlue}
           barPercent={30}
           barSize={50}
           image={badge}
-          mainColor='#177EC1'
+          mainColor='colors.blue'
           size={50}>
         </Hexagon>
         <Hexagon
-          mainColor='#295'
+          mainColor={colors.green}
           image={badge}
           size={50}>
         </Hexagon>
         <Hexagon
-          mainColor='#295'
+          mainColor={colors.green}
           image={shop}
           size={50}>
         </Hexagon>
         <Hexagon
-          mainColor='#295'
+          mainColor={colors.green}
           image={trophy}
           content='14'
           size={50}>
