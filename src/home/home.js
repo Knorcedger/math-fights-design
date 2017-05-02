@@ -71,9 +71,9 @@ class Home extends Component {
             barColor={colors.lightBlue}
             barPercent={30}
             barSize={80}
-            content={14}
             mainColor={colors.blue}
-            size={30}>
+            size={30}
+            text='14'>
           </Hexagon>
           <Hexagon
             bar={true}

@@ -12,11 +12,11 @@ const Wrapper = styled.div`
   :active: {
     opacity: 0.5;
   }
-  ${props => props.bar &&
-    `border-right: ${props.barSize}px solid ${props.barColor};
+  ${props => props.bar && `
+    border-right: ${props.barSize}px solid ${props.barColor};
     border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;`
-  }
+    border-top-right-radius: 5px;
+  `}
 `;
 
 const Edge = styled.div`

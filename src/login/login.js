@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import classNames from 'classnames';
 import './login.css';
 import styled from 'styled-components';
 import logo from '../assets/images/sword.svg';
@@ -42,6 +41,41 @@ const Body = styled.div`
   }
 `;
 
+const Tabs = styled.div`
+  width: 70%;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+`;
+
+const Tab = styled.div`
+  text-align: center;
+  font-size: 22px;
+  ${props => props.activeTab === props.type && `
+    border-bottom: 2px solid black;
+    margin-bottom: -20px;
+  `}
+`;
+
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  input:nth-child(1) {
+    margin-bottom: 20px;
+  }
+`;
+
+const Input = styled.input`
+  border-radius: 4px;
+  border: 1px solid ${colors.gray1};
+  width: 70%;
+  padding: 10px;
+`;
+
 /**
 * User Login View
 **/
@@ -64,8 +98,6 @@ class Login extends Component {
    * @return {object} the view displayed
   **/
   render() {
-    const loginClasses = classNames('tab', 'login', {active: this.state.activeTab === 'login'});
-    const registerClasses = classNames('tab', 'login', {active: this.state.activeTab === 'register'});
     return (
       <Container>
         <Logo>
@@ -73,16 +105,26 @@ class Login extends Component {
         </Logo>
         <Smile colorUp={colors.red} colorDown={colors.linen} />
         <Body>
-          <div className='tabs'>
-            <div className={loginClasses} onClick={() => this.setState({activeTab: 'login'})}>Login</div>
-            <div className={registerClasses} onClick={() => this.setState({activeTab: 'register'})}>Register</div>
-          </div>
+          <Tabs>
+            <Tab
+              activeTab={this.state.activeTab}
+              type='login'
+              onClick={() => this.setState({activeTab: 'login'})}>
+              Login
+            </Tab>
+            <Tab
+              activeTab={this.state.activeTab}
+              type='register'
+              onClick={() => this.setState({activeTab: 'register'})}>
+              Register
+            </Tab>
+          </Tabs>
           {
             this.state.activeTab === 'login'
             ? (
-              <div className='login box'>
-                <input name='login-username' className='username' placeholder='Username'></input>
-                <input name='login-password' placeholder='Password'></input>
+              <InputContainer>
+                <Input placeholder='Username' />
+                <Input placeholder='Password' />
                 <Button
                   backgroundColor={colors.blue}
                   text='Login'
@@ -90,19 +132,21 @@ class Login extends Component {
                   width={180}
                   onClick={() => {}}>
                 </Button>
-              </div>)
+              </InputContainer>
+            )
             : (
-              <div className='register box'>
-                <input name='register-username' className='username' placeholder='Username'></input>
-                <input name='register-password' placeholder='Password'></input>
+              <InputContainer>
+                <Input placeholder='Username' />
+                <Input placeholder='Password' />
                 <Button
-                  backgroundColor={colors.blue}
+                  backgroundColor={colors.yellow}
                   text='Register'
                   textColor={colors.white}
                   width={180}
                   onClick={() => {}}>
                 </Button>
-              </div>)
+              </InputContainer>
+            )
           }
         </Body>
       </Container>
