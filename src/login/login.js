@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './login.css';
 import styled from 'styled-components';
 import logo from '../assets/images/sword.svg';
 import Button from '../components/Button/Button';
@@ -8,7 +7,6 @@ import colors from '../modules/colors';
 
 const Container = styled.div`
   background-color: ${colors.red};
-  overflow-x: hidden;
 `;
 const Logo = styled.div`
   height: 80px;
@@ -83,14 +81,16 @@ class Login extends Component {
   /**
   * The constructor of UserLogin View
   * @param {object} props props
-  *
-  * activeTab: {string} activeTab the tab that is active {register or login}
   **/
   constructor() {
     super();
 
     this.state = {
-      activeTab: 'login'
+      /**
+       * The tab that is active {register or login}
+       * @type {String}
+       */
+      activeTab: 'register'
     };
   }
   /**
@@ -108,15 +108,15 @@ class Login extends Component {
           <Tabs>
             <Tab
               activeTab={this.state.activeTab}
-              type='login'
-              onClick={() => this.setState({activeTab: 'login'})}>
-              Login
-            </Tab>
-            <Tab
-              activeTab={this.state.activeTab}
               type='register'
               onClick={() => this.setState({activeTab: 'register'})}>
               Register
+            </Tab>
+            <Tab
+              activeTab={this.state.activeTab}
+              type='login'
+              onClick={() => this.setState({activeTab: 'login'})}>
+              Login
             </Tab>
           </Tabs>
           {
@@ -126,7 +126,7 @@ class Login extends Component {
                 <Input placeholder='Username' />
                 <Input placeholder='Password' />
                 <Button
-                  backgroundColor={colors.blue}
+                  backgroundColor={colors.red}
                   text='Login'
                   textColor={colors.white}
                   width={180}
@@ -139,7 +139,7 @@ class Login extends Component {
                 <Input placeholder='Username' />
                 <Input placeholder='Password' />
                 <Button
-                  backgroundColor={colors.yellow}
+                  backgroundColor={colors.lightBlue}
                   text='Register'
                   textColor={colors.white}
                   width={180}
