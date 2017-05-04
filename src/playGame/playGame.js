@@ -37,11 +37,27 @@ const Name = styled.div`
   padding-left: 10px;
 `;
 
+const Question = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  height: 40px;
+  font-size: 40px;
+`;
+
+const ButtonRow = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+`;
+
 const Body = styled.div`
   background-color: ${colors.red};
   height: 300px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 `;
 
@@ -136,16 +152,47 @@ class Home extends Component {
             </InfoRow>
           </MyInfo>
         </Header>
+        <Question>
+          7 + 4
+        </Question>
         <Smile colorUp={colors.linen} colorDown={colors.red} />
         <Body>
-          <Button
-            backgroundColor={colors.yellow}
-            borderColor={colors.gray}
-            text='Start Game!'
-            textColor={colors.gray}
-            width={140}
-            onClick={() => {}}>
-          </Button>
+          <ButtonRow>
+            <Button
+              backgroundColor={colors.yellow}
+              borderColor={colors.gray}
+              text='11'
+              textColor={colors.gray}
+              width={140}
+              onClick={() => {}}>
+            </Button>
+            <Button
+              backgroundColor={colors.yellow}
+              borderColor={colors.gray}
+              text='11'
+              textColor={colors.gray}
+              width={140}
+              onClick={() => {}}>
+            </Button>
+          </ButtonRow>
+          <ButtonRow>
+            <Button
+              backgroundColor={colors.yellow}
+              borderColor={colors.gray}
+              text='11'
+              textColor={colors.gray}
+              width={140}
+              onClick={() => {}}>
+            </Button>
+            <Button
+              backgroundColor={colors.yellow}
+              borderColor={colors.gray}
+              text='11'
+              textColor={colors.gray}
+              width={140}
+              onClick={() => {}}>
+            </Button>
+          </ButtonRow>
         </Body>
       </Container>
     );
