@@ -12,21 +12,24 @@ const Container = styled.div`
   overflow: hidden;
 `;
 const Header = styled.div`
-  height: 80px;
   display: flex;
   justify-content: center;
-  background: linen;
-  width: 25%;
-  margin: auto;
-  padding: 20px;
-  border-radius: 20px;
-  margin-top: 15px;
-  border: 3px solid darkgray;
-  div {
-    width: 80px;
-    background: url(${trophy});
-    background-size: contain;
-  }
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+`;
+
+const Cup = styled.div`{
+  height: 50px;
+  width: 50px;
+  background: url(${trophy}) no-repeat;
+}`;
+
+const LeaderboardText = styled.div`
+  font-size: 22px;
+  color: white;
+  top: 15px;
+  position: relative;
 `;
 
 const Body = styled.div`
@@ -36,7 +39,7 @@ const Body = styled.div`
   justify-content: center;
   align-items: center;
   div {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 `;
 const List = styled.div`
@@ -74,15 +77,14 @@ const Item = styled.div`
     width: 60%;
     margin-left: 10px;
     font-size: 18px;
+    overflow-x: hidden;
+    margin-right: 5px;
   }
   div:nth-child(5) {
     font-weight: bold;
     color: ${colors.red};
     margin-right: 20px;
-    font-size: 20px;
-  }
-  div:last {
-    margin-bottom: 0px;
+    font-size: 22px;
   }
 `;
  /**
@@ -118,9 +120,12 @@ class Leaderboard extends Component {
     return (
       <Container>
         <Header>
-          <div/>
         </Header>
-        <Smile colorUp={colors.red} colorDown={colors.linen} />
+        <div>Back</div>
+        <Smile childrenPosition='space-around' colorUp={colors.red} colorDown={colors.linen}>
+          <Cup/>
+          <LeaderboardText> Leaderboard </LeaderboardText>
+        </Smile>
         <Body>
           <List>
             {
