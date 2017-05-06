@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   background: ${props => props.colorDown};
 `;
 
-const SemiCircle = styled.span`
+const SemiCircle = styled.div`
   display: flex;
   background: ${props => props.colorUp};
   width: 134%;
@@ -17,17 +17,26 @@ const SemiCircle = styled.span`
   border-bottom: 0;
   position: relative;
   left: -17%;
+  justify-content: ${props => props.childrenPosition};
 `;
 
-const Smile = ({colorDown, colorUp}) => {
+const Smile = ({children, childrenPosition, colorDown, colorUp}) => {
   return (
     <Wrapper colorDown={colorDown} >
-      <SemiCircle colorUp={colorUp} />
+      <SemiCircle childrenPosition={childrenPosition} colorUp={colorUp} >
+        {children}
+      </SemiCircle>
     </Wrapper>
   );
-}
+};
 
-Smile.PropTypes = {
+Smile.defaultProps = {
+  childrenPosition: 'center'
+};
+
+Smile.propTypes = {
+  children: PropTypes.element,
+  childrenPosition: PropTypes.oneOf(['center', 'flex-start', 'flex-end', 'space-around', 'space-between']),
   colorDown: PropTypes.string.isRequired,
   colorUp: PropTypes.string.isRequired
 };
