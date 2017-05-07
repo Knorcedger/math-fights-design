@@ -56,37 +56,43 @@ const Item = styled.div`
     display: flex;
     align-items: center;
   }
-  div:nth-child(1) {
-    width: 10%;
-    justify-content: flex-end;
-    margin-right: 10px;
-    margin-left: 10px;
-    font-size: 22px;
-  }
-  div:nth-child(2) {
-    margin-right: 10px;
-    width: 10%;
-    img {
-      border-radius: 7px;
-    }
-  }
-  div:nth-child(3) {
-    width: 10%;
-  }
-  div:nth-child(4) {
-    width: 60%;
-    margin-left: 10px;
-    font-size: 18px;
-    overflow-x: hidden;
-    margin-right: 5px;
-  }
-  div:nth-child(5) {
-    font-weight: bold;
-    color: ${colors.red};
-    margin-right: 20px;
-    font-size: 22px;
-  }
 `;
+
+const Rank = styled.div`{
+  width: 10%;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 22px;
+}`;
+
+const ProfileImage = styled.div`{
+  margin-right: 10px;
+  width: 10%;
+  img {
+    border-radius: 7px;
+  }
+}`;
+
+const XPContainer = styled.div`{
+  width: 10%;
+}`;
+
+const Username = styled.div` {
+  width: 60%;
+  margin-left: 10px;
+  font-size: 18px;
+  overflow-x: hidden;
+  margin-right: 5px;
+}`;
+
+const LeaguePoints = styled.div` {
+  font-weight: bold;
+  color: ${colors.red};
+  margin-right: 20px;
+  font-size: 22px;
+}`;
+
  /**
   * This is the leaderboard view
   **/
@@ -132,11 +138,11 @@ class Leaderboard extends Component {
                 this.state.data.map((item, index) => {
                   return (
                     <Item>
-                      <div>{index + 1}</div>
-                      <div> <img src={photo} width='40' alt='t' /></div>
-                      <div> <XP level={item.xp} /></div>
-                      <div>{item.name}</div>
-                      <div>{item.points}</div>
+                      <Rank>{index + 1}</Rank>
+                      <ProfileImage> <img src={photo} width='40' alt='t' /></ProfileImage>
+                      <XPContainer> <XP level={item.xp} /></XPContainer>
+                      <Username>{item.name}</Username>
+                      <LeaguePoints>{item.points}</LeaguePoints>
                     </Item>
                   );
                 })
