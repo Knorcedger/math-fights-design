@@ -123,7 +123,7 @@ class Login extends Component {
             this.state.activeTab === 'login'
             ? (
               <InputContainer>
-                <Input placeholder='Username' />
+                <Input placeholder='Email' />
                 <Input placeholder='Password' />
                 <Button
                   backgroundColor={colors.red}
@@ -136,7 +136,7 @@ class Login extends Component {
             )
             : (
               <InputContainer>
-                <Input placeholder='Username' />
+                <Input placeholder='Email' />
                 <Input placeholder='Password' />
                 <Button
                   backgroundColor={colors.lightBlue}
