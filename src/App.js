@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Home from './home/home';
 import Leaderboard from './leaderboard/leaderboard';
 import Temp from './temp/temp';
 import Welcome from './welcome/welcome';
 import Login from './login/login';
+import Tutorial from './tutorial/tutorial';
 
 import {
   BrowserRouter as Router,
@@ -12,16 +13,25 @@ import {
   Link
 } from 'react-router-dom';
 
+/**
+ * App
+ */
 class App extends Component {
 
+  /**
+   * App constructor
+   */
   constructor() {
     super();
 
     this.state = {
       openNav: localStorage.getItem('openNav')
-    }
+    };
   }
 
+  /**
+   * Add listener to open/close nav
+   */
   componentDidMount() {
     const self = this;
     window.onkeyup = function(e) {
@@ -34,9 +44,13 @@ class App extends Component {
         localStorage.setItem('openNav', false);
         self.setState({openNav: false});
       }
-    }
+    };
   }
 
+  /**
+   * Render
+   * @return {object} JSX
+   */
   render() {
     return (
       <Router>
@@ -52,6 +66,7 @@ class App extends Component {
                 </ul>
                 <ul>
                   <li><Link to='/login'>Login</Link></li>
+                  <li><Link to='/tutorial'>Tutorial</Link></li>
                 </ul>
               </div>
             )
@@ -61,6 +76,7 @@ class App extends Component {
           <Route path='/temp' component={Temp} />
           <Route path='/welcome' component={Welcome} />
           <Route path='/login' component={Login} />
+          <Route path='/tutorial' component={Tutorial} />
         </div>
       </Router>
     );
