@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Smile from '../components/Smile/Smile';
 import BackButton from '../components/BackButton/BackButton';
 import Hexagon from '../components/Hexagon/Hexagon';
-import XP from '../components/XP/XP';
 import photo from '../assets/images/mark.jpg';
 // http://www.flaticon.com/free-icon/trophy_321773
 import trophy from '../assets/images/trophy.svg';
@@ -18,6 +17,14 @@ const Cup = styled.div`{
   height: 50px;
   width: 50px;
   background: url(${trophy}) no-repeat;
+  margin-left: 10px;
+}`;
+
+const BackButtonContainer = styled.div`{
+  position: relative;
+  top: 35px;
+  z-index: 1;
+  margin-left: 10px;
 }`;
 
 const LeaderboardText = styled.div`
@@ -28,14 +35,11 @@ const LeaderboardText = styled.div`
 `;
 
 const Body = styled.div`
-  background-color: linen;
+  background: linen;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  div {
-  //  margin-bottom: 15px;
-  }
 `;
 const List = styled.div`
   justify-content: space-between;
@@ -47,6 +51,8 @@ const Item = styled.div`
   border-bottom: 1px;
   border-color: ${colors.red};
   border-bottom-style: solid;
+  padding: 10px 0;
+
   div {
     display: flex;
     align-items: center;
@@ -120,7 +126,9 @@ class Leaderboard extends Component {
   render() {
     return (
       <Container>
-        <BackButton color='white' weigth={4} size={9}/>
+        <BackButtonContainer>
+          <BackButton color='white' weigth={4} size={5}/>
+        </BackButtonContainer>
         <Smile childrenPosition='space-around' colorUp={colors.red} colorDown={colors.linen}>
           <Cup/>
           <LeaderboardText>Leaderboard</LeaderboardText>
@@ -133,11 +141,13 @@ class Leaderboard extends Component {
                   <Item>
                     <Rank>{index + 1}</Rank>
                     <ProfileImage><img src={photo} width='40' alt='t' /></ProfileImage>
-                    <Hexagon
-                      mainColor={colors.blue}
-                      size={30}
-                      text={item.xp.toString()}>
-                    </Hexagon>
+                    <XPContainer>
+                      <Hexagon
+                        mainColor={colors.blue}
+                        size={30}
+                        text={item.xp.toString()}>
+                      </Hexagon>
+                    </XPContainer>
                     <Username>{item.name}</Username>
                     <LeaguePoints>{item.points}</LeaguePoints>
                   </Item>

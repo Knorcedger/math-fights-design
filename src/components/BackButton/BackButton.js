@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Arrow = styled.div`
   border: solid ${props => props.color};
-  border-width: 0 ${props => props.size}px ${props => props.size}px 0;
+  border-width: 0 ${props => props.weigth}px ${props => props.weigth}px 0;
   display: inline-block;
   padding: ${props => props.size}px;
   transform: rotate(135deg);
