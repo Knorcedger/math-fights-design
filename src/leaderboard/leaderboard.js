@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Smile from '../components/Smile/Smile';
-import XP from '../components/XP/XP';
+import BackButton from '../components/BackButton/BackButton';
+import Hexagon from '../components/Hexagon/Hexagon';
 import photo from '../assets/images/mark.jpg';
 // http://www.flaticon.com/free-icon/trophy_321773
 import trophy from '../assets/images/trophy.svg';
@@ -11,18 +12,19 @@ const Container = styled.div`
   background-color: ${colors.red};
   overflow: hidden;
 `;
-const Header = styled.div`
-  display: flex;
-  justify-content: center;
-  color: white;
-  font-size: 18px;
-  margin-top: 20px;
-`;
 
 const Cup = styled.div`{
   height: 50px;
   width: 50px;
   background: url(${trophy}) no-repeat;
+  margin-left: 10px;
+}`;
+
+const BackButtonContainer = styled.div`{
+  position: relative;
+  top: 35px;
+  z-index: 1;
+  margin-left: 10px;
 }`;
 
 const LeaderboardText = styled.div`
@@ -33,14 +35,11 @@ const LeaderboardText = styled.div`
 `;
 
 const Body = styled.div`
-  background-color: linen;
+  background: linen;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  div {
-    margin-bottom: 15px;
-  }
 `;
 const List = styled.div`
   justify-content: space-between;
@@ -52,6 +51,8 @@ const Item = styled.div`
   border-bottom: 1px;
   border-color: ${colors.red};
   border-bottom-style: solid;
+  padding: 10px 0;
+
   div {
     display: flex;
     align-items: center;
@@ -125,28 +126,34 @@ class Leaderboard extends Component {
   render() {
     return (
       <Container>
-        <Header>
-        </Header>
-        <div>Back</div>
+        <BackButtonContainer>
+          <BackButton color='white' weigth={4} size={5}/>
+        </BackButtonContainer>
         <Smile childrenPosition='space-around' colorUp={colors.red} colorDown={colors.linen}>
           <Cup/>
-          <LeaderboardText> Leaderboard </LeaderboardText>
+          <LeaderboardText>Leaderboard</LeaderboardText>
         </Smile>
         <Body>
           <List>
             {
-                this.state.data.map((item, index) => {
-                  return (
-                    <Item>
-                      <Rank>{index + 1}</Rank>
-                      <ProfileImage> <img src={photo} width='40' alt='t' /></ProfileImage>
-                      <XPContainer> <XP level={item.xp} /></XPContainer>
-                      <Username>{item.name}</Username>
-                      <LeaguePoints>{item.points}</LeaguePoints>
-                    </Item>
-                  );
-                })
-              }
+              this.state.data.map((item, index) => {
+                return (
+                  <Item>
+                    <Rank>{index + 1}</Rank>
+                    <ProfileImage><img src={photo} width='40' alt='t' /></ProfileImage>
+                    <XPContainer>
+                      <Hexagon
+                        mainColor={colors.blue}
+                        size={30}
+                        text={item.xp.toString()}>
+                      </Hexagon>
+                    </XPContainer>
+                    <Username>{item.name}</Username>
+                    <LeaguePoints>{item.points}</LeaguePoints>
+                  </Item>
+                );
+              })
+            }
           </List>
         </Body>
       </Container>
