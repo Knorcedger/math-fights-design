@@ -96,7 +96,7 @@ Hexagon.defaultProps = {
   barSize: 0,
   clickData: null,
   image: null,
-  onClick: null,
+  onClick: () => {},
   text: null
 };
 
