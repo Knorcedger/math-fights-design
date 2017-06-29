@@ -6,6 +6,7 @@ import Temp from './temp/temp';
 import Welcome from './welcome/welcome';
 import Login from './login/login';
 import PlayGame from './playGame/playGame';
+import Tutorial from './tutorial/tutorial';
 
 import {
   BrowserRouter as Router,
@@ -13,14 +14,8 @@ import {
   Link
 } from 'react-router-dom';
 
-/**
- * Main all component
- */
 class App extends Component {
 
-  /**
-   * Class constructor function
-   */
   constructor() {
     super();
 
@@ -29,9 +24,6 @@ class App extends Component {
     };
   }
 
-  /**
-   * Compoennt mounted
-   */
   componentDidMount() {
     const self = this;
     window.onkeyup = function(e) {
@@ -47,10 +39,6 @@ class App extends Component {
     };
   }
 
-  /**
-   * Render function
-   * @return {element} JSX
-   */
   render() {
     return (
       <Router>
@@ -67,6 +55,7 @@ class App extends Component {
                 <ul>
                   <li><Link to='/login'>Login</Link></li>
                   <li><Link to='/playgame'>PlayGame</Link></li>
+                  <li><Link to='/tutorial'>Tutorial</Link></li>
                 </ul>
               </div>
             )
@@ -77,6 +66,7 @@ class App extends Component {
           <Route path='/welcome' component={Welcome} />
           <Route path='/login' component={Login} />
           <Route path='/playgame' component={PlayGame} />
+          <Route path='/tutorial' component={Tutorial} />
         </div>
       </Router>
     );
