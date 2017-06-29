@@ -1,7 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
+import styled from 'styled-components';
+
+// components
 // import Button from '../components/Button/Button';
 // import Smile from '../components/Smile/Smile';
-import styled from 'styled-components';
+
+// modules
 import colors from '../modules/colors';
 
 const Container = styled.div`
@@ -26,22 +30,14 @@ const Question = styled.div`
 /**
 * Tutorial View
 **/
-class Tutorial extends Component {
-  /**
-   * Render the tutorial view to the user's screen
-   * @return {object} the displayed view
-  **/
-  render() {
-    return (
-      <Container>
-        <Circle>
-          <Question>
-            7 + 4
-          </Question>
-        </Circle>
-      </Container>
-    );
-  }
-};
+const Tutorial = () => (
+  <Container>
+    <Circle>
+      <Question>
+        7 + 4
+      </Question>
+    </Circle>
+  </Container>
+);
 
 export default Tutorial;

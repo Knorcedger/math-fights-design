@@ -1,10 +1,17 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+// components
 import Button from '../components/Button/Button';
 import Hexagon from '../components/Hexagon/Hexagon';
 import Smile from '../components/Smile/Smile';
+
+// assets
 import trophy from '../assets/images/trophy.svg';
 import coin from '../assets/images/coin.svg';
-import styled from 'styled-components';
+
+// modules
 import colors from '../modules/colors';
 
 const Container = styled.div`
@@ -64,140 +71,132 @@ const Body = styled.div`
 /**
 * Home View
 **/
-class Home extends Component {
-  /**
-   * Render the home view to the user's screen
-   * @return {object} the displayed view
-  **/
-  render() {
-    return (
-      <Container>
-        <Header>
-          <OpponentInfo>
-            <InfoRow>
-              <Hexagon
-              mainColor={colors.blue}
-              size={30}
-              text='14'>
-              </Hexagon>
-              <Name>
-                Leopold
-              </Name>
-            </InfoRow>
-            <Hexagon
-              bar={true}
-              barColor={colors.gray1}
-              barContent={1535}
-              barPercent={0}
-              barSize={80}
-              image={trophy}
-              mainColor={colors.gray}
-              size={30}>
-            </Hexagon>
-          </OpponentInfo>
-          <MyInfo>
-            <InfoRow>
-              <Hexagon
-                mainColor={colors.blue}
-                size={30}
-                text='14'>
-              </Hexagon>
-              <Name>
-                Knorcedger
-              </Name>
-            </InfoRow>
-            <InfoRow>
-              <Hexagon
-                bar={true}
-                barColor={colors.gray1}
-                barContent={1535}
-                barPercent={0}
-                barSize={80}
-                image={trophy}
-                mainColor={colors.gray}
-                size={30}>
-              </Hexagon>
-              <Hexagon
-                bar={true}
-                barColor={colors.gray1}
-                barContent={1535}
-                barPercent={0}
-                barSize={80}
-                image={coin}
-                mainColor={colors.gray}
-                size={30}>
-              </Hexagon>
-            </InfoRow>
-            <InfoRow>
-              <Hexagon
-                bar={true}
-                barColor={colors.gray1}
-                barContent={23}
-                barPercent={0}
-                barSize={80}
-                mainColor={colors.green}
-                size={30}
-                text='+'>
-              </Hexagon>
-              <Hexagon
-                bar={true}
-                barColor={colors.gray1}
-                barContent={27}
-                barPercent={0}
-                barSize={80}
-                mainColor={colors.red}
-                size={30}
-                text='-'>
-              </Hexagon>
-            </InfoRow>
-          </MyInfo>
-        </Header>
-        <Question>
-          7 + 4
-        </Question>
-        <Smile colorUp={colors.linen} colorDown={colors.red} />
-        <Body>
-          <ButtonRow>
-            <Button
-              backgroundColor={colors.yellow}
-              borderColor={colors.gray}
-              text='11'
-              textColor={colors.gray}
-              width={140}
-              onClick={() => {}}>
-            </Button>
-            <Button
-              backgroundColor={colors.yellow}
-              borderColor={colors.gray}
-              text='11'
-              textColor={colors.gray}
-              width={140}
-              onClick={() => {}}>
-            </Button>
-          </ButtonRow>
-          <ButtonRow>
-            <Button
-              backgroundColor={colors.yellow}
-              borderColor={colors.gray}
-              text='11'
-              textColor={colors.gray}
-              width={140}
-              onClick={() => {}}>
-            </Button>
-            <Button
-              backgroundColor={colors.yellow}
-              borderColor={colors.gray}
-              text='11'
-              textColor={colors.gray}
-              width={140}
-              onClick={() => {}}>
-            </Button>
-          </ButtonRow>
-        </Body>
-      </Container>
-    );
-  }
-};
+const Home = () => (
+  <Container>
+    <Header>
+      <OpponentInfo>
+        <InfoRow>
+          <Hexagon
+            mainColor={colors.blue}
+            size={30}
+            text='14'
+          />
+          <Name>
+            Leopold
+          </Name>
+        </InfoRow>
+        <Hexagon
+          bar={true}
+          barColor={colors.gray1}
+          barContent={1535}
+          barPercent={0}
+          barSize={80}
+          image={trophy}
+          mainColor={colors.gray}
+          size={30}
+        />
+      </OpponentInfo>
+      <MyInfo>
+        <InfoRow>
+          <Hexagon
+            mainColor={colors.blue}
+            size={30}
+            text='14'
+          />
+          <Name>
+            Knorcedger
+          </Name>
+        </InfoRow>
+        <InfoRow>
+          <Hexagon
+            bar={true}
+            barColor={colors.gray1}
+            barContent={1535}
+            barPercent={0}
+            barSize={80}
+            image={trophy}
+            mainColor={colors.gray}
+            size={30}
+          />
+          <Hexagon
+            bar={true}
+            barColor={colors.gray1}
+            barContent={1535}
+            barPercent={0}
+            barSize={80}
+            image={coin}
+            mainColor={colors.gray}
+            size={30}
+          />
+        </InfoRow>
+        <InfoRow>
+          <Hexagon
+            bar={true}
+            barColor={colors.gray1}
+            barContent={23}
+            barPercent={0}
+            barSize={80}
+            mainColor={colors.green}
+            size={30}
+            text='+'
+          />
+          <Hexagon
+            bar={true}
+            barColor={colors.gray1}
+            barContent={27}
+            barPercent={0}
+            barSize={80}
+            mainColor={colors.red}
+            size={30}
+            text='-'
+          />
+        </InfoRow>
+      </MyInfo>
+    </Header>
+    <Question>
+      7 + 4
+    </Question>
+    <Smile colorUp={colors.linen} colorDown={colors.red} />
+    <Body>
+      <ButtonRow>
+        <Button
+          backgroundColor={colors.yellow}
+          borderColor={colors.gray}
+          text='11'
+          textColor={colors.gray}
+          width={140}
+          onClick={() => {}}
+        />
+        <Button
+          backgroundColor={colors.yellow}
+          borderColor={colors.gray}
+          text='11'
+          textColor={colors.gray}
+          width={140}
+          onClick={() => {}}
+        />
+      </ButtonRow>
+      <ButtonRow>
+        <Button
+          backgroundColor={colors.yellow}
+          borderColor={colors.gray}
+          text='11'
+          textColor={colors.gray}
+          width={140}
+          onClick={() => {}}
+        />
+        <Button
+          backgroundColor={colors.yellow}
+          borderColor={colors.gray}
+          text='11'
+          textColor={colors.gray}
+          width={140}
+          onClick={() => {}}
+        />
+      </ButtonRow>
+    </Body>
+  </Container>
+);
 
 Home.contextTypes = {
   history: PropTypes.object

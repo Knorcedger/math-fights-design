@@ -12,8 +12,12 @@ export default {
   // secondary
   pink: 'rgb(247, 196, 188)',
   gray1: 'rgb(199, 192, 184)',
-  gray2: 'rgb(100, 100, 100)', // not used, change at will
-  gray3: 'rgb(150, 150, 150)', // not used, change at will
-  gray4: 'rgb(200, 200, 200)', // not used, change at will
-  gray5: 'rgb(250, 250, 250)' // not used, change at will
+  // not used, change at will
+  gray2: 'rgb(100, 100, 100)',
+  // not used, change at will
+  gray3: 'rgb(150, 150, 150)',
+  // not used, change at will
+  gray4: 'rgb(200, 200, 200)',
+  // not used, change at will
+  gray5: 'rgb(250, 250, 250)'
 };

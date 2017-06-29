@@ -1,9 +1,15 @@
-import React, {Component} from 'react';
-import Button from '../components/Button/Button';
+import React from 'react';
 import styled from 'styled-components';
-import logo from '../assets/images/sword.svg';
-import colors from '../modules/colors';
+
+// components
+import Button from '../components/Button/Button';
 import Smile from '../components/Smile/Smile';
+
+// assets
+import logo from '../assets/images/sword.svg';
+
+// modules
+import colors from '../modules/colors';
 
 const Container = styled.div`
   background-color: ${colors.red};
@@ -42,39 +48,31 @@ const Body = styled.div`
 `;
 
 /**
- * This is the initial view that will run and check if the user is already loggd in:
- **/
-class Welcome extends Component {
-/**
-* Render the welcome view to the user's screen
-* @return {object} the view displayed
+* This is the initial view that will run and check if the user is already loggd in:
 **/
-  render() {
-    return (
-      <Container>
-        <Logo>
-          <div/>
-        </Logo>
-        <Smile colorUp={colors.red} colorDown={colors.linen} />
-        <Body>
-          <Button
-            backgroundColor={colors.blue}
-            text='Login with facebook'
-            textColor={colors.white}
-            width={180}
-            onClick={() => {}}>
-          </Button>
-          <Button
-            backgroundColor={colors.red}
-            text='Login with email'
-            textColor={colors.white}
-            width={180}
-            onClick={() => {}}>
-          </Button>
-        </Body>
-      </Container>
-    );
-  }
-}
+const Welcome = () => (
+  <Container>
+    <Logo>
+      <div />
+    </Logo>
+    <Smile colorUp={colors.red} colorDown={colors.linen} />
+    <Body>
+      <Button
+        backgroundColor={colors.blue}
+        text='Login with facebook'
+        textColor={colors.white}
+        width={180}
+        onClick={() => {}}
+      />
+      <Button
+        backgroundColor={colors.red}
+        text='Login with email'
+        textColor={colors.white}
+        width={180}
+        onClick={() => {}}
+      />
+    </Body>
+  </Container>
+);
 
 export default Welcome;

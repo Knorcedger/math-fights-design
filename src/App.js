@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 import './App.css';
 import Home from './home/home';
 import Leaderboard from './leaderboard/leaderboard';
@@ -8,11 +13,6 @@ import Login from './login/login';
 import PlayGame from './playGame/playGame';
 import Tutorial from './tutorial/tutorial';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
 
 class App extends Component {
 
@@ -26,7 +26,7 @@ class App extends Component {
 
   componentDidMount() {
     const self = this;
-    window.onkeyup = function(e) {
+    window.onkeyup = e => {
       const key = e.keyCode ? e.keyCode : e.which;
 
       if (key === 219) {
@@ -71,6 +71,6 @@ class App extends Component {
       </Router>
     );
   }
-};
+}
 
 export default App;

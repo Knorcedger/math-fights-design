@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import logo from '../assets/images/sword.svg';
+
+// components
 import Button from '../components/Button/Button';
 import Smile from '../components/Smile/Smile';
+
+// assets
+import logo from '../assets/images/sword.svg';
+
+// modules
 import colors from '../modules/colors';
 
 const Container = styled.div`
@@ -101,7 +107,7 @@ class Login extends Component {
     return (
       <Container>
         <Logo>
-          <div/>
+          <div />
         </Logo>
         <Smile colorUp={colors.red} colorDown={colors.linen} />
         <Body>
@@ -109,44 +115,46 @@ class Login extends Component {
             <Tab
               activeTab={this.state.activeTab}
               type='register'
-              onClick={() => this.setState({activeTab: 'register'})}>
+              onClick={() => this.setState({activeTab: 'register'})}
+            >
               Register
             </Tab>
             <Tab
               activeTab={this.state.activeTab}
               type='login'
-              onClick={() => this.setState({activeTab: 'login'})}>
+              onClick={() => this.setState({activeTab: 'login'})}
+            >
               Login
             </Tab>
           </Tabs>
           {
             this.state.activeTab === 'login'
-            ? (
-              <InputContainer>
-                <Input placeholder='Email' />
-                <Input placeholder='Password' />
-                <Button
-                  backgroundColor={colors.red}
-                  text='Login'
-                  textColor={colors.white}
-                  width={180}
-                  onClick={() => {}}>
-                </Button>
-              </InputContainer>
-            )
-            : (
-              <InputContainer>
-                <Input placeholder='Email' />
-                <Input placeholder='Password' />
-                <Button
-                  backgroundColor={colors.lightBlue}
-                  text='Register'
-                  textColor={colors.white}
-                  width={180}
-                  onClick={() => {}}>
-                </Button>
-              </InputContainer>
-            )
+              ? (
+                <InputContainer>
+                  <Input placeholder='Email' />
+                  <Input placeholder='Password' />
+                  <Button
+                    backgroundColor={colors.red}
+                    text='Login'
+                    textColor={colors.white}
+                    width={180}
+                    onClick={() => {}}
+                  />
+                </InputContainer>
+              )
+              : (
+                <InputContainer>
+                  <Input placeholder='Email' />
+                  <Input placeholder='Password' />
+                  <Button
+                    backgroundColor={colors.lightBlue}
+                    text='Register'
+                    textColor={colors.white}
+                    width={180}
+                    onClick={() => {}}
+                  />
+                </InputContainer>
+              )
           }
         </Body>
       </Container>

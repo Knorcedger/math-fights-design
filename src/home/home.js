@@ -1,7 +1,13 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+// components
 import Button from '../components/Button/Button';
 import Hexagon from '../components/Hexagon/Hexagon';
 import Smile from '../components/Smile/Smile';
+
+// assets
 // import badge from '../assets/images/badge.svg';
 import trophy from '../assets/images/trophy.svg';
 // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
@@ -14,7 +20,8 @@ import coin from '../assets/images/coin.svg';
 import diamond from '../assets/images/diamond.svg';
 import profile from '../assets/images/mark.jpg';
 import leaderboard from '../assets/images/leaderboard.svg';
-import styled from 'styled-components';
+
+// modules
 import colors from '../modules/colors';
 
 const Container = styled.div`
@@ -57,91 +64,83 @@ const Menu = styled.div`
 /**
 * Home View
 **/
-class Home extends Component {
-  /**
-   * Render the home view to the user's screen
-   * @return {object} the displayed view
-  **/
-  render() {
-    return (
-      <Container>
-        <Header>
-          <Hexagon
-            bar={true}
-            barColor={colors.lightBlue}
-            barPercent={30}
-            barSize={80}
-            mainColor={colors.blue}
-            size={30}
-            text='14'>
-          </Hexagon>
-          <Hexagon
-            bar={true}
-            barColor={colors.pink}
-            barContent={12632}
-            barPercent={0}
-            barSize={80}
-            image={coin}
-            mainColor={colors.red}
-            size={30}>
-          </Hexagon>
-          <Hexagon
-            bar={true}
-            barColor={colors.gray1}
-            barContent={211}
-            barPercent={0}
-            barSize={80}
-            image={diamond}
-            mainColor={colors.darkBlue}
-            size={30}>
-          </Hexagon>
-        </Header>
-        <ProfileArea>
-          <ProfileImage/>
-          <Hexagon
-            bar={true}
-            barColor={colors.gray1}
-            barContent={1535}
-            barPercent={0}
-            barSize={80}
-            image={trophy}
-            mainColor={colors.gray}
-            size={30}>
-          </Hexagon>
-        </ProfileArea>
-        <Menu>
-          <Hexagon
-            mainColor={colors.lightBlue}
-            image={shop}
-            size={50}>
-          </Hexagon>
-          <Hexagon
-            mainColor={colors.lightBlue}
-            image={leaderboard}
-            onClick={() => this.context.history.push('leaderboard')}
-            size={50}>
-          </Hexagon>
-          <Hexagon
-            mainColor={colors.lightBlue}
-            image={history}
-            size={50}>
-          </Hexagon>
-        </Menu>
-        <Smile colorUp={colors.linen} colorDown={colors.red} />
-        <Body>
-          <Button
-            backgroundColor={colors.yellow}
-            borderColor={colors.gray}
-            text='Start Game!'
-            textColor={colors.gray}
-            width={140}
-            onClick={() => {}}>
-          </Button>
-        </Body>
-      </Container>
-    );
-  }
-};
+const Home = () => (
+  <Container>
+    <Header>
+      <Hexagon
+        bar={true}
+        barColor={colors.lightBlue}
+        barPercent={30}
+        barSize={80}
+        mainColor={colors.blue}
+        size={30}
+        text='14'
+      />
+      <Hexagon
+        bar={true}
+        barColor={colors.pink}
+        barContent={12632}
+        barPercent={0}
+        barSize={80}
+        image={coin}
+        mainColor={colors.red}
+        size={30}
+      />
+      <Hexagon
+        bar={true}
+        barColor={colors.gray1}
+        barContent={211}
+        barPercent={0}
+        barSize={80}
+        image={diamond}
+        mainColor={colors.darkBlue}
+        size={30}
+      />
+    </Header>
+    <ProfileArea>
+      <ProfileImage />
+      <Hexagon
+        bar={true}
+        barColor={colors.gray1}
+        barContent={1535}
+        barPercent={0}
+        barSize={80}
+        image={trophy}
+        mainColor={colors.gray}
+        size={30}
+      />
+    </ProfileArea>
+    <Menu>
+      <Hexagon
+        mainColor={colors.lightBlue}
+        image={shop}
+        size={50}
+      />
+      <Hexagon
+        mainColor={colors.lightBlue}
+        image={leaderboard}
+        onClick={() => this.context.history.push('leaderboard')}
+        size={50}
+      />
+      <Hexagon
+        mainColor={colors.lightBlue}
+        image={history}
+        size={50}
+      />
+    </Menu>
+    <Smile colorUp={colors.linen} colorDown={colors.red} />
+    <Body>
+      <Button
+        backgroundColor={colors.yellow}
+        borderColor={colors.gray}
+        text='Start Game!'
+        textColor={colors.gray}
+        width={140}
+        onClick={() => {}}
+      />
+    </Body>
+  </Container>
+);
 
 Home.contextTypes = {
   history: PropTypes.object

@@ -1,9 +1,10 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Text = styled.div`
     width: ${props => props.width}px;
-    background-color: ${props => props.disabled ? 'gray' : props.backgroundColor};
+    background-color: ${props => (props.disabled ? 'gray' : props.backgroundColor)};
     font-size: 20px;
     font-weight: bold;
     color: ${props => props.textColor};
@@ -13,11 +14,16 @@ const Text = styled.div`
     border-radius: 30px;
 `;
 
-const Button = props => {
-  return (
-    <Text {...props} onClick={() => props.onClick(props.clickData)}>{props.text}</Text>
-  );
-};
+const Button = ({backgroundColor, borderColor, clickData, disabled, onClick, text, textColor, width}) => (
+  <Text
+    backgroundColor={backgroundColor}
+    borderColor={borderColor}
+    disabled={disabled}
+    textColor={textColor}
+    width={width}
+    onClick={() => onClick(clickData)}
+  >{text}</Text>
+);
 
 Button.defaultProps = {
   borderColor: null,

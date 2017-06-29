@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
+import styled from 'styled-components';
+
+// components
 import Smile from '../components/Smile/Smile';
 import BackButton from '../components/BackButton/BackButton';
 import Hexagon from '../components/Hexagon/Hexagon';
+
+// assets
 import photo from '../assets/images/mark.jpg';
 // http://www.flaticon.com/free-icon/trophy_321773
 import trophy from '../assets/images/trophy.svg';
+
+// modules
 import colors from '../modules/colors';
-import styled from 'styled-components';
 
 const Container = styled.div`
   background-color: ${colors.red};
@@ -21,36 +27,29 @@ const Cup = styled.div`{
 }`;
 
 const BackButtonContainer = styled.div`{
-  position: relative;
-  top: 35px;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
   z-index: 1;
-  margin-left: 10px;
+  margin: 10px 0 0 14px;
 }`;
 
-const LeaderboardText = styled.div`
-  font-size: 22px;
-  color: white;
-  top: 15px;
-  position: relative;
+const HeaderText = styled.div`
+  font-size: 26px;
+  font-weight: bold;
+  color: ${colors.white};
+  margin-top: 15px;
 `;
 
-const Body = styled.div`
-  background: linen;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
 const List = styled.div`
   justify-content: space-between;
-  width: 96%;
-  margin-left: 2%;
+  width: 100%;
+  background-color: ${colors.linen};
 `;
+
 const Item = styled.div`
   display: flex;
-  border-bottom: 1px;
-  border-color: ${colors.red};
-  border-bottom-style: solid;
+  border-bottom: 1px solid ${colors.red};
   padding: 10px 0;
 
   div {
@@ -60,16 +59,19 @@ const Item = styled.div`
 `;
 
 const Rank = styled.div`{
+  display: flex;
+  justify-content: center;
   width: 10%;
-  justify-content: flex-end;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin: 0 10px;
   font-size: 22px;
+  color: ${colors.gray};
+  text-align: left;
 }`;
 
 const ProfileImage = styled.div`{
   margin-right: 10px;
   width: 10%;
+
   img {
     border-radius: 7px;
   }
@@ -107,16 +109,16 @@ class Leaderboard extends Component {
   constructor(props) {
     super(props);
 
-    let data = [];
+    const data = [];
     for (let i = 0; i < 20; i++) {
       data.push({
-        name: 'Marios' + Math.floor(Math.random() * 2017),
+        name: `Marios${Math.floor(Math.random() * 2017)}`,
         points: 1500 - i,
         xp: Math.floor(Math.random() * (20 - 10)) + 10
       });
     }
 
-    this.state = {data: data};
+    this.state = {data};
   }
 
     /**
@@ -126,36 +128,32 @@ class Leaderboard extends Component {
   render() {
     return (
       <Container>
-        <BackButtonContainer>
-          <BackButton color='white' weigth={4} size={5}/>
-        </BackButtonContainer>
         <Smile childrenPosition='space-around' colorUp={colors.red} colorDown={colors.linen}>
-          <Cup/>
-          <LeaderboardText>Leaderboard</LeaderboardText>
+          <BackButtonContainer onClick={() => window.location.replace('/')}>
+            <BackButton color={colors.white} thickness={4} size={5} />
+            <Cup />
+          </BackButtonContainer>
+          <HeaderText>Leaderboard</HeaderText>
         </Smile>
-        <Body>
-          <List>
-            {
-              this.state.data.map((item, index) => {
-                return (
-                  <Item>
-                    <Rank>{index + 1}</Rank>
-                    <ProfileImage><img src={photo} width='40' alt='t' /></ProfileImage>
-                    <XPContainer>
-                      <Hexagon
-                        mainColor={colors.blue}
-                        size={30}
-                        text={item.xp.toString()}>
-                      </Hexagon>
-                    </XPContainer>
-                    <Username>{item.name}</Username>
-                    <LeaguePoints>{item.points}</LeaguePoints>
-                  </Item>
-                );
-              })
-            }
-          </List>
-        </Body>
+        <List>
+          {
+            this.state.data.map((item, index) => (
+              <Item key={item + index}>
+                <Rank>{index + 1}</Rank>
+                <ProfileImage><img src={photo} width='40' alt='t' /></ProfileImage>
+                <XPContainer>
+                  <Hexagon
+                    mainColor={colors.blue}
+                    size={30}
+                    text={item.xp.toString()}
+                  />
+                </XPContainer>
+                <Username>{item.name}</Username>
+                <LeaguePoints>{item.points}</LeaguePoints>
+              </Item>
+            ))
+          }
+        </List>
       </Container>
     );
   }

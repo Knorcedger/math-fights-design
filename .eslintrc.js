@@ -1,35 +1,25 @@
 module.exports = {
   extends: [
-    'google',
-    'plugin:react/recommended'
+    'airbnb'
   ],
   rules: {
-    'arrow-parens': [2, 'as-needed'],
-    'comma-dangle': ['error', 'never'],
-    'indent': [2, 2],
-    'linebreak-style': 0,
-    'max-len': [2, 120],
-    'no-multiple-empty-lines': ['error', {'max': 1, 'maxBOF': 1}],
-    'no-console': 2,
-    'no-unused-vars': ['error'],
-    'no-whitespace-before-property': ['error'],
-    'no-debugger': 'error',
-    'no-undef': 'error',
-    'react/jsx-indent': [2, 2],
-    'require-jsdoc': 2,
-  },
-  'parserOptions': {
-    'ecmaVersion': 8,
-    'sourceType': 'module',
-    'ecmaFeatures': {
-        'jsx': true,
-        'modules': true
-    }
+    'arrow-parens': [2, 'as-needed', {'requireForBlockBody': false}],
+    'comma-dangle': ['off'],
+    'jsx-a11y/img-has-alt': 0,
+    'jsx-quotes': ['error', 'prefer-single'],
+    'import/prefer-default-export': 'off',
+    'max-len': ['error', 120],
+    'no-inline-comments': ['error'],
+    'no-loop-func': 'off',
+    'no-mixed-operators': 'off',
+    'no-plusplus': 'off',
+    'no-underscore-dangle': 'off',
+    'object-curly-spacing': ['error', 'never'],
+    'react/forbid-prop-types': ['error', {'forbid': ['array', 'object']}],
+    'react/jsx-boolean-value': ['error', 'always'],
+    'react/jsx-filename-extension': [1, {'extensions': ['.js', '.jsx']}]
   },
   env: {
-		browser: true
-	},
-  plugins: [
-    'react'
-  ]
-}
+    browser: true
+  }
+};

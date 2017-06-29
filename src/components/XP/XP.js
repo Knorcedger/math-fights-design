@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import './XP.css';
 
@@ -9,7 +10,7 @@ const XP = ({level}) => (
 );
 
 XP.propTypes = {
-	level: PropTypes.number.isRequired
+  level: PropTypes.number.isRequired
 };
 
 export default XP;

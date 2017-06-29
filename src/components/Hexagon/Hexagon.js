@@ -1,6 +1,5 @@
-/* http://csshexagon.com/ */
-
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -27,7 +26,9 @@ const Edge = styled.div`
   border-right: ${props => props.size / 2}px solid transparent;
   ${props => {
     const borderStyle = `${(props.size * 0.5775) / 2}px solid ${props.mainColor}`;
-    return props.top ? `border-top: ${borderStyle}; top: 100%;` : `border-bottom: ${borderStyle}; bottom: 100%;`;
+    return props.placement === 'top'
+      ? `border-top: ${borderStyle}; top: 100%;`
+      : `border-bottom: ${borderStyle}; bottom: 100%;`;
   }};
 `;
 
@@ -77,11 +78,11 @@ const Hexagon = ({
   return (
     <Wrapper {...{bar, barColor, barSize, mainColor, size}} onClick={() => onClick(clickData)}>
       <Middle>
-        <Edge top {...{mainColor, size}} />
+        <Edge placement='top' {...{mainColor, size}} />
         <Image image={image}>
           {text}
         </Image>
-        <Edge bottom {...{mainColor, size}} />
+        <Edge placement='bottom' {...{mainColor, size}} />
       </Middle>
       {barElement}
     </Wrapper>

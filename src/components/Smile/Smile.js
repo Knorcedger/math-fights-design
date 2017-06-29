@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -20,22 +21,21 @@ const SemiCircle = styled.div`
   justify-content: ${props => props.childrenPosition};
 `;
 
-const Smile = ({children, childrenPosition, colorDown, colorUp}) => {
-  return (
-    <Wrapper colorDown={colorDown} >
-      <SemiCircle childrenPosition={childrenPosition} colorUp={colorUp} >
-        {children}
-      </SemiCircle>
-    </Wrapper>
-  );
-};
+const Smile = ({children, childrenPosition, colorDown, colorUp}) => (
+  <Wrapper colorDown={colorDown} >
+    <SemiCircle childrenPosition={childrenPosition} colorUp={colorUp} >
+      {children}
+    </SemiCircle>
+  </Wrapper>
+);
 
 Smile.defaultProps = {
+  children: null,
   childrenPosition: 'center'
 };
 
 Smile.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.arrayOf(PropTypes.element),
   childrenPosition: PropTypes.oneOf(['center', 'flex-start', 'flex-end', 'space-around', 'space-between']),
   colorDown: PropTypes.string.isRequired,
   colorUp: PropTypes.string.isRequired
