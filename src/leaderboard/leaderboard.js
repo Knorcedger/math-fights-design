@@ -1,12 +1,101 @@
 import React, {Component} from 'react';
-import './leaderboard.css';
+import Smile from '../components/Smile/Smile';
 import XP from '../components/XP/XP';
 import photo from '../assets/images/mark.jpg';
 // http://www.flaticon.com/free-icon/trophy_321773
 import trophy from '../assets/images/trophy.svg';
-/**
- * This is the leaderboard view
- **/
+import colors from '../modules/colors';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  background-color: ${colors.red};
+  overflow: hidden;
+`;
+const Header = styled.div`
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+`;
+
+const Cup = styled.div`{
+  height: 50px;
+  width: 50px;
+  background: url(${trophy}) no-repeat;
+}`;
+
+const LeaderboardText = styled.div`
+  font-size: 22px;
+  color: white;
+  top: 15px;
+  position: relative;
+`;
+
+const Body = styled.div`
+  background-color: linen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  div {
+    margin-bottom: 15px;
+  }
+`;
+const List = styled.div`
+  justify-content: space-between;
+  width: 96%;
+  margin-left: 2%;
+`;
+const Item = styled.div`
+  display: flex;
+  border-bottom: 1px;
+  border-color: ${colors.red};
+  border-bottom-style: solid;
+  div {
+    display: flex;
+    align-items: center;
+  }
+`;
+
+const Rank = styled.div`{
+  width: 10%;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 22px;
+}`;
+
+const ProfileImage = styled.div`{
+  margin-right: 10px;
+  width: 10%;
+  img {
+    border-radius: 7px;
+  }
+}`;
+
+const XPContainer = styled.div`{
+  width: 10%;
+}`;
+
+const Username = styled.div` {
+  width: 60%;
+  margin-left: 10px;
+  font-size: 18px;
+  overflow-x: hidden;
+  margin-right: 5px;
+}`;
+
+const LeaguePoints = styled.div` {
+  font-weight: bold;
+  color: ${colors.red};
+  margin-right: 20px;
+  font-size: 22px;
+}`;
+
+ /**
+  * This is the leaderboard view
+  **/
 class Leaderboard extends Component {
   /**
   * The constructor of Leaderboard View
@@ -28,38 +117,39 @@ class Leaderboard extends Component {
 
     this.state = {data: data};
   }
+
     /**
     * Render the leaderboard view to the user's screen
     * @return {object} the view displayed
     **/
   render() {
     return (
-      <div className='Leaderboard-container'>
-        <div className='header'>
-          <div className='title'>Leaderboard</div>
-          <div className='details'>
-            <img src={trophy} alt='trophy' />
-            <span className='text'>Top Math Masters</span>
-          </div>
-        </div>
-        <div className='list'>
-          {
-              this.state.data.map((item, index) => {
-                return (
-                  <div className='item' key={item.name}>
-                    <span className='rank'>{index + 1}</span>
-                    <span className='photo'>
-                      <img src={photo} width='30' alt='t' />
-                    </span>
-                    <XP level={item.xp} />
-                    <span className='name'>{item.name}</span>
-                    <span className='points'>{item.points}</span>
-                  </div>
-                );
-              })
-            }
-        </div>
-      </div>
+      <Container>
+        <Header>
+        </Header>
+        <div>Back</div>
+        <Smile childrenPosition='space-around' colorUp={colors.red} colorDown={colors.linen}>
+          <Cup/>
+          <LeaderboardText> Leaderboard </LeaderboardText>
+        </Smile>
+        <Body>
+          <List>
+            {
+                this.state.data.map((item, index) => {
+                  return (
+                    <Item>
+                      <Rank>{index + 1}</Rank>
+                      <ProfileImage> <img src={photo} width='40' alt='t' /></ProfileImage>
+                      <XPContainer> <XP level={item.xp} /></XPContainer>
+                      <Username>{item.name}</Username>
+                      <LeaguePoints>{item.points}</LeaguePoints>
+                    </Item>
+                  );
+                })
+              }
+          </List>
+        </Body>
+      </Container>
     );
   }
 }
