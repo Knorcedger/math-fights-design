@@ -28,11 +28,13 @@ const Container = styled.div`
   background-color: linen;
   overflow-x: hidden;
 `;
+
 const Header = styled.div`
   padding: 10px 10px;
   display: flex;
   justify-content: space-between;
 `;
+
 const Body = styled.div`
   background-color: ${colors.red};
   height: 300px;
@@ -40,6 +42,7 @@ const Body = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 const ProfileArea = styled.div`
   display: flex;
   justify-content: center;
@@ -61,6 +64,7 @@ const Menu = styled.div`
   top: 30px;
   z-index: 10;
 `;
+
 /**
 * Home View
 **/
@@ -119,7 +123,7 @@ const Home = () => (
       <Hexagon
         mainColor={colors.lightBlue}
         image={leaderboard}
-        onClick={() => this.context.history.push('leaderboard')}
+        onClick={() => window.location.replace('/leaderboard')}
         size={50}
       />
       <Hexagon
@@ -141,9 +145,5 @@ const Home = () => (
     </Body>
   </Container>
 );
-
-Home.contextTypes = {
-  history: PropTypes.object
-};
 
 export default Home;
