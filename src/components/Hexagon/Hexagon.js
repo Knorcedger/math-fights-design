@@ -50,6 +50,7 @@ const Image = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: ${props => props.textColor};
 `;
 
 const Middle = styled.div`
@@ -69,7 +70,8 @@ const Hexagon = ({
   mainColor,
   onClick,
   size,
-  text
+  text,
+  textColor
 }) => {
   // calculate the correct percentage relative to the size
   const relativeBarPercent = (barSize / size) * barPercent;
@@ -79,7 +81,7 @@ const Hexagon = ({
     <Wrapper {...{bar, barColor, barSize, mainColor, size}} onClick={() => onClick(clickData)}>
       <Middle>
         <Edge placement='top' {...{mainColor, size}} />
-        <Image image={image}>
+        <Image image={image} textColor={textColor}>
           {text}
         </Image>
         <Edge placement='bottom' {...{mainColor, size}} />
@@ -98,7 +100,8 @@ Hexagon.defaultProps = {
   clickData: null,
   image: null,
   onClick: () => {},
-  text: null
+  text: null,
+  textColor: 'white'
 };
 
 Hexagon.propTypes = {
@@ -143,9 +146,13 @@ Hexagon.propTypes = {
    */
   size: PropTypes.number.isRequired,
   /**
-   * Text shown inside hegaxon.
+   * Text displayed inside hegaxon.
    */
-  text: PropTypes.string
+  text: PropTypes.string,
+  /**
+   * The color of the text displayed inside the hexagon
+   */
+  textColor: PropTypes.string
 };
 
 export default Hexagon;

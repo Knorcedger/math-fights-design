@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 
 // components
-import Smile from '../components/Smile/Smile';
 import BackButton from '../components/BackButton/BackButton';
 import Hexagon from '../components/Hexagon/Hexagon';
+import Smile from '../components/Smile/Smile';
 
 // assets
 import photo from '../assets/images/mark.jpg';
@@ -38,12 +38,10 @@ const HeaderText = styled.div`
   font-size: 26px;
   font-weight: bold;
   color: ${colors.white};
-  margin-top: 15px;
+  margin: 20px 10px 0 0;
 `;
 
 const List = styled.div`
-  justify-content: space-between;
-  width: 100%;
   background-color: ${colors.linen};
 `;
 
@@ -69,11 +67,11 @@ const Rank = styled.div`{
 }`;
 
 const ProfileImage = styled.div`{
-  margin-right: 10px;
+  margin-right: 14px;
   width: 10%;
 
   img {
-    border-radius: 7px;
+    border-radius: 50px;
   }
 }`;
 
@@ -87,6 +85,8 @@ const Username = styled.div` {
   font-size: 18px;
   overflow-x: hidden;
   margin-right: 5px;
+  color: ${colors.gray};
+  white-space: nowrap;
 }`;
 
 const LeaguePoints = styled.div` {
@@ -138,7 +138,7 @@ class Leaderboard extends Component {
         <List>
           {
             this.state.data.map((item, index) => (
-              <Item key={item + index}>
+              <Item key={item.name + item.points}>
                 <Rank>{index + 1}</Rank>
                 <ProfileImage><img src={photo} width='40' alt='t' /></ProfileImage>
                 <XPContainer>
