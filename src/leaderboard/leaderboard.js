@@ -85,6 +85,7 @@ const Username = styled.div` {
   font-size: 18px;
   overflow-x: hidden;
   margin-right: 5px;
+  color: ${colors.gray};
 }`;
 
 const LeaguePoints = styled.div` {
