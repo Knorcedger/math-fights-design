@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 
 // components
-import Smile from '../components/Smile/Smile';
 import BackButton from '../components/BackButton/BackButton';
 import Hexagon from '../components/Hexagon/Hexagon';
+import Smile from '../components/Smile/Smile';
 
 // assets
 import photo from '../assets/images/mark.jpg';
@@ -38,12 +38,10 @@ const HeaderText = styled.div`
   font-size: 26px;
   font-weight: bold;
   color: ${colors.white};
-  margin-top: 15px;
+  margin: 20px 10px 0 0;
 `;
 
 const List = styled.div`
-  justify-content: space-between;
-  width: 100%;
   background-color: ${colors.linen};
 `;
 
@@ -73,7 +71,7 @@ const ProfileImage = styled.div`{
   width: 10%;
 
   img {
-    border-radius: 7px;
+    border-radius: 50px;
   }
 }`;
 
