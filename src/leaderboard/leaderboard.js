@@ -67,7 +67,7 @@ const Rank = styled.div`{
 }`;
 
 const ProfileImage = styled.div`{
-  margin-right: 10px;
+  margin-right: 14px;
   width: 10%;
 
   img {
@@ -86,6 +86,7 @@ const Username = styled.div` {
   overflow-x: hidden;
   margin-right: 5px;
   color: ${colors.gray};
+  white-space: nowrap;
 }`;
 
 const LeaguePoints = styled.div` {
@@ -137,7 +138,7 @@ class Leaderboard extends Component {
         <List>
           {
             this.state.data.map((item, index) => (
-              <Item key={item + index}>
+              <Item key={item.name + item.points}>
                 <Rank>{index + 1}</Rank>
                 <ProfileImage><img src={photo} width='40' alt='t' /></ProfileImage>
                 <XPContainer>
