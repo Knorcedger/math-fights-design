@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  position: absolute;
+  width: 100%;
   height: 100px;
   background: ${props => props.colorDown};
+  z-index: -1;
 `;
 
 const SemiCircle = styled.div`
@@ -18,25 +21,15 @@ const SemiCircle = styled.div`
   border-bottom: 0;
   position: relative;
   left: -17%;
-  justify-content: ${props => props.childrenPosition};
 `;
 
-const Smile = ({children, childrenPosition, colorDown, colorUp}) => (
+const Smile = ({colorDown, colorUp}) => (
   <Wrapper colorDown={colorDown} >
-    <SemiCircle childrenPosition={childrenPosition} colorUp={colorUp} >
-      {children}
-    </SemiCircle>
+    <SemiCircle colorUp={colorUp} />
   </Wrapper>
 );
 
-Smile.defaultProps = {
-  children: null,
-  childrenPosition: 'center'
-};
-
 Smile.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element),
-  childrenPosition: PropTypes.oneOf(['center', 'flex-start', 'flex-end', 'space-around', 'space-between']),
   colorDown: PropTypes.string.isRequired,
   colorUp: PropTypes.string.isRequired
 };

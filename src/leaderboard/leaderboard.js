@@ -15,7 +15,7 @@ import trophy from '../assets/images/trophy.svg';
 import colors from '../modules/colors';
 
 const Container = styled.div`
-  background-color: ${colors.red};
+  position: relative;
   overflow: hidden;
 `;
 
@@ -128,13 +128,12 @@ class Leaderboard extends Component {
   render() {
     return (
       <Container>
-        <Smile childrenPosition='space-around' colorUp={colors.red} colorDown={colors.linen}>
-          <BackButtonContainer onClick={() => window.location.replace('/')}>
-            <BackButton color={colors.white} thickness={4} size={5} />
-            <Cup />
-          </BackButtonContainer>
-          <HeaderText>Leaderboard</HeaderText>
-        </Smile>
+        <Smile colorUp={colors.red} colorDown={colors.linen} />
+        <BackButtonContainer onClick={() => window.location.replace('/')}>
+          <BackButton color={colors.white} thickness={4} size={5} />
+          <Cup />
+        </BackButtonContainer>
+        <HeaderText>Leaderboard</HeaderText>
         <List>
           {
             this.state.data.map((item, index) => (
