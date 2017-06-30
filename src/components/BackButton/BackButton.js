@@ -23,7 +23,8 @@ const BackButton = ({clickData, color, disabled, onClick, size, thickness}) => (
 BackButton.defaultProps = {
   borderColor: 'black',
   clickData: null,
-  disabled: false
+  disabled: false,
+  onClick: null
 };
 
 BackButton.propTypes = {

@@ -13,6 +13,7 @@ module.exports = {
     'no-loop-func': 'off',
     'no-mixed-operators': 'off',
     'no-plusplus': 'off',
+    'no-return-assign': 'off',
     'no-underscore-dangle': 'off',
     'object-curly-spacing': ['error', 'never'],
     'react/forbid-prop-types': ['error', {'forbid': ['array', 'object']}],
