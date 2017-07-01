@@ -19,26 +19,31 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const Cup = styled.div`{
+const Cup = styled.div`
   height: 50px;
   width: 50px;
   background: url(${trophy}) no-repeat;
   margin-left: 10px;
-}`;
+`;
 
-const BackButtonContainer = styled.div`{
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 20px 14px;
+  height: 70px;
+`;
+
+const BackContainer = styled.div`
   display: flex;
   align-items: center;
-  align-self: flex-start;
-  z-index: 1;
-  margin: 10px 0 0 14px;
-}`;
+`;
 
 const HeaderText = styled.div`
   font-size: 26px;
   font-weight: bold;
   color: ${colors.white};
-  margin: 20px 10px 0 0;
+  margin: 10px 10px 0 0;
 `;
 
 const List = styled.div`
@@ -56,7 +61,7 @@ const Item = styled.div`
   }
 `;
 
-const Rank = styled.div`{
+const Rank = styled.div`
   display: flex;
   justify-content: center;
   width: 10%;
@@ -64,22 +69,22 @@ const Rank = styled.div`{
   font-size: 22px;
   color: ${colors.gray};
   text-align: left;
-}`;
+`;
 
-const ProfileImage = styled.div`{
+const ProfileImage = styled.div`
   margin-right: 14px;
   width: 10%;
 
   img {
     border-radius: 50px;
   }
-}`;
+`;
 
-const XPContainer = styled.div`{
+const XPContainer = styled.div`
   width: 10%;
-}`;
+`;
 
-const Username = styled.div` {
+const Username = styled.div`
   width: 60%;
   margin-left: 10px;
   font-size: 18px;
@@ -87,14 +92,14 @@ const Username = styled.div` {
   margin-right: 5px;
   color: ${colors.gray};
   white-space: nowrap;
-}`;
+`;
 
-const LeaguePoints = styled.div` {
+const LeaguePoints = styled.div`
   font-weight: bold;
   color: ${colors.red};
   margin-right: 20px;
   font-size: 22px;
-}`;
+`;
 
  /**
   * This is the leaderboard view
@@ -129,11 +134,13 @@ class Leaderboard extends Component {
     return (
       <Container>
         <Smile colorUp={colors.red} colorDown={colors.linen} />
-        <BackButtonContainer onClick={() => window.location.replace('/')}>
-          <BackButton color={colors.white} thickness={4} size={5} />
-          <Cup />
-        </BackButtonContainer>
-        <HeaderText>Leaderboard</HeaderText>
+        <Header onClick={() => window.location.replace('/')}>
+          <BackContainer>
+            <BackButton color={colors.white} thickness={4} size={5} />
+            <Cup />
+          </BackContainer>
+          <HeaderText>Leaderboard</HeaderText>
+        </Header>
         <List>
           {
             this.state.data.map((item, index) => (
