@@ -6,43 +6,41 @@ import Button from '../components/Button/Button';
 import Smile from '../components/Smile/Smile';
 
 // assets
-import logo from '../assets/images/sword.svg';
+import logo from '../assets/images/logo.png';
 
 // modules
 import colors from '../modules/colors';
 
 const Container = styled.div`
-  background-color: ${colors.red};
-`;
-const Logo = styled.div`
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  background: linen;
-  width: 25%;
-  margin: auto;
-  padding: 20px;
-  border-radius: 20px;
-  margin-top: 20px;
-  border: 3px solid darkgray;
-  div {
-    border-radius: 50%;
-    width: 80px;
-    background: url(${logo});
-    background-size: contain;
-  }
 `;
 
 const Body = styled.div`
+  position: relative;
+`;
+
+const InSmile = styled.div`
+  width: 100%;
+  height: ${props => props.height};
+  display: flex;
+  justify-content: center;
+`;
+
+const Content = styled.div`
   background-color: linen;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  div {
-    margin-top: 20px;
-  }
+  min-height: 10vh;
+`;
+
+const Logo = styled.div`
+  width: 140px;
+  height: 140px;
+  background: url(${logo});
+  background-size: contain;
+  margin-top: 20px;
 `;
 
 const Tabs = styled.div`
@@ -58,7 +56,6 @@ const Tab = styled.div`
   font-size: 22px;
   ${props => props.activeTab === props.type && `
     border-bottom: 2px solid black;
-    margin-bottom: -20px;
   `}
 `;
 
@@ -68,7 +65,8 @@ const InputContainer = styled.div`
   width: 70%;
   justify-content: center;
   align-items: center;
-  input:nth-child(1) {
+
+  input {
     margin-bottom: 20px;
   }
 `;
@@ -106,56 +104,60 @@ class Login extends Component {
   render() {
     return (
       <Container>
-        <Logo>
-          <div />
-        </Logo>
-        <Smile colorUp={colors.red} colorDown={colors.linen} />
+        <Smile colorUp={colors.red} colorDown={colors.linen} height='240px' />
         <Body>
-          <Tabs>
-            <Tab
-              activeTab={this.state.activeTab}
-              type='register'
-              onClick={() => this.setState({activeTab: 'register'})}
-            >
-              Register
-            </Tab>
-            <Tab
-              activeTab={this.state.activeTab}
-              type='login'
-              onClick={() => this.setState({activeTab: 'login'})}
-            >
-              Login
-            </Tab>
-          </Tabs>
-          {
-            this.state.activeTab === 'login'
-              ? (
-                <InputContainer>
-                  <Input placeholder='Email' />
-                  <Input placeholder='Password' />
-                  <Button
-                    backgroundColor={colors.red}
-                    text='Login'
-                    textColor={colors.white}
-                    width={180}
-                    onClick={() => {}}
-                  />
-                </InputContainer>
-              )
-              : (
-                <InputContainer>
-                  <Input placeholder='Email' />
-                  <Input placeholder='Password' />
-                  <Button
-                    backgroundColor={colors.lightBlue}
-                    text='Register'
-                    textColor={colors.white}
-                    width={180}
-                    onClick={() => {}}
-                  />
-                </InputContainer>
-              )
-          }
+          <InSmile height='240px'>
+            <Logo />
+          </InSmile>
+          <Content>
+            <Tabs>
+              <Tab
+                activeTab={this.state.activeTab}
+                type='register'
+                onClick={() => this.setState({activeTab: 'register'})}
+              >
+                Register
+              </Tab>
+              <Tab
+                activeTab={this.state.activeTab}
+                type='login'
+                onClick={() => this.setState({activeTab: 'login'})}
+              >
+                Login
+              </Tab>
+            </Tabs>
+            {
+              this.state.activeTab === 'login'
+                ? (
+                  <InputContainer>
+                    <Input placeholder='Email' />
+                    <Input placeholder='Password' />
+                    <Button
+                      backgroundColor={colors.red}
+                      text='Login'
+                      textColor={colors.white}
+                      width={180}
+
+                      onClick={() => {}}
+                    />
+                  </InputContainer>
+                )
+                : (
+                  <InputContainer>
+                    <Input placeholder='Email' />
+                    <Input placeholder='Password' />
+                    <Button
+                      backgroundColor={colors.lightBlue}
+                      text='Register'
+                      textColor={colors.white}
+                      width={180}
+                      size='large'
+                      onClick={() => {}}
+                    />
+                  </InputContainer>
+                )
+            }
+          </Content>
         </Body>
       </Container>
     );

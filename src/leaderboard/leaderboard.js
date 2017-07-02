@@ -19,6 +19,25 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
+const Body = styled.div`
+  position: relative;
+`;
+
+const InSmile = styled.div`
+  width: 100%;
+  height: ${props => props.height};
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Content = styled.div`
+  background-color: linen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 const Cup = styled.div`
   height: 50px;
   width: 50px;
@@ -26,27 +45,23 @@ const Cup = styled.div`
   margin-left: 10px;
 `;
 
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 0 20px 14px;
-  height: 70px;
-`;
-
 const BackContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin: 0 0 20px 14px;
+  height: 70px;
 `;
 
 const HeaderText = styled.div`
   font-size: 26px;
   font-weight: bold;
   color: ${colors.white};
-  margin: 10px 10px 0 0;
+  margin: 20px 10px 0 0;
 `;
 
 const List = styled.div`
+  width: 100%;
   background-color: ${colors.linen};
 `;
 
@@ -133,33 +148,37 @@ class Leaderboard extends Component {
   render() {
     return (
       <Container>
-        <Smile colorUp={colors.red} colorDown={colors.linen} />
-        <Header onClick={() => window.location.replace('/')}>
-          <BackContainer>
-            <BackButton color={colors.white} thickness={4} size={5} />
-            <Cup />
-          </BackContainer>
-          <HeaderText>Leaderboard</HeaderText>
-        </Header>
-        <List>
-          {
-            this.state.data.map((item, index) => (
-              <Item key={item.name + item.points}>
-                <Rank>{index + 1}</Rank>
-                <ProfileImage><img src={photo} width='40' alt='t' /></ProfileImage>
-                <XPContainer>
-                  <Hexagon
-                    mainColor={colors.blue}
-                    size={30}
-                    text={item.xp.toString()}
-                  />
-                </XPContainer>
-                <Username>{item.name}</Username>
-                <LeaguePoints>{item.points}</LeaguePoints>
-              </Item>
-            ))
-          }
-        </List>
+        <Smile colorUp={colors.red} colorDown={colors.linen} height='100px' />
+        <Body>
+          <InSmile height='100px'>
+            <BackContainer onClick={() => window.location.replace('/')}>
+              <BackButton color={colors.white} thickness={4} size={5} />
+              <Cup />
+            </BackContainer>
+            <HeaderText>Leaderboard</HeaderText>
+          </InSmile>
+          <Content>
+            <List>
+              {
+                this.state.data.map((item, index) => (
+                  <Item key={item.name + item.points}>
+                    <Rank>{index + 1}</Rank>
+                    <ProfileImage><img src={photo} width='40' alt='t' /></ProfileImage>
+                    <XPContainer>
+                      <Hexagon
+                        mainColor={colors.blue}
+                        size={30}
+                        text={item.xp.toString()}
+                      />
+                    </XPContainer>
+                    <Username>{item.name}</Username>
+                    <LeaguePoints>{item.points}</LeaguePoints>
+                  </Item>
+                ))
+              }
+            </List>
+          </Content>
+        </Body>
       </Container>
     );
   }

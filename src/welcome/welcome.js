@@ -6,7 +6,7 @@ import Button from '../components/Button/Button';
 import Smile from '../components/Smile/Smile';
 
 // assets
-import logo from '../assets/images/sword.svg';
+import logo from '../assets/images/logo.png';
 
 // modules
 import colors from '../modules/colors';
@@ -15,62 +15,66 @@ const Container = styled.div`
   background-color: ${colors.red};
   overflow-x: hidden;
 `;
-const Logo = styled.div`
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  background: linen;
-  width: 25%;
-  margin: auto;
-  padding: 20px;
-  border-radius: 20px;
-  margin-top: 20px;
-  border: 3px solid darkgray;
-  div {
-    border-radius: 50%;
-    width: 80px;
-    background: url(${logo});
-    background-size: contain;
-  }
-`;
 
 const Body = styled.div`
-  background-color: linen;
-  height: 308px;
+  position: relative;
+`;
+
+const InSmile = styled.div`
+  width: 100%;
+  height: ${props => props.height};
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+`;
+
+const Content = styled.div`
+  background-color: linen;
+  height: 400px;
+  display: flex;
   flex-direction: column;
-  padding-bottom: 100px;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+
   div:nth-child(1) {
     margin-bottom: 20px;
   }
 `;
 
+const Logo = styled.div`
+  width: 140px;
+  height: 140px;
+  background: url(${logo});
+  background-size: contain;
+  margin-top: 20px;
+`;
+
 /**
-* This is the initial view that will run and check if the user is already loggd in:
-**/
+ * This is the initial view that will run and check if the user is already loggd in:
+ */
 const Welcome = () => (
   <Container>
-    <Logo>
-      <div />
-    </Logo>
-    <Smile colorUp={colors.red} colorDown={colors.linen} />
+    <Smile colorUp={colors.red} colorDown={colors.linen} height='240px' />
     <Body>
-      <Button
-        backgroundColor={colors.blue}
-        text='Login with facebook'
-        textColor={colors.white}
-        width={180}
-        onClick={() => {}}
-      />
-      <Button
-        backgroundColor={colors.red}
-        text='Login with email'
-        textColor={colors.white}
-        width={180}
-        onClick={() => {}}
-      />
+      <InSmile height='240px'>
+        <Logo />
+      </InSmile>
+      <Content>
+        <Button
+          backgroundColor={colors.blue}
+          text='Login with facebook'
+          textColor={colors.white}
+          width={180}
+          onClick={() => {}}
+        />
+        <Button
+          backgroundColor={colors.red}
+          text='Login with email'
+          textColor={colors.white}
+          width={180}
+          onClick={() => {}}
+        />
+      </Content>
     </Body>
   </Container>
 );

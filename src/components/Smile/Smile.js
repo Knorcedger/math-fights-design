@@ -5,9 +5,8 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   position: absolute;
   width: 100%;
-  height: 100px;
+  height: ${props => props.height};
   background: ${props => props.colorDown};
-  z-index: -1;
 `;
 
 const SemiCircle = styled.div`
@@ -23,15 +22,16 @@ const SemiCircle = styled.div`
   left: -17%;
 `;
 
-const Smile = ({colorDown, colorUp}) => (
-  <Wrapper colorDown={colorDown} >
+const Smile = ({colorDown, colorUp, height}) => (
+  <Wrapper colorDown={colorDown} height={height}>
     <SemiCircle colorUp={colorUp} />
   </Wrapper>
 );
 
 Smile.propTypes = {
   colorDown: PropTypes.string.isRequired,
-  colorUp: PropTypes.string.isRequired
+  colorUp: PropTypes.string.isRequired,
+  height: PropTypes.string.isRequired
 };
 
 export default Smile;
