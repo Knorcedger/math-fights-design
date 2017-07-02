@@ -68,17 +68,13 @@ const List = styled.div`
 const Item = styled.div`
   display: flex;
   border-bottom: 1px solid ${colors.red};
-  padding: 10px 0;
-
-  div {
-    display: flex;
-    align-items: center;
-  }
+  padding: 8px 0;
 `;
 
 const Rank = styled.div`
   display: flex;
   justify-content: center;
+  align-self: center;
   width: 10%;
   margin: 0 10px;
   font-size: 22px;
@@ -89,6 +85,8 @@ const Rank = styled.div`
 const ProfileImage = styled.div`
   margin-right: 14px;
   width: 10%;
+  display: flex;
+  align-items: center;
 
   img {
     border-radius: 50px;
@@ -97,10 +95,12 @@ const ProfileImage = styled.div`
 
 const XPContainer = styled.div`
   width: 10%;
+  align-self: center;
 `;
 
 const Username = styled.div`
   width: 60%;
+  align-self: center;
   margin-left: 10px;
   font-size: 18px;
   overflow-x: hidden;
@@ -111,8 +111,10 @@ const Username = styled.div`
 
 const LeaguePoints = styled.div`
   font-weight: bold;
+  display: flex;
+  align-self: center;
   color: ${colors.red};
-  margin-right: 20px;
+  margin: 4px 20px 0 0;
   font-size: 22px;
 `;
 
