@@ -72,7 +72,7 @@ const Welcome = () => (
           text='Login with email'
           textColor={colors.white}
           width={180}
-          onClick={() => {}}
+          onClick={() => window.location.replace('/login')}
         />
       </Content>
     </Body>
