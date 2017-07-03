@@ -29,16 +29,13 @@ const InSmile = styled.div`
 
 const Content = styled.div`
   background-color: linen;
-  height: 400px;
+  height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   min-height: 10vh;
-
-  div:nth-child(1) {
-    margin-bottom: 20px;
-  }
+  padding-bottom: 20px;
 `;
 
 const Logo = styled.div`
@@ -47,6 +44,18 @@ const Logo = styled.div`
   background: url(${logo});
   background-size: contain;
   margin-top: 20px;
+`;
+
+const AppName = styled.div`
+  font-size: 50px;
+  color: ${colors.darkBlue}
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 140px;
 `;
 
 /**
@@ -60,20 +69,23 @@ const Welcome = () => (
         <Logo />
       </InSmile>
       <Content>
-        <Button
-          backgroundColor={colors.blue}
-          text='Login with facebook'
-          textColor={colors.white}
-          width={180}
-          onClick={() => {}}
-        />
-        <Button
-          backgroundColor={colors.red}
-          text='Login with email'
-          textColor={colors.white}
-          width={180}
-          onClick={() => window.location.replace('/login')}
-        />
+        <AppName>Math Fights</AppName>
+        <ButtonWrapper>
+          <Button
+            backgroundColor={colors.blue}
+            text='Login with facebook'
+            textColor={colors.white}
+            width={180}
+            onClick={() => {}}
+          />
+          <Button
+            backgroundColor={colors.red}
+            text='Login with email'
+            textColor={colors.white}
+            width={180}
+            onClick={() => window.location.replace('/login')}
+          />
+        </ButtonWrapper>
       </Content>
     </Body>
   </Container>
