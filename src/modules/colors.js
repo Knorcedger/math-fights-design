@@ -1,5 +1,6 @@
 export default {
   // main
+  darkRed: 'rgb(212, 16, 13)',
   red: 'rgb(242, 95, 92)',
   linen: 'rgb(250, 240, 230)',
   lightBlue: 'rgb(100, 199, 204)',

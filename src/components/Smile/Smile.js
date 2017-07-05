@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   position: absolute;
-  width: 100%;
+  left: ${props => props.left};
+  width: ${props => props.width};
   height: ${props => props.height};
   background: ${props => props.colorDown};
 `;
@@ -22,16 +23,25 @@ const SemiCircle = styled.div`
   left: -17%;
 `;
 
-const Smile = ({colorDown, colorUp, height}) => (
-  <Wrapper colorDown={colorDown} height={height}>
-    <SemiCircle colorUp={colorUp} />
-  </Wrapper>
-);
+const Smile = ({colorDown, colorUp, height, width}) => {
+  const left = `-${((parseInt(width, 10) - 100) / 2).toString()}%`;
+
+  return (
+    <Wrapper colorDown={colorDown} height={height} width={width} left={left}>
+      <SemiCircle colorUp={colorUp} />
+    </Wrapper>
+  );
+};
+
+Smile.defaultProps = {
+  width: '100%'
+};
 
 Smile.propTypes = {
   colorDown: PropTypes.string.isRequired,
   colorUp: PropTypes.string.isRequired,
-  height: PropTypes.string.isRequired
+  height: PropTypes.string.isRequired,
+  width: PropTypes.string
 };
 
 export default Smile;

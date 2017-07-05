@@ -2,15 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+// modules
+import colors from '../../modules/colors';
+
+// assets
+import add from '../../assets/images/plus.svg';
+
 const Wrapper = styled.div`
   position: relative;
   width: ${props => props.size}px;
   height: ${props => props.size * 0.5775}px;
   background-color: ${props => props.mainColor};
   margin: ${props => (props.size * 0.5775) / 2}px 0;
+
   :active: {
     opacity: 0.5;
   }
+
   ${props => props.bar && `
     border-right: ${props.barSize}px solid ${props.barColor};
     border-bottom-right-radius: 5px;
@@ -32,21 +40,49 @@ const Edge = styled.div`
   }};
 `;
 
-const Bar = styled.span`
+const Bar = styled.div`
+  width: ${props => props.width}%;
   height: 100%;
-  width: ${props => props.relativeBarPercent}%;
-  background-color: ${props => props.mainColor};
   z-index: 10;
-  display: inherit;
   position: relative;
   left: ${props => props.size}px;
-  top: -100%
+  top: -100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const BarBackground = styled.div`
+  width: ${props => props.relativeBarPercent}%;
+  height: 100%;
+  background-color: ${props => props.mainColor};
+`;
+
+const BarText = styled.div`
+  font-size: 13px;
+  font-weight: bold;
+  color: ${colors.white};
+  margin: 2px 0 0 2px;
+`;
+
+const BarIcon = styled.div`
+  width: 20px;
+  height: 20px;
+  background-image: url(${add});
+  background-size: cover;
 `;
 
 const Image = styled.div`
   background-image: url(${props => props.image});
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Text = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,12 +98,14 @@ const Middle = styled.div`
 const Hexagon = ({
   bar,
   barColor,
-  barContent,
+  barIcon,
   barPercent,
   barSize,
+  barText,
   clickData,
   image,
   mainColor,
+  onBarIconClick,
   onClick,
   size,
   text,
@@ -75,15 +113,42 @@ const Hexagon = ({
 }) => {
   // calculate the correct percentage relative to the size
   const relativeBarPercent = (barSize / size) * barPercent;
-  const barElement = bar && <Bar {...{relativeBarPercent, mainColor, size}}>{barContent}</Bar>;
+
+  // construct the bar
+  let barElement;
+  let barBackgroundElement;
+  let barTextElement;
+  let barIconElement;
+  if (bar) {
+    barBackgroundElement = barPercent !== 0 && <BarBackground {...{relativeBarPercent, mainColor, size}} />;
+    barTextElement = barText && <BarText>{barText}</BarText>;
+    barIconElement = barIcon && <BarIcon barIcon={barIcon} onClick={onBarIconClick || null} />;
+
+    // we need barWidth set only when the bar has Icon to position the Icon correctly
+    const barWidth = barIconElement && (barSize / size) * 110;
+
+    barElement = (
+      <Bar size={size} width={barWidth}>
+        {barBackgroundElement}
+        {barTextElement}
+        {barIconElement}
+      </Bar>
+    );
+  }
+
+  let content;
+
+  if (text) {
+    content = <Text textColor={textColor}>{text}</Text>;
+  } else if (image) {
+    content = <Image image={image} />;
+  }
 
   return (
-    <Wrapper {...{bar, barColor, barSize, mainColor, size}} onClick={() => onClick(clickData)}>
+    <Wrapper {...{bar, barColor, barSize, mainColor, size}} onClick={() => onClick && onClick(clickData)}>
       <Middle>
         <Edge placement='top' {...{mainColor, size}} />
-        <Image image={image} textColor={textColor}>
-          {text}
-        </Image>
+        {content}
         <Edge placement='bottom' {...{mainColor, size}} />
       </Middle>
       {barElement}
@@ -94,12 +159,13 @@ const Hexagon = ({
 Hexagon.defaultProps = {
   bar: false,
   barColor: 'black',
-  barContent: null,
+  barIcon: null,
   barPercent: 0,
   barSize: 0,
+  barText: null,
   clickData: null,
   image: null,
-  onClick: () => {},
+  onClick: null,
   text: null,
   textColor: 'white'
 };
@@ -114,9 +180,9 @@ Hexagon.propTypes = {
    */
   barColor: PropTypes.string,
   /**
-   * Component to render over the bar
+   * Display an icon on the bar end
    */
-  barContent: PropTypes.number,
+  barIcon: PropTypes.oneOf(['add']),
   /**
    * Percentage of bar that is full
    */
@@ -125,6 +191,10 @@ Hexagon.propTypes = {
    * Width of bar in px
    */
   barSize: PropTypes.number,
+  /**
+   * Text to render over the bar
+   */
+  barText: PropTypes.string,
   /**
    * Data passed on click of hexagon
    */
@@ -137,6 +207,10 @@ Hexagon.propTypes = {
    * Color of hexagon
    */
   mainColor: PropTypes.string.isRequired,
+  /**
+   * On click on the bar icon
+   */
+  onBarIconClick: PropTypes.func,
   /**
    * On click of the component, the function that will run
    */
