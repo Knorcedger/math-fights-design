@@ -19,8 +19,13 @@ class App extends Component {
   constructor() {
     super();
 
+    let openNav = true;
+    if (localStorage.getItem('openNav') === 'false') {
+      openNav = false;
+    }
+
     this.state = {
-      openNav: localStorage.getItem('openNav')
+      openNav
     };
   }
 
