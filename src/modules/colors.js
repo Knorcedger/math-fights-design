@@ -16,7 +16,7 @@ export default {
   // not used, change at will
   gray2: 'rgb(100, 100, 100)',
   // not used, change at will
-  gray3: 'rgb(150, 150, 150)',
+  gray3: 'rgba(0, 0, 0, 0.3)',
   // not used, change at will
   gray4: 'rgb(200, 200, 200)',
   // not used, change at will
