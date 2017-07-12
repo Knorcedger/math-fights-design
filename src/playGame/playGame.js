@@ -13,9 +13,11 @@ import coin from '../assets/images/coin.svg';
 // modules
 import colors from '../modules/colors';
 
-const Container = styled.div``;
+const Container = styled.div`
+`;
 
 const Body = styled.div`
+  overflow-x: hidden;
   position: relative;
 `;
 
@@ -53,35 +55,42 @@ const InfoRow = styled.div`
   margin-top: 10px;
 `;
 
+const InfoRowEnd = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+`;
+
 const Name = styled.div`
   padding-left: 10px;
+`;
+
+const ContentBackground = styled.div`
+  background-color: ${colors.gray3};
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
 `;
 
 const Question = styled.div`
   display: flex;
   justify-content: center;
   font-size: 40px;
-  width: 100%;
-  padding: 10px 0;
   color: ${colors.white}
-  background-color: ${colors.gray3}
 `;
 
 const ButtonArea = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: space-between;
   flex-direction: column;
-  margin-bottom: 20px;
-  height: 150px;
   width: 100%;
-`;
 
-const ButtonRow = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
+  > div {
+    margin-top: 10px;
+  }
 `;
 
 /**
@@ -116,6 +125,13 @@ const PlayGame = () => (
               size={30}
             />
           </InfoRow>
+          <InfoRowEnd>
+            <Hexagon
+              mainColor={colors.red}
+              size={30}
+              text='-28'
+            />
+          </InfoRowEnd>
         </OpponentInfo>
         <MyInfo>
           <InfoRow>
@@ -146,26 +162,21 @@ const PlayGame = () => (
               size={30}
               text='+22'
             />
-            <Hexagon
-              mainColor={colors.red}
-              size={30}
-              text='-28'
-            />
           </InfoRow>
         </MyInfo>
       </InSmile>
       <Content>
-        <Question>
-          7 + 4
-        </Question>
-        <ButtonArea>
-          <ButtonRow>
+        <ContentBackground>
+          <Question>
+            7 + 4
+          </Question>
+          <ButtonArea>
             <Button
               backgroundColor={colors.linen}
               borderColor={colors.gray}
               text='11'
               textColor={colors.gray}
-              width={100}
+              width={180}
               onClick={() => {}}
             />
             <Button
@@ -173,17 +184,7 @@ const PlayGame = () => (
               borderColor={colors.gray}
               text='11'
               textColor={colors.gray}
-              width={100}
-              onClick={() => {}}
-            />
-          </ButtonRow>
-          <ButtonRow>
-            <Button
-              backgroundColor={colors.linen}
-              borderColor={colors.gray}
-              text='11'
-              textColor={colors.gray}
-              width={100}
+              width={180}
               onClick={() => {}}
             />
             <Button
@@ -191,11 +192,19 @@ const PlayGame = () => (
               borderColor={colors.gray}
               text='11'
               textColor={colors.gray}
-              width={100}
+              width={180}
               onClick={() => {}}
             />
-          </ButtonRow>
-        </ButtonArea>
+            <Button
+              backgroundColor={colors.linen}
+              borderColor={colors.gray}
+              text='11'
+              textColor={colors.gray}
+              width={180}
+              onClick={() => {}}
+            />
+          </ButtonArea>
+        </ContentBackground>
       </Content>
     </Body>
   </Container>
