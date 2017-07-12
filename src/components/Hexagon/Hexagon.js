@@ -48,21 +48,25 @@ const Bar = styled.div`
   left: ${props => props.size}px;
   top: -100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 `;
 
 const BarBackground = styled.div`
+  position: absolute;
+  left: 0;
   width: ${props => props.relativeBarPercent}%;
   height: 100%;
   background-color: ${props => props.mainColor};
 `;
 
 const BarText = styled.div`
+  position: absolute;
+  left: 0;
   font-size: 13px;
   font-weight: bold;
   color: ${colors.white};
-  margin: 2px 0 0 2px;
+  margin: 1px 0 0 2px;
 `;
 
 const BarIcon = styled.div`
@@ -165,6 +169,7 @@ Hexagon.defaultProps = {
   barText: null,
   clickData: null,
   image: null,
+  onBarIconClick: null,
   onClick: null,
   text: null,
   textColor: 'white'

@@ -12,7 +12,7 @@ import Welcome from './welcome/welcome';
 import Login from './login/login';
 import PlayGame from './playGame/playGame';
 import Tutorial from './tutorial/tutorial';
-
+import GameResult from './gameResult/gameResult';
 
 class App extends Component {
 
@@ -61,17 +61,19 @@ class App extends Component {
                   <li><Link to='/login'>Login</Link></li>
                   <li><Link to='/playgame'>PlayGame</Link></li>
                   <li><Link to='/tutorial'>Tutorial</Link></li>
+                  <li><Link to='/gameresult'>GameResult</Link></li>
                 </ul>
               </div>
             )
           }
-          <Route exact path='/' component={Home} />
+          <Route exact={true} path='/' component={Home} />
           <Route path='/leaderboard' component={Leaderboard} />
           <Route path='/temp' component={Temp} />
           <Route path='/welcome' component={Welcome} />
           <Route path='/login' component={Login} />
           <Route path='/playgame' component={PlayGame} />
           <Route path='/tutorial' component={Tutorial} />
+          <Route path='/gameresult' component={GameResult} />
         </div>
       </Router>
     );

@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   width: ${props => props.width};
   height: ${props => props.height};
   background: ${props => props.colorDown};
+  overflow-x: hidden;
 `;
 
 const SemiCircle = styled.div`
