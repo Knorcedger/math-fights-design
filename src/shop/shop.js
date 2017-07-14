@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 // components
 import BackButton from '../components/BackButton/BackButton';
+import Button from '../components/Button/Button';
 import Smile from '../components/Smile/Smile';
 
 // assets
@@ -113,6 +114,50 @@ const Number = styled.div`
   color: ${colors.white};
 `;
 
+const Modal = styled.div`
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: ${colors.gray4};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ModalContent = styled.div`
+  background-color: ${colors.linen};
+  width: 80%;
+  height: 180px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+`;
+
+const Close = styled.div`
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  border-radius: 6px;
+  background-color: ${colors.red};
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${colors.white};
+  border: 2px solid ${colors.gray4}
+`;
+
+const ModalText = styled.div`
+  font-size: 18px;
+`;
+
  /**
   * This is the leaderboard view
   **/
@@ -132,7 +177,16 @@ const Shop = () => (
         <TileList>
           <Tile>
             <Title>Pouch</Title>
-            <Amount color='linen'>100</Amount>
+            <Amount color='white'>100</Amount>
+            <Icon icon={pouch} size={80} />
+            <Price>
+              <Number>1</Number>
+              <Icon icon={gem} size={30} />
+            </Price>
+          </Tile>
+          <Tile>
+            <Title>Pack</Title>
+            <Amount color='white'>1200</Amount>
             <Icon icon={pouch} size={80} />
             <Price>
               <Number>10</Number>
@@ -140,20 +194,11 @@ const Shop = () => (
             </Price>
           </Tile>
           <Tile>
-            <Title>Pack</Title>
-            <Amount color='linen'>100</Amount>
+            <Title>Truck</Title>
+            <Amount color='white'>15000</Amount>
             <Icon icon={pouch} size={80} />
             <Price>
               <Number>100</Number>
-              <Icon icon={gem} size={30} />
-            </Price>
-          </Tile>
-          <Tile>
-            <Title>Truck</Title>
-            <Amount color='linen'>100</Amount>
-            <Icon icon={pouch} size={80} />
-            <Price>
-              <Number>1000</Number>
               <Icon icon={gem} size={30} />
             </Price>
           </Tile>
@@ -162,7 +207,7 @@ const Shop = () => (
         <TileList>
           <Tile>
             <Title>Pouch</Title>
-            <Amount color='linen'>100</Amount>
+            <Amount color='white'>100</Amount>
             <Icon icon={pouch} size={80} />
             <Price>
               <Number>€ 1</Number>
@@ -170,18 +215,18 @@ const Shop = () => (
           </Tile>
           <Tile>
             <Title>Pack</Title>
-            <Amount color='linen'>100</Amount>
+            <Amount color='white'>500</Amount>
             <Icon icon={pouch} size={80} />
             <Price>
-              <Number>€ 10</Number>
+              <Number>€ 4</Number>
             </Price>
           </Tile>
           <Tile>
             <Title>Truck</Title>
-            <Amount color='linen'>100</Amount>
+            <Amount color='white'>1000</Amount>
             <Icon icon={pouch} size={80} />
             <Price>
-              <Number>€ 50</Number>
+              <Number>€ 7</Number>
             </Price>
           </Tile>
         </TileList>
@@ -199,13 +244,28 @@ const Shop = () => (
             <Title>New Username</Title>
             <Icon icon={pouch} size={80} />
             <Price>
-              <Number>350</Number>
+              <Number>100</Number>
               <Icon icon={gem} size={30} />
             </Price>
           </Tile>
         </TileList>
       </Content>
     </Body>
+    <Modal>
+      <ModalContent>
+        <Ribbon>Buy</Ribbon>
+        <Close>X</Close>
+        <ModalText>Are you sure you want to buy 1200 gold?</ModalText>
+        <Button
+          backgroundColor={colors.green}
+          borderColor={colors.gray}
+          text='Buy'
+          textColor={colors.white}
+          width={120}
+          onClick={() => {}}
+        />
+      </ModalContent>
+    </Modal>
   </Container>
 );
 
