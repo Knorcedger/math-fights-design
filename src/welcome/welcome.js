@@ -29,7 +29,7 @@ const InSmile = styled.div`
 
 const Content = styled.div`
   background-color: linen;
-  height: 300px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -69,7 +69,7 @@ const Welcome = () => (
         <Logo />
       </InSmile>
       <Content>
-        <AppName>Math Fights</AppName>
+        <AppName>Math Warriors</AppName>
         <ButtonWrapper>
           <Button
             backgroundColor={colors.blue}

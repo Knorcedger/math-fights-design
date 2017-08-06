@@ -43,7 +43,7 @@ const InSmile = styled.div`
 
 const Content = styled.div`
   background-color: ${colors.red};
-  height: 300px;
+  height: 370px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
