@@ -9,7 +9,8 @@ import Smile from '../components/Smile/Smile';
 // assets
 import trophy from '../assets/images/trophy.svg';
 import coin from '../assets/images/coin.svg';
-import profile from '../assets/images/mark.jpg';
+import profile from '../assets/images/tasos.jpg';
+import profile2 from '../assets/images/tasos2.jpg';
 import clock from '../assets/images/time.png';
 
 // modules
@@ -82,7 +83,7 @@ const ProfileImage = styled.div`
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  background: url(${profile});
+  background: url(${props => props.image});
   background-size: contain;
 `;
 
@@ -149,7 +150,7 @@ const GameResult = () => (
           <OpponentInfo>
             <OpponentName>Leopold</OpponentName>
             <Row>
-              <ProfileImage />
+              <ProfileImage image={profile} />
               <Hexagon
                 text='8'
                 mainColor={colors.blue}
@@ -165,7 +166,7 @@ const GameResult = () => (
                 mainColor={colors.blue}
                 size={30}
               />
-              <ProfileImage />
+              <ProfileImage image={profile2} />
             </Row>
           </MyInfo>
         </PlayerInfo>

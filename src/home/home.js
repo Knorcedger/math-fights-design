@@ -17,7 +17,7 @@ import shop from '../assets/images/shop.svg';
 // import badge from '../assets/images/badge.svg';
 import coin from '../assets/images/coin.svg';
 import diamond from '../assets/images/diamond.svg';
-import profile from '../assets/images/mark.jpg';
+import profile from '../assets/images/tasos.jpg';
 import leaderboard from '../assets/images/leaderboard.svg';
 import logo from '../assets/images/logo.png';
 

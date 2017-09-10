@@ -7,7 +7,7 @@ import Hexagon from '../components/Hexagon/Hexagon';
 import Smile from '../components/Smile/Smile';
 
 // assets
-import photo from '../assets/images/mark.jpg';
+import photo from '../assets/images/tasos.jpg';
 // http://www.flaticon.com/free-icon/trophy_321773
 import trophy from '../assets/images/trophy.svg';
 
