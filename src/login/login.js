@@ -73,19 +73,19 @@ const InputContainer = styled.div`
 
 const Input = styled.input`
   border-radius: 4px;
-  border: 1px solid ${colors.gray1};
+  border: 2px solid ${colors.gray};
   width: 70%;
   padding: 10px;
 `;
 
 /**
-* User Login View
-**/
+ * User login view
+ */
 class Login extends Component {
   /**
-  * The constructor of UserLogin View
-  * @param {object} props props
-  **/
+   * The constructor of UserLogin View
+   * @param {object} props props
+   */
   constructor() {
     super();
 
@@ -108,50 +108,51 @@ class Login extends Component {
         <Body>
           <InSmile height='240px'>
             <Logo />
-          </InSmile>
-          <Content>
-            <Tabs>
-              <Tab
-                activeTab={this.state.activeTab}
-                type='register'
-                onClick={() => this.setState({activeTab: 'register'})}
-              >
-                Register
-              </Tab>
-              <Tab
-                activeTab={this.state.activeTab}
-                type='login'
-                onClick={() => this.setState({activeTab: 'login'})}
-              >
-                Login
-              </Tab>
-            </Tabs>
-            {
-              this.state.activeTab === 'login'
-                ? (
-                  <InputContainer>
-                    <Input placeholder='Email' />
-                    <Input placeholder='Password' />
-                    <Button
-                      backgroundColor={colors.red}
-                      text='Login'
-                      textColor={colors.white}
-                      width={180}
-
-                      onClick={() => {}}
-                    />
-                  </InputContainer>
-                )
-                : (
-                  <InputContainer>
-                    <Input placeholder='Email' />
-                    <Input placeholder='Password' />
-                    <Button
-                      backgroundColor={colors.lightBlue}
-                      text='Register'
-                      textColor={colors.white}
-                      width={180}
-                      size='large'
+           </InSmile>
+            <Content>
+               <Tabs>
+                  <Tab
+                     activeTab={this.state.activeTab}
+                     type='register'
+                     onClick={() => this.setState({activeTab: 'register'})}
+                  >
+                     Register
+                  </Tab>
+                  <Tab
+                     activeTab={this.state.activeTab}
+                     type='login'
+                     onClick={() => this.setState({activeTab: 'login'})}
+                  >
+                     Login
+                  </Tab>
+               </Tabs>
+               {
+                  this.state.activeTab === 'login'
+                     ? (
+                        <InputContainer>
+                           <Input placeholder='Email' />
+                           <Input placeholder='Password' />
+                           <Button
+                              backgroundColor={colors.green}
+                              text='Login'
+                              textColor={colors.white}
+                              width={180}
+                              borderColor={colors.gray}
+                              onClick={() => {}}
+                           />
+                        </InputContainer>
+                     )
+                     : (
+                        <InputContainer>
+                           <Input placeholder='Email' />
+                           <Input placeholder='Password' />
+                           <Button
+                              backgroundColor={colors.lightBlue}
+                              text='Register'
+                              textColor={colors.white}
+                              width={180}
+                              size='large'
+                              borderColor={colors.gray}
                       onClick={() => {}}
                     />
                   </InputContainer>

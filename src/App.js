@@ -15,6 +15,7 @@ import Tutorial from './tutorial/tutorial';
 import GameResult from './gameResult/gameResult';
 import Shop from './shop/shop';
 import Experience from './experience/experience';
+import Experience2 from './experience/experience2';
 
 class App extends Component {
 
@@ -66,6 +67,7 @@ class App extends Component {
                   <li><Link to='/tutorial'>Tutorial</Link></li>
                   <li><Link to='/gameresult'>GameResult</Link></li>
                   <li><Link to='/experience'>Experience</Link></li>
+                  <li><Link to='/experience2'>Experience2</Link></li>
                 </ul>
               </div>
             )
@@ -80,6 +82,7 @@ class App extends Component {
           <Route path='/gameresult' component={GameResult} />
           <Route path='/shop' component={Shop} />
           <Route path='/experience' component={Experience} />
+          <Route path='/experience2' component={Experience2} />
         </div>
       </Router>
     );

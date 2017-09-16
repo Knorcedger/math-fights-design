@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 // components
 import Smile from '../components/Smile/Smile';
+import ExperienceTile from '../components/ExperienceTile/ExperienceTile';
 
 // assets
 import shop from '../assets/images/shop.svg';
@@ -54,36 +55,8 @@ const TileList = styled.div`
   justify-content: space-between;
 `;
 
-const Tile = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: ${colors.lightBlue};
-  border: 2px solid ${colors.darkBlue};
-  border-radius: 10px;
-  padding: 10px;
-  width: 40%;
-`;
-
-const Icon = styled.div`
-  width: ${props => props.size}px;
-  height: ${props => props.size}px;
-  background: url(${props => props.icon}) no-repeat;
-`;
-
-const Title = styled.div`
-  font-size: 20px;
-  color: ${colors.darkBlue};
-  margin: 10px 0;
-`;
-
-const Age = styled.div`
-  font-size: 14px;
-  color: ${colors.gray};
-`;
-
  /**
-  * This is the leaderboard view
+  * This is the Experience view
   **/
 const Experience = () => (
   <Container>
@@ -95,26 +68,32 @@ const Experience = () => (
       </InSmile>
       <Content>
         <TileList>
-          <Tile>
-            <Icon icon={shop} size={80} />
-            <Title>Junior</Title>
-            <Age>Age &lt; 8</Age>
-          </Tile>
-          <Tile>
-            <Icon icon={shop} size={80} />
-            <Title>Senior</Title>
-            <Age>Age 8-12</Age>
-          </Tile>
+          <ExperienceTile
+            title='Junior'
+            age='Age &lt; 8'
+            icon={shop}
+            iconSize={80}
+          />
+          <ExperienceTile
+            title='Senior'
+            age='Age 8-12'
+            icon={shop}
+            iconSize={80}
+          />
         </TileList>
         <TileList>
-          <Tile>
-            <Icon icon={shop} size={80} />
-            <Title>Veteran</Title>
-          </Tile>
-          <Tile>
-            <Icon icon={shop} size={80} />
-            <Title>Master</Title>
-          </Tile>
+          <ExperienceTile
+            title='Veteran'
+            age='Age irrelevant'
+            icon={shop}
+            iconSize={80}
+          />
+          <ExperienceTile
+            title='Master'
+            age='Space Age'
+            icon={shop}
+            iconSize={80}
+          />
         </TileList>
       </Content>
     </Body>
