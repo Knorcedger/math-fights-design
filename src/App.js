@@ -16,6 +16,7 @@ import GameResult from './gameResult/gameResult';
 import Shop from './shop/shop';
 import Experience from './experience/experience';
 import Experience2 from './experience/experience2';
+import AchievementUp from './achievementUp/achievementUp';
 
 class App extends Component {
 
@@ -60,6 +61,7 @@ class App extends Component {
                   <li><Link to='/temp'>Temp</Link></li>
                   <li><Link to='/welcome'>Welcome</Link></li>
                   <li><Link to='/shop'>Shop</Link></li>
+                  <li><Link to='/achievementUp'>AchievementUp</Link></li>
                 </ul>
                 <ul>
                   <li><Link to='/login'>Login</Link></li>
@@ -83,6 +85,7 @@ class App extends Component {
           <Route path='/shop' component={Shop} />
           <Route path='/experience' component={Experience} />
           <Route path='/experience2' component={Experience2} />
+          <Route path='/achievementUp' component={AchievementUp} />
         </div>
       </Router>
     );
