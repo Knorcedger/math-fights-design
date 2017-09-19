@@ -8,6 +8,7 @@ import Smile from '../components/Smile/Smile';
 // assets
 // import badge from '../assets/images/badge.svg';
 import trophy from '../assets/images/trophy.svg';
+import trophyShadow from '../assets/images/trophy-shadow.png';
 // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
 import history from '../assets/images/history.svg';
 // http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
@@ -85,7 +86,7 @@ const Menu = styled.div`
 
 const Tile = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: ${colors.lightBlue};
   border: 2px solid ${colors.darkBlue};
@@ -95,20 +96,30 @@ const Tile = styled.div`
   height: 40px;
 `;
 
-const Title = styled.div`
-  font-size: 20px;
-  color: ${colors.white};
+const HexagonContainer = styled.div`
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-const Amount = styled.div`
+const Info = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
   font-size: 18px;
   color: ${colors.white};
 `;
 
+const Title = styled.div``;
+
+const Amount = styled.div``;
+
 /**
- * Home View
+ * UserProfile View
  */
-const Home = () => (
+const UserProfile = () => (
   <Container>
     <Smile colorUp={colors.linen} colorDown={colors.red} height='360px' width='140%' />
     <Body>
@@ -184,30 +195,115 @@ const Home = () => (
       </InSmile>
       <Content>
         <Tile>
-          <Title>Wins:</Title>
-          <Amount>513</Amount>
-          <Hexagon
-            mainColor={colors.blue}
-            image={trophy}
-            size={30}
-          />
-          <Hexagon
-            mainColor={colors.blue}
-            image={trophy}
-            size={30}
-          />
-          <Hexagon
-            bar={true}
-            barColor={colors.green}
-            barPercent={30}
-            barSize={80}
-            mainColor={colors.blue}
-            size={30}
-          />
+          <HexagonContainer>
+            <Hexagon
+              mainColor={colors.blue}
+              image={trophy}
+              size={30}
+            />
+            <Hexagon
+              mainColor={colors.blue}
+              image={trophy}
+              size={30}
+            />
+            <Hexagon
+              bar={true}
+              barColor={colors.gray}
+              barPercent={30}
+              barSize={50}
+              barText='50'
+              mainColor={colors.blue}
+              image={diamond}
+              size={30}
+            />
+          </HexagonContainer>
+          <Info>
+            <Title>Wins</Title>
+            <Amount>513</Amount>
+          </Info>
+        </Tile>
+        <Tile>
+          <HexagonContainer>
+            <Hexagon
+              mainColor={colors.blue}
+              image={trophy}
+              size={30}
+            />
+            <Hexagon
+              bar={true}
+              barColor={colors.gray}
+              barPercent={30}
+              barSize={50}
+              barText='150'
+              mainColor={colors.blue}
+              image={diamond}
+              size={30}
+            />
+            <Hexagon
+              mainColor={colors.blue}
+              image={trophyShadow}
+              size={30}
+            />
+          </HexagonContainer>
+          <Info>
+            <Title>Correct Answers</Title>
+            <Amount>10243</Amount>
+          </Info>
+        </Tile>
+        <Tile>
+          <HexagonContainer>
+            <Hexagon
+              bar={true}
+              barColor={colors.gray}
+              barPercent={30}
+              barSize={50}
+              barText='50'
+              mainColor={colors.blue}
+              image={diamond}
+              size={30}
+            />
+            <Hexagon
+              mainColor={colors.blue}
+              image={trophyShadow}
+              size={30}
+            />
+            <Hexagon
+              mainColor={colors.blue}
+              image={trophyShadow}
+              size={30}
+            />
+          </HexagonContainer>
+          <Info>
+            <Title>XP</Title>
+            <Amount>14</Amount>
+          </Info>
+        </Tile>
+        <Tile>
+          <HexagonContainer>
+            <Hexagon
+              mainColor={colors.blue}
+              image={trophy}
+              size={30}
+            />
+            <Hexagon
+              mainColor={colors.blue}
+              image={trophy}
+              size={30}
+            />
+            <Hexagon
+              mainColor={colors.blue}
+              image={trophy}
+              size={30}
+            />
+          </HexagonContainer>
+          <Info>
+            <Title>Trophies</Title>
+            <Amount>1243</Amount>
+          </Info>
         </Tile>
       </Content>
     </Body>
   </Container>
 );
 
-export default Home;
+export default UserProfile;
