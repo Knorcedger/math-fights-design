@@ -11,14 +11,14 @@ import trophy from '../assets/images/trophy.svg';
 import trophyShadow from '../assets/images/trophy-shadow.png';
 // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
 import history from '../assets/images/history.svg';
-// http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
-import shop from '../assets/images/shop.svg';
 // import profile from '../assets/images/profile.svg';
 // import badge from '../assets/images/badge.svg';
 import coin from '../assets/images/coin.svg';
 import diamond from '../assets/images/diamond.svg';
 import profile from '../assets/images/tasos.jpg';
 import leaderboard from '../assets/images/leaderboard.svg';
+import home from '../assets/images/home.svg';
+import shop from '../assets/images/basket.svg';
 
 // modules
 import colors from '../modules/colors';
@@ -42,10 +42,10 @@ const InSmile = styled.div`
 
 const Content = styled.div`
   background-color: ${colors.red};
-  height: 370px;
+  height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding-bottom: 20px;
 `;
@@ -79,7 +79,7 @@ const Menu = styled.div`
   margin-top: 15px;
   height: 80px;
 
-  > :nth-child(2) {
+  > :nth-child(2), > :nth-child(3) {
     align-self: flex-end;
   }
 `;
@@ -94,6 +94,7 @@ const Tile = styled.div`
   padding: 10px;
   width: 90%;
   height: 40px;
+  margin-bottom: 20px;
 `;
 
 const HexagonContainer = styled.div`
@@ -173,6 +174,12 @@ const UserProfile = () => (
           />
         </ProfileArea>
         <Menu>
+          <Hexagon
+            image={home}
+            mainColor={colors.blue}
+            onClick={() => window.location.replace('/')}
+            size={50}
+          />
           <Hexagon
             image={shop}
             mainColor={colors.blue}
