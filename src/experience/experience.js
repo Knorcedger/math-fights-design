@@ -6,7 +6,10 @@ import Smile from '../components/Smile/Smile';
 import ExperienceTile from '../components/ExperienceTile/ExperienceTile';
 
 // assets
-import shop from '../assets/images/shop.svg';
+import holidays from '../assets/images/holidays.svg';
+import worker from '../assets/images/worker.svg';
+import viking from '../assets/images/viking.svg';
+import greek from '../assets/images/greek.svg';
 
 // modules
 import colors from '../modules/colors';
@@ -71,13 +74,13 @@ const Experience = () => (
           <ExperienceTile
             title='Junior'
             age='Age &lt; 8'
-            icon={shop}
+            icon={holidays}
             iconSize={80}
           />
           <ExperienceTile
             title='Senior'
             age='Age 8-12'
-            icon={shop}
+            icon={worker}
             iconSize={80}
           />
         </TileList>
@@ -85,13 +88,13 @@ const Experience = () => (
           <ExperienceTile
             title='Veteran'
             age='Age irrelevant'
-            icon={shop}
+            icon={viking}
             iconSize={80}
           />
           <ExperienceTile
             title='Master'
             age='Space Age'
-            icon={shop}
+            icon={greek}
             iconSize={80}
           />
         </TileList>

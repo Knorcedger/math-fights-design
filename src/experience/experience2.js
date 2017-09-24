@@ -8,7 +8,7 @@ import ExperienceTile from '../components/ExperienceTile/ExperienceTile';
 import Smile from '../components/Smile/Smile';
 
 // assets
-import shop from '../assets/images/shop.svg';
+import holidays from '../assets/images/holidays.svg';
 
 // modules
 import colors from '../modules/colors';
@@ -89,7 +89,7 @@ const Experience = () => (
         <ExperienceTile
           title='Junior'
           age='Age &lt; 8'
-          icon={shop}
+          icon={holidays}
           iconSize={80}
         />
       </InSmile>
