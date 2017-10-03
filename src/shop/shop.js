@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 
 // components
@@ -129,13 +129,12 @@ const Modal = styled.div`
 const ModalContent = styled.div`
   background-color: ${colors.linen};
   width: 80%;
-  height: 180px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 4px 20px 20px 20px;
   position: relative;
 `;
 
@@ -155,118 +154,168 @@ const Close = styled.div`
 `;
 
 const ModalText = styled.div`
-  font-size: 18px;
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: center;
+`;
+
+const ButtonWrapper = styled.div`
+  margin-top: 20px;
+`;
+
+const Input = styled.input`
+  border-radius: 4px;
+  border: 2px solid ${colors.gray};
+  width: 70%;
+  padding: 10px;
+  margin: 10px 0 40px 0;
 `;
 
  /**
   * This is the leaderboard view
   **/
-const Shop = () => (
-  <Container>
-    <Smile colorUp={colors.red} colorDown={colors.linen} height='100px' />
-    <Body>
-      <InSmile height='100px'>
-        <BackContainer onClick={() => window.location.replace('/')}>
-          <BackButton color={colors.white} thickness={4} size={5} />
-          <ShopIcon />
-        </BackContainer>
-        <HeaderText>Shop</HeaderText>
-      </InSmile>
-      <Content>
-        <Ribbon>Gold</Ribbon>
-        <TileList>
-          <Tile>
-            <Title>Pouch</Title>
-            <Amount color='white'>100</Amount>
-            <Icon icon={pouch} size={80} />
-            <Price>
-              <Number>1</Number>
-              <Icon icon={gem} size={30} />
-            </Price>
-          </Tile>
-          <Tile>
-            <Title>Pack</Title>
-            <Amount color='white'>1200</Amount>
-            <Icon icon={pouch} size={80} />
-            <Price>
-              <Number>10</Number>
-              <Icon icon={gem} size={30} />
-            </Price>
-          </Tile>
-          <Tile>
-            <Title>Truck</Title>
-            <Amount color='white'>15000</Amount>
-            <Icon icon={pouch} size={80} />
-            <Price>
-              <Number>100</Number>
-              <Icon icon={gem} size={30} />
-            </Price>
-          </Tile>
-        </TileList>
-        <Ribbon>Gems</Ribbon>
-        <TileList>
-          <Tile>
-            <Title>Pouch</Title>
-            <Amount color='white'>100</Amount>
-            <Icon icon={pouch} size={80} />
-            <Price>
-              <Number>€ 1</Number>
-            </Price>
-          </Tile>
-          <Tile>
-            <Title>Pack</Title>
-            <Amount color='white'>500</Amount>
-            <Icon icon={pouch} size={80} />
-            <Price>
-              <Number>€ 4</Number>
-            </Price>
-          </Tile>
-          <Tile>
-            <Title>Truck</Title>
-            <Amount color='white'>1000</Amount>
-            <Icon icon={pouch} size={80} />
-            <Price>
-              <Number>€ 7</Number>
-            </Price>
-          </Tile>
-        </TileList>
-        <Ribbon>Game Experience</Ribbon>
-        <TileList>
-          <Tile>
-            <Title>Remove ads</Title>
-            <Icon icon={pouch} size={80} />
-            <Price>
-              <Number>350</Number>
-              <Icon icon={gem} size={30} />
-            </Price>
-          </Tile>
-          <Tile>
-            <Title>New Username</Title>
-            <Icon icon={pouch} size={80} />
-            <Price>
-              <Number>100</Number>
-              <Icon icon={gem} size={30} />
-            </Price>
-          </Tile>
-        </TileList>
-      </Content>
-    </Body>
-    <Modal>
-      <ModalContent>
-        <Ribbon>Buy</Ribbon>
-        <Close>X</Close>
-        <ModalText>Are you sure you want to buy 1200 gold?</ModalText>
-        <Button
-          backgroundColor={colors.green}
-          borderColor={colors.gray}
-          text='Buy'
-          textColor={colors.white}
-          width={120}
-          onClick={() => {}}
-        />
-      </ModalContent>
-    </Modal>
-  </Container>
-);
+class Shop extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      show: null
+    };
+  }
+
+  render() {
+    return (
+      <Container>
+        <Smile colorUp={colors.red} colorDown={colors.linen} height='100px' />
+        <Body>
+          <InSmile height='100px'>
+            <BackContainer onClick={() => window.location.replace('/')}>
+              <BackButton color={colors.white} thickness={4} size={5} />
+              <ShopIcon />
+            </BackContainer>
+            <HeaderText>Shop</HeaderText>
+          </InSmile>
+          <Content>
+            <Ribbon>Gold</Ribbon>
+            <TileList>
+              <Tile onClick={() => this.setState({show: 'buyModal'})}>
+                <Title>Pouch</Title>
+                <Amount color='white'>100</Amount>
+                <Icon icon={pouch} size={80} />
+                <Price>
+                  <Number>1</Number>
+                  <Icon icon={gem} size={30} />
+                </Price>
+              </Tile>
+              <Tile onClick={() => this.setState({show: 'buyModal'})}>
+                <Title>Pack</Title>
+                <Amount color='white'>1200</Amount>
+                <Icon icon={pouch} size={80} />
+                <Price>
+                  <Number>10</Number>
+                  <Icon icon={gem} size={30} />
+                </Price>
+              </Tile>
+              <Tile onClick={() => this.setState({show: 'buyModal'})}>
+                <Title>Truck</Title>
+                <Amount color='white'>15000</Amount>
+                <Icon icon={pouch} size={80} />
+                <Price>
+                  <Number>100</Number>
+                  <Icon icon={gem} size={30} />
+                </Price>
+              </Tile>
+            </TileList>
+            <Ribbon>Gems</Ribbon>
+            <TileList>
+              <Tile>
+                <Title>Pouch</Title>
+                <Amount color='white'>100</Amount>
+                <Icon icon={pouch} size={80} />
+                <Price>
+                  <Number>€ 1</Number>
+                </Price>
+              </Tile>
+              <Tile>
+                <Title>Pack</Title>
+                <Amount color='white'>500</Amount>
+                <Icon icon={pouch} size={80} />
+                <Price>
+                  <Number>€ 4</Number>
+                </Price>
+              </Tile>
+              <Tile>
+                <Title>Truck</Title>
+                <Amount color='white'>1000</Amount>
+                <Icon icon={pouch} size={80} />
+                <Price>
+                  <Number>€ 7</Number>
+                </Price>
+              </Tile>
+            </TileList>
+            <Ribbon>Game Experience</Ribbon>
+            <TileList>
+              <Tile>
+                <Title>Remove ads</Title>
+                <Icon icon={pouch} size={80} />
+                <Price>
+                  <Number>350</Number>
+                  <Icon icon={gem} size={30} />
+                </Price>
+              </Tile>
+              <Tile onClick={() => this.setState({show: 'changeUsernameModal'})}>
+                <Title>New Username</Title>
+                <Icon icon={pouch} size={80} />
+                <Price>
+                  <Number>100</Number>
+                  <Icon icon={gem} size={30} />
+                </Price>
+              </Tile>
+            </TileList>
+          </Content>
+        </Body>
+        {
+          this.state.show === 'buyModal' &&
+          <Modal>
+            <ModalContent>
+              <Ribbon>Buy</Ribbon>
+              <Close onClick={() => this.setState({show: null})}>X</Close>
+              <ModalText>You are about to buy 1200 gold for 10 gems!</ModalText>
+              <ButtonWrapper>
+                <Button
+                  backgroundColor={colors.green}
+                  borderColor={colors.gray}
+                  text='Buy'
+                  textColor={colors.white}
+                  width={120}
+                  onClick={() => {}}
+                />
+              </ButtonWrapper>
+            </ModalContent>
+          </Modal>
+        }
+        {
+          this.state.show === 'changeUsernameModal' &&
+          <Modal>
+            <ModalContent>
+              <Ribbon>Change Username</Ribbon>
+              <Close onClick={() => this.setState({show: null})}>X</Close>
+              <ModalText>You are about to change your username for 100 gems!</ModalText>
+              <Input />
+              <Button
+                backgroundColor={colors.green}
+                borderColor={colors.gray}
+                text='Change'
+                textColor={colors.white}
+                width={120}
+                onClick={() => {}}
+              />
+            </ModalContent>
+          </Modal>
+        }
+      </Container>
+    );
+  }
+}
 
 export default Shop;
