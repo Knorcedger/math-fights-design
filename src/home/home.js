@@ -12,7 +12,7 @@ import trophy from '../assets/images/trophy.svg';
 // http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
 import history from '../assets/images/history.svg';
 // http://www.flaticon.com/free-icon/shop_345763#term=shop&page=3&position=15
-import shop from '../assets/images/shop.svg';
+import shop from '../assets/images/basket.svg';
 // import profile from '../assets/images/profile.svg';
 // import badge from '../assets/images/badge.svg';
 import coin from '../assets/images/coin.svg';
@@ -20,6 +20,7 @@ import diamond from '../assets/images/diamond.svg';
 import profile from '../assets/images/tasos.jpg';
 import leaderboard from '../assets/images/leaderboard.svg';
 import logo from '../assets/images/logo.png';
+import user from '../assets/images/user.svg';
 
 // modules
 import colors from '../modules/colors';
@@ -80,7 +81,7 @@ const Menu = styled.div`
   margin-top: 15px;
   height: 80px;
 
-  > :nth-child(2) {
+  > :nth-child(2), > :nth-child(3) {
     align-self: flex-end;
   }
 `;
@@ -151,6 +152,12 @@ const Home = () => (
           />
         </ProfileArea>
         <Menu>
+          <Hexagon
+            image={user}
+            mainColor={colors.blue}
+            onClick={() => window.location.replace('/userProfile')}
+            size={50}
+          />
           <Hexagon
             image={shop}
             mainColor={colors.blue}
