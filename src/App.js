@@ -18,6 +18,7 @@ import Experience from './experience/experience';
 import Experience2 from './experience/experience2';
 import AchievementUp from './achievementUp/achievementUp';
 import UserProfile from './userProfile/userProfile';
+import UserHistory from './userHistory/userHistory';
 
 class App extends Component {
 
@@ -72,6 +73,7 @@ class App extends Component {
                   <li><Link to='/gameresult'>GameResult</Link></li>
                   <li><Link to='/experience'>Experience</Link></li>
                   <li><Link to='/experience2'>Experience2</Link></li>
+                  <li><Link to='/userhistory'>UserHistory</Link></li>
                 </ul>
               </div>
             )
@@ -89,6 +91,7 @@ class App extends Component {
           <Route path='/experience2' component={Experience2} />
           <Route path='/achievementUp' component={AchievementUp} />
           <Route path='/userProfile' component={UserProfile} />
+          <Route path='/userhistory' component={UserHistory} />
         </div>
       </Router>
     );

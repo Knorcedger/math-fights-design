@@ -188,10 +188,10 @@ const PlayGame = () => (
               onClick={() => {}}
             />
             <Button
-              backgroundColor={colors.linen}
+              backgroundColor={colors.gray1}
               borderColor={colors.gray}
               text='11'
-              textColor={colors.gray}
+              textColor={colors.gray3}
               width={180}
               onClick={() => {}}
             />
