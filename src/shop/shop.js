@@ -10,6 +10,9 @@ import Smile from '../components/Smile/Smile';
 import shop from '../assets/images/shop.svg';
 import pouch from '../assets/images/coins.svg';
 import gem from '../assets/images/diamond.svg';
+import blockAds from '../assets/images/block-ads.png';
+import changeUsername from '../assets/images/change-username.png';
+import gemsPouch from '../assets/images/gems-pouch.png';
 
 // modules
 import colors from '../modules/colors';
@@ -78,7 +81,7 @@ const Tile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${colors.lightBlue};
+  background-color: ${colors.blue};
   border: 2px solid ${colors.darkBlue};
   border-radius: 10px;
   padding: 10px;
@@ -86,7 +89,7 @@ const Tile = styled.div`
 
 const Title = styled.div`
   font-size: 20px;
-  color: ${colors.darkBlue};
+  color: ${colors.yellow};
   margin-bottom: 10px;
 `;
 
@@ -98,7 +101,9 @@ const Amount = styled.div`
 const Icon = styled.div`
   width: ${props => props.size}px;
   height: ${props => props.size}px;
-  background: url(${props => props.icon}) no-repeat;
+  background-image: url(${props => props.icon});
+  background-repeat: no-repeat;
+  background-size: ${props => props.size}px;
 `;
 
 const Price = styled.div`
@@ -231,7 +236,7 @@ class Shop extends Component {
               <Tile>
                 <Title>Pouch</Title>
                 <Amount color='white'>100</Amount>
-                <Icon icon={pouch} size={80} />
+                <Icon icon={gemsPouch} size={80} />
                 <Price>
                   <Number>€ 1</Number>
                 </Price>
@@ -257,7 +262,7 @@ class Shop extends Component {
             <TileList>
               <Tile>
                 <Title>Remove ads</Title>
-                <Icon icon={pouch} size={80} />
+                <Icon icon={blockAds} size={80} />
                 <Price>
                   <Number>350</Number>
                   <Icon icon={gem} size={30} />
@@ -265,7 +270,7 @@ class Shop extends Component {
               </Tile>
               <Tile onClick={() => this.setState({show: 'changeUsernameModal'})}>
                 <Title>New Username</Title>
-                <Icon icon={pouch} size={80} />
+                <Icon icon={changeUsername} size={80} />
                 <Price>
                   <Number>100</Number>
                   <Icon icon={gem} size={30} />
