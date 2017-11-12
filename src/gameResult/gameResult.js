@@ -121,13 +121,6 @@ const RewardList = styled.div`
   }
 `;
 
-const Title = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: 40px;
-  color: ${colors.white}
-`;
-
 const ButtonArea = styled.div`
   margin-top: 40px;
   display: flex;
@@ -139,7 +132,7 @@ const ButtonArea = styled.div`
  **/
 const GameResult = () => (
   <Container>
-    <Smile colorUp={colors.blue} colorDown={colors.linen} height='120px' />
+    <Smile colorUp={colors.green} colorDown={colors.linen} height='120px' />
     <Body>
       <InSmile height='120px'>
         <Result>Victory</Result>
@@ -148,7 +141,7 @@ const GameResult = () => (
       <Content>
         <PlayerInfo>
           <OpponentInfo>
-            <OpponentName>Leopold</OpponentName>
+            <OpponentName>Knorcedger</OpponentName>
             <Row>
               <ProfileImage image={profile} />
               <Hexagon
@@ -159,7 +152,7 @@ const GameResult = () => (
             </Row>
           </OpponentInfo>
           <MyInfo>
-            <MyName>Knorcedger</MyName>
+            <MyName>Leopold</MyName>
             <Row>
               <Hexagon
                 text='8'
@@ -171,7 +164,6 @@ const GameResult = () => (
           </MyInfo>
         </PlayerInfo>
         <Rewards>
-          <Title>Rewards</Title>
           <RewardList>
             <Hexagon
               bar={true}
@@ -203,11 +195,21 @@ const GameResult = () => (
               mainColor={colors.green}
               size={30}
             />
+            <Hexagon
+              bar={true}
+              barColor={colors.green}
+              barPercent={0}
+              barSize={80}
+              barText='-1000'
+              image={coin}
+              mainColor={colors.green}
+              size={30}
+            />
           </RewardList>
         </Rewards>
         <ButtonArea>
           <Button
-            backgroundColor={colors.green}
+            backgroundColor={colors.blue}
             borderColor={colors.gray}
             text='OK'
             textColor={colors.linen}

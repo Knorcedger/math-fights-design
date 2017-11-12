@@ -74,7 +74,7 @@ const GameTile = styled.div`
 const GameHeader = styled.div`
   display: flex;
   justify-content: center;
-  background-color: ${props => props.result === 'win' ? colors.blue : colors.red};
+  background-color: ${props => props.result === 'win' ? colors.green : colors.red};
   color: ${colors.linen};
   border-radius: 8px 8px 0 0;
   font-size: 22px;
@@ -107,7 +107,7 @@ const PlayerInfo = styled.div`
 
 const Name = styled.div`
   display: flex;
-  justify-content: ${props => props.who === 'me' ? 'flex-end' : 'flex-start'};
+  justify-content: ${props => props.who === 'me' ? 'flex-start' : 'flex-end'};
 `;
 
 const Row = styled.div`
@@ -172,7 +172,7 @@ const UserHistory = () => (
           </GameHeader>
           <Players>
             <PlayerInfo>
-              <Name who='opponent'>Leopold</Name>
+              <Name who='me'>Knorcedger</Name>
               <Row>
                 <ProfileImage image={profile} />
                 <Hexagon
@@ -199,7 +199,7 @@ const UserHistory = () => (
               <Sword></Sword>
             </SwordContainer>
             <PlayerInfo>
-              <Name who='me'>Knorcedger</Name>
+              <Name who='opponent'>Leopold</Name>
               <Row>
                 <Hexagon
                   text='8'
@@ -230,11 +230,11 @@ const UserHistory = () => (
           </GameHeader>
           <Players>
             <PlayerInfo>
-              <Name who='opponent'>Leopold</Name>
+              <Name who='me'>Knorcedger</Name>
               <Row>
                 <ProfileImage image={profile} />
                 <Hexagon
-                  text='8'
+                  text='7'
                   mainColor={colors.blue}
                   size={30}
                 />
@@ -256,10 +256,10 @@ const UserHistory = () => (
               <Sword></Sword>
             </SwordContainer>
             <PlayerInfo>
-              <Name who='me'>Knorcedger</Name>
+              <Name who='opponent'>Leopold</Name>
               <Row>
                 <Hexagon
-                  text='7'
+                  text='8'
                   mainColor={colors.blue}
                   size={30}
                 />
