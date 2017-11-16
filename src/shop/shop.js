@@ -8,11 +8,15 @@ import Smile from '../components/Smile/Smile';
 
 // assets
 import shop from '../assets/images/shop.svg';
-import pouch from '../assets/images/coins.svg';
 import gem from '../assets/images/diamond.svg';
 import blockAds from '../assets/images/block-ads.png';
 import changeUsername from '../assets/images/change-username.png';
+import goldPouch from '../assets/images/gold-pouch.png';
+import goldBucket from '../assets/images/gold-bucket.png';
+import goldChest from '../assets/images/gold-chest.png';
 import gemsPouch from '../assets/images/gems-pouch.png';
+import gemsBucket from '../assets/images/gems-bucket.png';
+import gemsChest from '../assets/images/gems-chest.png';
 
 // modules
 import colors from '../modules/colors';
@@ -81,8 +85,8 @@ const Tile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${colors.blue};
-  border: 2px solid ${colors.darkBlue};
+  background-color: ${colors.darkBlue};
+  border: 2px solid ${colors.gray};
   border-radius: 10px;
   padding: 10px;
 `;
@@ -206,7 +210,7 @@ class Shop extends Component {
               <Tile onClick={() => this.setState({show: 'buyModal'})}>
                 <Title>Pouch</Title>
                 <Amount color='white'>100</Amount>
-                <Icon icon={pouch} size={80} />
+                <Icon icon={goldPouch} size={80} />
                 <Price>
                   <Number>1</Number>
                   <Icon icon={gem} size={30} />
@@ -215,7 +219,7 @@ class Shop extends Component {
               <Tile onClick={() => this.setState({show: 'buyModal'})}>
                 <Title>Pack</Title>
                 <Amount color='white'>1200</Amount>
-                <Icon icon={pouch} size={80} />
+                <Icon icon={goldBucket} size={80} />
                 <Price>
                   <Number>10</Number>
                   <Icon icon={gem} size={30} />
@@ -224,7 +228,7 @@ class Shop extends Component {
               <Tile onClick={() => this.setState({show: 'buyModal'})}>
                 <Title>Truck</Title>
                 <Amount color='white'>15000</Amount>
-                <Icon icon={pouch} size={80} />
+                <Icon icon={goldChest} size={80} />
                 <Price>
                   <Number>100</Number>
                   <Icon icon={gem} size={30} />
@@ -244,7 +248,7 @@ class Shop extends Component {
               <Tile>
                 <Title>Pack</Title>
                 <Amount color='white'>500</Amount>
-                <Icon icon={pouch} size={80} />
+                <Icon icon={gemsBucket} size={80} />
                 <Price>
                   <Number>€ 4</Number>
                 </Price>
@@ -252,7 +256,7 @@ class Shop extends Component {
               <Tile>
                 <Title>Truck</Title>
                 <Amount color='white'>1000</Amount>
-                <Icon icon={pouch} size={80} />
+                <Icon icon={gemsChest} size={80} />
                 <Price>
                   <Number>€ 7</Number>
                 </Price>

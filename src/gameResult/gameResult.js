@@ -11,7 +11,7 @@ import trophy from '../assets/images/trophy.svg';
 import coin from '../assets/images/coin.svg';
 import profile from '../assets/images/tasos.jpg';
 import profile2 from '../assets/images/tasos2.jpg';
-import clock from '../assets/images/time.png';
+import clock from '../assets/images/wireless-error.svg';
 
 // modules
 import colors from '../modules/colors';
