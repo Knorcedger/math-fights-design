@@ -4,6 +4,8 @@ import styled from 'styled-components';
 // components
 import Hexagon from '../components/Hexagon/Hexagon';
 import Button from '../components/Button/Button';
+import Smile from '../components/Smile/Smile';
+import BackButton from '../components/BackButton/BackButton';
 
 // assets
 import trophy from '../assets/images/trophy.svg';
@@ -22,6 +24,41 @@ const Container = styled.div`
 
 const Body = styled.div`
   height: 100%;
+  position: relative;
+  top: 100px;
+`;
+
+const SmileWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+`;
+
+const InSmile = styled.div`
+  width: 100%;
+  height: ${props => props.height};
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 30;
+  top: 0;
+`;
+
+const BackContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 20px 14px;
+  height: 70px;
+`;
+
+const HeaderText = styled.div`
+  font-size: 26px;
+  font-weight: bold;
+  color: ${colors.red};
+  margin: 20px 10px 0 0;
+  z-index: 1;
 `;
 
 const RanksContainer = styled.div`
@@ -61,25 +98,21 @@ const RankImage = styled.div`
   width: 100%;
 `;
 
-const Footer = styled.div`
-  position: fixed;
-  bottom: 0;
-  height: 80px;
-  width: 100%;
-  z-index: 10;
-  background-color: ${colors.linen};
-  border-top: 2px solid ${colors.gray4};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 /**
  * Ranks View
  */
 const Ranks = () => (
   <Container>
+    <SmileWrapper>
+      <Smile colorUp={colors.linen} colorDown={colors.red} height='100px' />
+    </SmileWrapper>
     <Body>
+      <InSmile height='100px'>
+        <BackContainer onClick={() => window.location.replace('/')}>
+          <BackButton color={colors.red} thickness={4} size={5} />
+        </BackContainer>
+        <HeaderText>Ranks</HeaderText>
+      </InSmile>
       <RanksContainer>
         <Rank>
           <Wrapper width={65} align='center'>
@@ -154,16 +187,6 @@ const Ranks = () => (
           </Wrapper>
         </Rank>
       </RanksContainer>
-      <Footer>
-        <Button
-          backgroundColor={colors.blue}
-          borderColor={colors.darkBlue}
-          onClick={() => window.location.replace('/home')}
-          text='Close'
-          textColor={colors.white}
-          width={140}
-        />
-      </Footer>
     </Body>
   </Container>
 );
