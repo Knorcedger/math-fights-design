@@ -95,6 +95,25 @@ const Logo = styled.div`
   background-size: contain;
 `;
 
+const ButtonWrapper = styled.div`
+  position: relative;
+`;
+
+const Warning = styled.div`
+  position: absolute;
+  top: -10px;
+  right: 0;
+  border-radius: 6px;
+  background-color: ${colors.blue};
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${colors.white};
+  border: 2px solid ${colors.gray4}
+`;
+
 /**
  * Home View
  */
@@ -180,14 +199,17 @@ const Home = () => (
       </InSmile>
       <Content>
         <Logo />
-        <Button
-          backgroundColor={colors.yellow}
-          borderColor={colors.gray}
-          text='Start Game!'
-          textColor={colors.gray}
-          width={140}
-          onClick={() => {}}
-        />
+        <ButtonWrapper>
+          <Button
+            backgroundColor={colors.yellow}
+            borderColor={colors.gray}
+            text='Start Game!'
+            textColor={colors.gray}
+            width={140}
+            onClick={() => {}}
+          />
+          <Warning>!</Warning>
+        </ButtonWrapper>
       </Content>
     </Body>
   </Container>
