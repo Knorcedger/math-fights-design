@@ -4,6 +4,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import _ from 'lodash';
 import './App.css';
 import Home from './home/home';
 import Leaderboard from './leaderboard/leaderboard';
@@ -20,6 +21,26 @@ import AchievementUp from './achievementUp/achievementUp';
 import UserProfile from './userProfile/userProfile';
 import UserHistory from './userHistory/userHistory';
 import Ranks from './ranks/ranks';
+import Searching from './searching/searching';
+
+const getTip = () => {
+  const tips = [
+    'The game matches you with players of the same skill level based on your trophies',
+    'If you win, you get trophies from your opponent. If he wins, he gets your trophies',
+    'Earn more trophies to appear in the Leaderboard and achieve new Ranks',
+    'When the answer button turns yellow, you can select a second answer (Second Try)',
+    'You have 1 Second Try per game which costs you 1000 gold to use',
+    'Use your gems to buy more gold in the Shop to always have a Second Try available',
+    'In case of a draw the winner is based on answer time. Click the clock icon to check the times',
+    'Green answer button means correct, red is wrong and yellow that you have a Second Try',
+    'You have 10 seconds for each question, 8 questions per game and 1 Second Try',
+    'Questions contain additions, subtractions, multiplications, divisions and factorials',
+    'Play games to earn experience points and achieve higher experience levels',
+    'Every time you win a game, you earn an amount of gold'
+  ];
+
+  return tips[_.random(0, 11)];
+};
 
 class App extends Component {
 
@@ -32,7 +53,8 @@ class App extends Component {
     }
 
     this.state = {
-      openNav
+      openNav,
+      tip: getTip()
     };
   }
 
@@ -49,6 +71,10 @@ class App extends Component {
         self.setState({openNav: false});
       }
     };
+
+    setInterval(() => {
+      this.setState({tip: getTip()});
+    }, 6000);
   }
 
   render() {
@@ -76,6 +102,7 @@ class App extends Component {
                   <li><Link to='/experience'>Experience</Link></li>
                   <li><Link to='/experience2'>Experience2</Link></li>
                   <li><Link to='/userhistory'>UserHistory</Link></li>
+                  <li><Link to='/searching'>Searching</Link></li>
                 </ul>
               </div>
             )
@@ -95,6 +122,7 @@ class App extends Component {
           <Route path='/userProfile' component={UserProfile} />
           <Route path='/userhistory' component={UserHistory} />
           <Route path='/ranks' component={Ranks} />
+          <Route path='/searching' render={() => <Searching tip={this.state.tip} />} />
         </div>
       </Router>
     );
