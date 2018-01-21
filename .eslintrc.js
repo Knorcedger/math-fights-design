@@ -9,6 +9,7 @@ module.exports = {
     'jsx-quotes': ['error', 'prefer-single'],
     'import/prefer-default-export': 'off',
     'max-len': ['error', 120],
+    'no-confusing-arrow': 'off',
     'no-inline-comments': ['error'],
     'no-loop-func': 'off',
     'no-mixed-operators': 'off',

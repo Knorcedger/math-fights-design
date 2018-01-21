@@ -195,8 +195,8 @@ const UserHistory = () => (
               </Row>
             </PlayerInfo>
             <SwordContainer>
-              <Clock></Clock>
-              <Sword></Sword>
+              <Clock />
+              <Sword />
             </SwordContainer>
             <PlayerInfo>
               <Name who='opponent'>Leopold</Name>
@@ -253,7 +253,7 @@ const UserHistory = () => (
               </Row>
             </PlayerInfo>
             <SwordContainer>
-              <Sword></Sword>
+              <Sword />
             </SwordContainer>
             <PlayerInfo>
               <Name who='opponent'>Leopold</Name>

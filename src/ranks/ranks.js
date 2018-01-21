@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 // components
 import Hexagon from '../components/Hexagon/Hexagon';
-import Button from '../components/Button/Button';
 import Smile from '../components/Smile/Smile';
 import BackButton from '../components/BackButton/BackButton';
 
