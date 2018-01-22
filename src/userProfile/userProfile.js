@@ -4,21 +4,16 @@ import styled from 'styled-components';
 // components
 import Hexagon from '../components/Hexagon/Hexagon';
 import Smile from '../components/Smile/Smile';
+import BackButton from '../components/BackButton/BackButton';
 
 // assets
-// import badge from '../assets/images/badge.svg';
+import badge from '../assets/images/badge.svg';
 import trophy from '../assets/images/trophy.svg';
 import trophyShadow from '../assets/images/trophy-shadow.png';
-// http://www.flaticon.com/free-icon/scroll_302124#term=papyrus&page=1&position=9
-import history from '../assets/images/history.svg';
-// import profile from '../assets/images/profile.svg';
-// import badge from '../assets/images/badge.svg';
-import coin from '../assets/images/coin.svg';
-import diamond from '../assets/images/diamond.svg';
 import profile from '../assets/images/tasos.jpg';
 import leaderboard from '../assets/images/leaderboard.svg';
-import home from '../assets/images/home.svg';
-import shop from '../assets/images/basket.svg';
+import diamond from '../assets/images/diamond.svg';
+import user from '../assets/images/user.svg';
 
 // modules
 import colors from '../modules/colors';
@@ -37,11 +32,12 @@ const InSmile = styled.div`
   height: ${props => props.height};
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   flex-direction: column;
 `;
 
 const Content = styled.div`
-  background-color: ${colors.red};
+  background-color: ${colors.linen};
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -51,9 +47,31 @@ const Content = styled.div`
 `;
 
 const Header = styled.div`
-  padding: 10px;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+`;
+
+const BackContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 20px 14px;
+  height: 70px;
+`;
+
+const MainIcon = styled.div`
+  height: 50px;
+  width: 50px;
+  background: url(${user}) no-repeat;
+  margin-left: 10px;
+`;
+
+const HeaderText = styled.div`
+  font-size: 26px;
+  font-weight: bold;
+  color: ${colors.white};
+  margin: 20px 10px 0 0;
 `;
 
 const ProfileArea = styled.div`
@@ -71,17 +89,16 @@ const ProfileImage = styled.div`
   left: calc(50% - 50px);
   background: url(${profile});
   background-size: contain;
+  border: 2px solid ${colors.white};
 `;
 
 const Menu = styled.div`
   display: flex;
   justify-content: space-around;
-  margin-top: 15px;
+  align-items: center;
+  margin-top: 0px;
+  width: 50%;
   height: 80px;
-
-  > :nth-child(2), > :nth-child(3) {
-    align-self: flex-end;
-  }
 `;
 
 const Tile = styled.div`
@@ -122,80 +139,30 @@ const Amount = styled.div``;
  */
 const UserProfile = () => (
   <Container>
-    <Smile colorUp={colors.linen} colorDown={colors.red} height='360px' width='140%' />
+    <Smile colorUp={colors.red} colorDown={colors.linen} height='260px' width='140%' />
     <Body>
-      <InSmile height='320px'>
+      <InSmile height='260px'>
         <Header>
-          <Hexagon
-            bar={true}
-            barColor={colors.lightBlue}
-            barPercent={30}
-            barSize={80}
-            mainColor={colors.blue}
-            size={30}
-            text='14'
-          />
-          <Hexagon
-            bar={true}
-            barColor={colors.green}
-            barPercent={0}
-            barSize={80}
-            barText='1535'
-            image={trophy}
-            mainColor={colors.green}
-            size={30}
-          />
-          <Hexagon
-            bar={true}
-            barColor={colors.darkRed}
-            barIcon='add'
-            barPercent={0}
-            barSize={80}
-            barText='12632'
-            image={coin}
-            mainColor={colors.darkRed}
-            onBarIconClick={() => window.location.replace('/shop')}
-            size={30}
-          />
+          <BackContainer onClick={() => window.location.replace('/')}>
+            <BackButton color={colors.white} thickness={4} size={5} />
+            <MainIcon />
+          </BackContainer>
+          <ProfileArea>
+            <ProfileImage />
+          </ProfileArea>
+          <HeaderText>Profile</HeaderText>
         </Header>
-        <ProfileArea>
-          <ProfileImage />
-          <Hexagon
-            bar={true}
-            barColor={colors.darkRed}
-            barIcon='add'
-            barPercent={0}
-            barSize={80}
-            barText='211'
-            image={diamond}
-            mainColor={colors.darkRed}
-            onBarIconClick={() => window.location.replace('/shop')}
-            size={30}
-          />
-        </ProfileArea>
         <Menu>
           <Hexagon
-            image={home}
-            mainColor={colors.blue}
-            onClick={() => window.location.replace('/')}
-            size={50}
-          />
-          <Hexagon
-            image={shop}
+            image={badge}
             mainColor={colors.blue}
             onClick={() => window.location.replace('/shop')}
             size={50}
           />
           <Hexagon
             image={leaderboard}
-            mainColor={colors.blue}
+            mainColor={colors.gray3}
             onClick={() => window.location.replace('/leaderboard')}
-            size={50}
-          />
-          <Hexagon
-            image={history}
-            mainColor={colors.blue}
-            onClick={() => window.location.replace('/history')}
             size={50}
           />
         </Menu>

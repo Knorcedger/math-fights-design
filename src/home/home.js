@@ -73,6 +73,7 @@ const ProfileImage = styled.div`
   left: calc(50% - 50px);
   background: url(${profile});
   background-size: contain;
+  border: 2px solid ${colors.white};
 `;
 
 const Menu = styled.div`
