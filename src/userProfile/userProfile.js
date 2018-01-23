@@ -167,7 +167,7 @@ const UserProfile = () => (
           <Hexagon
             image={social}
             mainColor={colors.gray3}
-            onClick={() => window.location.replace('/leaderboard')}
+            onClick={() => window.location.replace('/social')}
             size={50}
           />
         </Menu>

@@ -22,6 +22,7 @@ import UserProfile from './userProfile/userProfile';
 import UserHistory from './userHistory/userHistory';
 import Ranks from './ranks/ranks';
 import Searching from './searching/searching';
+import Social from './social/social';
 
 const getTip = () => {
   const tips = [
@@ -92,6 +93,7 @@ class App extends Component {
                   <li><Link to='/shop'>Shop</Link></li>
                   <li><Link to='/achievementUp'>AchievementUp</Link></li>
                   <li><Link to='/userProfile'>UserProfile</Link></li>
+                  <li><Link to='/social'>Social</Link></li>
                   <li><Link to='/ranks'>Ranks</Link></li>
                 </ul>
                 <ul>
@@ -123,6 +125,7 @@ class App extends Component {
           <Route path='/userhistory' component={UserHistory} />
           <Route path='/ranks' component={Ranks} />
           <Route path='/searching' render={() => <Searching tip={this.state.tip} />} />
+          <Route path='/social' component={Social} />
         </div>
       </Router>
     );
