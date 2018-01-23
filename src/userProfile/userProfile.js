@@ -5,13 +5,14 @@ import styled from 'styled-components';
 import Hexagon from '../components/Hexagon/Hexagon';
 import Smile from '../components/Smile/Smile';
 import BackButton from '../components/BackButton/BackButton';
+import Ribbon from '../components/Ribbon/Ribbon';
 
 // assets
 import badge from '../assets/images/badge.svg';
 import trophy from '../assets/images/trophy.svg';
 import trophyShadow from '../assets/images/trophy-shadow.png';
 import profile from '../assets/images/tasos.jpg';
-import leaderboard from '../assets/images/leaderboard.svg';
+import social from '../assets/images/social.svg';
 import diamond from '../assets/images/diamond.svg';
 import user from '../assets/images/user.svg';
 
@@ -44,6 +45,10 @@ const Content = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding-bottom: 20px;
+
+  > :nth-child(1) {
+    margin-bottom: 20px;
+  }
 `;
 
 const Header = styled.div`
@@ -97,7 +102,7 @@ const Menu = styled.div`
   justify-content: space-around;
   align-items: center;
   margin-top: 0px;
-  width: 50%;
+  width: 180px;
   height: 80px;
 `;
 
@@ -160,7 +165,7 @@ const UserProfile = () => (
             size={50}
           />
           <Hexagon
-            image={leaderboard}
+            image={social}
             mainColor={colors.gray3}
             onClick={() => window.location.replace('/leaderboard')}
             size={50}
@@ -168,6 +173,7 @@ const UserProfile = () => (
         </Menu>
       </InSmile>
       <Content>
+        <Ribbon text='Achievements' />
         <Tile>
           <HexagonContainer>
             <Hexagon

@@ -2,64 +2,68 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import colors from '../../modules/colors';
+import cornerLeft from '../../assets/images/ribbon-corner-left.png';
+import middleLeft from '../../assets/images/ribbon-middle-left.png';
+import middleRight from '../../assets/images/ribbon-middle-right.png';
+import cornerRight from '../../assets/images/ribbon-corner-right.png';
 
-const Tile = styled.div`
+const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: ${colors.lightBlue};
-  border: 2px solid ${colors.darkBlue};
-  border-radius: 10px;
   padding: 10px;
+  width: 100%;
+`;
+
+const CornerLeft = styled.div`
+  background: url(${cornerLeft}) no-repeat;
+  background-size: 20px 60px;
+  height: 60px;
+  width: 20px;
+`;
+
+const MiddleLeft = styled.div`
+  background: url(${middleLeft}) repeat-x;
+  background-size: 40% 60px;
+  height: 60px;
   width: 40%;
 `;
 
-const Icon = styled.div`
-  width: ${props => props.size}px;
-  height: ${props => props.size}px;
-  background: url(${props => props.icon}) no-repeat;
+const MiddleRight = styled.div`
+  background: url(${middleRight}) repeat-x;
+  background-size: 40% 60px;
+  height: 60px;
+  width: 40%;
 `;
 
-const Title = styled.div`
-  font-size: 20px;
+const CornerRight = styled.div`
+  background: url(${cornerRight}) no-repeat;
+  background-size: 20px 60px;
+  height: 60px;
+  width: 20px;
+`;
+
+const Text = styled.span`
+  position: absolute;
   color: ${colors.darkBlue};
-  margin: 10px 0;
+  font-size: 40px;
 `;
 
-const Age = styled.div`
-  font-size: 14px;
-  color: ${colors.gray};
-`;
-
-const Ribbon = ({age, icon, iconSize, title}) => (
-  <Tile>
-    <Icon icon={icon} size={iconSize} />
-    <Title>{title}</Title>
-    <Age>{age}</Age>
-  </Tile>
+const Ribbon = ({text}) => (
+  <Wrapper>
+    <CornerLeft />
+    <MiddleLeft />
+    <Text>{text}</Text>
+    <MiddleRight />
+    <CornerRight />
+  </Wrapper>
 );
-
-Ribbon.defaultProps = {
-  age: null
-};
 
 Ribbon.propTypes = {
   /**
-   * The player age
+   * The ribbon text
    */
-  age: PropTypes.string,
-  /**
-   * The player representative icon
-   */
-  icon: PropTypes.any.isRequired,
-  /**
-   * The player icon size
-   */
-  iconSize: PropTypes.number.isRequired,
-  /**
-   * The player experience title
-   */
-  title: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired
 };
 
 export default Ribbon;
