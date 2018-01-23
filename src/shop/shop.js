@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import BackButton from '../components/BackButton/BackButton';
 import Button from '../components/Button/Button';
 import Smile from '../components/Smile/Smile';
+import Ribbon from '../components/Ribbon/Ribbon';
 
 // assets
 import shop from '../assets/images/shop.svg';
@@ -65,13 +66,6 @@ const HeaderText = styled.div`
   font-weight: bold;
   color: ${colors.white};
   margin: 20px 10px 0 0;
-`;
-
-const Ribbon = styled.div`
-  width: 100%;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
 `;
 
 const TileList = styled.div`
@@ -205,7 +199,7 @@ class Shop extends Component {
             <HeaderText>Shop</HeaderText>
           </InSmile>
           <Content>
-            <Ribbon>Gold</Ribbon>
+            <Ribbon text='Gold' />
             <TileList>
               <Tile onClick={() => this.setState({show: 'buyModal'})}>
                 <Title>Pouch</Title>
@@ -235,7 +229,7 @@ class Shop extends Component {
                 </Price>
               </Tile>
             </TileList>
-            <Ribbon>Gems</Ribbon>
+            <Ribbon text='Gems' />
             <TileList>
               <Tile>
                 <Title>Pouch</Title>
@@ -262,7 +256,7 @@ class Shop extends Component {
                 </Price>
               </Tile>
             </TileList>
-            <Ribbon>Game Experience</Ribbon>
+            <Ribbon text='Game Experience' fontSize={36} />
             <TileList>
               <Tile>
                 <Title>Remove ads</Title>

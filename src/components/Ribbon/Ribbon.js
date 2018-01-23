@@ -46,20 +46,25 @@ const CornerRight = styled.div`
 const Text = styled.span`
   position: absolute;
   color: ${colors.darkBlue};
-  font-size: 40px;
+  font-size: ${props => props.fontSize}px;
 `;
 
-const Ribbon = ({text}) => (
+const Ribbon = ({fontSize, text}) => (
   <Wrapper>
     <CornerLeft />
     <MiddleLeft />
-    <Text>{text}</Text>
+    <Text fontSize={fontSize}>{text}</Text>
     <MiddleRight />
     <CornerRight />
   </Wrapper>
 );
 
+Ribbon.defaultProps = {
+  fontSize: 40
+};
+
 Ribbon.propTypes = {
+  fontSize: PropTypes.number,
   /**
    * The ribbon text
    */
