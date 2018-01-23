@@ -17,29 +17,29 @@ const Wrapper = styled.div`
 
 const CornerLeft = styled.div`
   background: url(${cornerLeft}) no-repeat;
-  background-size: 20px 60px;
-  height: 60px;
+  background-size: 20px 50px;
+  height: 50px;
   width: 20px;
 `;
 
 const MiddleLeft = styled.div`
   background: url(${middleLeft}) repeat-x;
-  background-size: 40% 60px;
-  height: 60px;
+  background-size: 40% 50px;
+  height: 50px;
   width: 40%;
 `;
 
 const MiddleRight = styled.div`
   background: url(${middleRight}) repeat-x;
-  background-size: 40% 60px;
-  height: 60px;
+  background-size: 40% 50px;
+  height: 50px;
   width: 40%;
 `;
 
 const CornerRight = styled.div`
   background: url(${cornerRight}) no-repeat;
-  background-size: 20px 60px;
-  height: 60px;
+  background-size: 20px 50px;
+  height: 50px;
   width: 20px;
 `;
 
@@ -60,7 +60,7 @@ const Ribbon = ({fontSize, text}) => (
 );
 
 Ribbon.defaultProps = {
-  fontSize: 40
+  fontSize: 32
 };
 
 Ribbon.propTypes = {

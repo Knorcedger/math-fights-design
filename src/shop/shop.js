@@ -129,6 +129,13 @@ const Modal = styled.div`
   align-items: center;
 `;
 
+const ModalHeader = styled.div`
+  width: 100%;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+`;
+
 const ModalContent = styled.div`
   background-color: ${colors.linen};
   width: 80%;
@@ -144,12 +151,13 @@ const ModalContent = styled.div`
 const Close = styled.div`
   position: absolute;
   right: 6px;
-  top: 6px;
+  top: 16px;
   border-radius: 6px;
   background-color: ${colors.red};
   width: 24px;
   height: 24px;
   display: flex;
+  display: flex;log
   justify-content: center;
   align-items: center;
   color: ${colors.white};
@@ -256,7 +264,7 @@ class Shop extends Component {
                 </Price>
               </Tile>
             </TileList>
-            <Ribbon text='Game Experience' fontSize={36} />
+            <Ribbon text='Game Experience' />
             <TileList>
               <Tile>
                 <Title>Remove ads</Title>
@@ -281,7 +289,7 @@ class Shop extends Component {
           this.state.show === 'buyModal' &&
           <Modal>
             <ModalContent>
-              <Ribbon>Buy</Ribbon>
+              <ModalHeader>Buy</ModalHeader>
               <Close onClick={() => this.setState({show: null})}>X</Close>
               <ModalText>You are about to buy 1200 gold for 10 gems!</ModalText>
               <ButtonWrapper>
@@ -301,7 +309,7 @@ class Shop extends Component {
           this.state.show === 'changeUsernameModal' &&
           <Modal>
             <ModalContent>
-              <Ribbon>Change Username</Ribbon>
+              <ModalHeader>Change Username</ModalHeader>
               <Close onClick={() => this.setState({show: null})}>X</Close>
               <ModalText>You are about to change your username for 100 gems!</ModalText>
               <Input />
