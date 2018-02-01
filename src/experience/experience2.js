@@ -47,6 +47,12 @@ const BackContainer = styled.div`
   height: 70px;
 `;
 
+const ExampleQuestion = styled.div`
+  color: ${colors.linen};
+  font-size: 20px;
+  margin-top: 10px;
+`;
+
 const NameContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -80,9 +86,9 @@ const ButtonContainer = styled.div`
   **/
 const Experience = () => (
   <Container>
-    <Smile colorUp={colors.red} colorDown={colors.linen} height='400px' />
+    <Smile colorUp={colors.red} colorDown={colors.linen} height='440px' />
     <Body>
-      <InSmile height='400px'>
+      <InSmile height='440px'>
         <BackContainer onClick={() => window.location.replace('/')}>
           <BackButton color={colors.white} thickness={4} size={5} />
         </BackContainer>
@@ -92,6 +98,8 @@ const Experience = () => (
           icon={holidays}
           iconSize={80}
         />
+        <ExampleQuestion>Start playing as Junior?</ExampleQuestion>
+        <ExampleQuestion>Example question: 5 + 3</ExampleQuestion>
       </InSmile>
       <Content>
         <NameContainer>
@@ -110,7 +118,7 @@ const Experience = () => (
           <Button
             backgroundColor={colors.green}
             borderColor={colors.gray}
-            text='Save'
+            text='Confirm'
             textColor={colors.white}
             width={100}
             onClick={() => {}}

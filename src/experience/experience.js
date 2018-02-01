@@ -93,7 +93,7 @@ const Experience = () => (
           />
           <ExperienceTile
             title='Master'
-            age='Space Age'
+            age='Really Difficult!'
             icon={greek}
             iconSize={80}
           />
