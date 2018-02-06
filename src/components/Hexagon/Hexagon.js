@@ -80,6 +80,7 @@ const Image = styled.div`
   background-image: url(${props => props.image});
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -94,9 +95,8 @@ const Text = styled.div`
 `;
 
 const Middle = styled.div`
-  width: 60%;
+  width: ${props => props.size}px;
   height: 100%;
-  margin-left: 20%;
 `;
 
 const Hexagon = ({
@@ -150,7 +150,7 @@ const Hexagon = ({
 
   return (
     <Wrapper {...{bar, barColor, barSize, mainColor, size}} onClick={() => onClick && onClick(clickData)}>
-      <Middle>
+      <Middle size={size}>
         <Edge placement='top' {...{mainColor, size}} />
         {content}
         <Edge placement='bottom' {...{mainColor, size}} />

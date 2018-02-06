@@ -23,6 +23,7 @@ import UserHistory from './userHistory/userHistory';
 import Ranks from './ranks/ranks';
 import Searching from './searching/searching';
 import Social from './social/social';
+import Challenge from './challenge/challenge';
 
 const getTip = () => {
   const tips = [
@@ -105,6 +106,7 @@ class App extends Component {
                   <li><Link to='/experience2'>Experience2</Link></li>
                   <li><Link to='/userhistory'>UserHistory</Link></li>
                   <li><Link to='/searching'>Searching</Link></li>
+                  <li><Link to='/challenge'>Challenge</Link></li>
                 </ul>
               </div>
             )
@@ -126,6 +128,7 @@ class App extends Component {
           <Route path='/ranks' component={Ranks} />
           <Route path='/searching' render={() => <Searching tip={this.state.tip} />} />
           <Route path='/social' component={Social} />
+          <Route path='/challenge' component={Challenge} />
         </div>
       </Router>
     );
