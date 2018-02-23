@@ -177,6 +177,7 @@ const Home = () => (
             mainColor={colors.blue}
             onClick={() => window.location.replace('/userProfile')}
             size={50}
+            showNew={true}
           />
           <Hexagon
             image={shop}

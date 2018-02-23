@@ -99,6 +99,14 @@ const Middle = styled.div`
   height: 100%;
 `;
 
+const New = styled.div`
+position: absolute;
+-webkit-transform: translateY(-22px) translateX(29px) rotate(29deg);
+font-size: 15px;
+right: 18px;
+color: red;
+`;
+
 const Hexagon = ({
   bar,
   barColor,
@@ -111,6 +119,7 @@ const Hexagon = ({
   mainColor,
   onBarIconClick,
   onClick,
+  showNew,
   size,
   text,
   textColor
@@ -149,7 +158,12 @@ const Hexagon = ({
   }
 
   return (
-    <Wrapper {...{bar, barColor, barSize, mainColor, size}} onClick={() => onClick && onClick(clickData)}>
+    <Wrapper {...{bar, barColor, barSize, mainColor, showNew, size}} onClick={() => onClick && onClick(clickData)}>
+      {
+        showNew && (
+          <New showNew={showNew}>NEW!</New>
+        )
+      }
       <Middle size={size}>
         <Edge placement='top' {...{mainColor, size}} />
         {content}
@@ -171,6 +185,7 @@ Hexagon.defaultProps = {
   image: null,
   onBarIconClick: null,
   onClick: null,
+  showNew: false,
   text: null,
   textColor: 'white'
 };
@@ -220,6 +235,10 @@ Hexagon.propTypes = {
    * On click of the component, the function that will run
    */
   onClick: PropTypes.func,
+  /**
+   * Display New at the top to denote that there is a new feature
+   */
+  showNew: PropTypes.bool,
   /**
    * Size of the hexagon in px
    */
