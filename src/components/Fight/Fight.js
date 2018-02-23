@@ -141,7 +141,7 @@ const Price = styled.div`
 `;
 
 const Diagonal = styled.div`
-display: ${props => !props.showFree};
+display: ${props => props.showFree ? 'block' : 'none'};
 width: 40px;
 height: 40px;
 border-bottom: 3px solid rgb(242, 95, 92);
@@ -153,6 +153,7 @@ const Fight = ({
   headerBackgroundColor,
   imageSize,
   onClockClick,
+  price,
   showClock,
   showFree,
   time,
@@ -175,7 +176,7 @@ const Fight = ({
         )
       }
       <Price>
-        <Number>1</Number>
+        <Number>{price}</Number>
         <Icon imageSize={imageSize} />
         <Diagonal showFree={showFree} />
       </Price>
@@ -250,6 +251,7 @@ const Fight = ({
 
 Fight.defaultProps = {
   imageSize: null,
+  price: '',
   onClockClick: null,
   showClock: false,
   showFree: false,
@@ -266,6 +268,7 @@ Fight.propTypes = {
   headerBackgroundColor: PropTypes.string.isRequired,
   imageSize: PropTypes.number,
   onClockClick: PropTypes.func,
+  price: PropTypes.string,
   showClock: PropTypes.bool,
   showFree: PropTypes.bool,
   time: PropTypes.string,
