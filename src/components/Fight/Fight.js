@@ -11,7 +11,9 @@ import colors from '../../modules/colors';
 // assets
 import sword from '../../assets/images/sword.svg';
 import clock from '../../assets/images/time.png';
+import free from '../../assets/images/free.png';
 import trophy from '../../assets/images/trophy.svg';
+import gem from '../../assets/images/diamond.svg';
 
 const Wrapper = styled.div`
   width: 90%;
@@ -101,6 +103,15 @@ const Clock = styled.div`
   background-size: contain;
 `;
 
+const Free = styled.div`
+  position: absolute;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  background: url(${free});
+  background-size: contain;
+`;
+
 const TrophiesWrapper = styled.div`
   margin-top: 0px;
   padding: 10px;
@@ -108,10 +119,42 @@ const TrophiesWrapper = styled.div`
   justify-content: center;
 `;
 
+const Number = styled.div`
+  font-size: 17px;
+  color: ${colors.white};
+  align-self: flex-end;
+`;
+
+const Icon = styled.div`
+  width: ${props => props.imageSize}px;
+  height: ${props => props.imageSize}px;
+  background-image: url(${gem});
+  background-repeat: no-repeat;
+  background-size: ${props => props.imageSize}px;
+`;
+
+const Price = styled.div`
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+
+const Diagonal = styled.div`
+display: ${props => !props.showFree};
+width: 40px;
+height: 40px;
+border-bottom: 3px solid rgb(242, 95, 92);
+-webkit-transform: translateY(-20px)   translateX(-4px)   rotate(-22deg);
+position: absolute;
+`;
+
 const Fight = ({
   headerBackgroundColor,
+  imageSize,
   onClockClick,
   showClock,
+  showFree,
   time,
   title,
   user1Image,
@@ -131,6 +174,11 @@ const Fight = ({
           <Time>{time}</Time>
         )
       }
+      <Price>
+        <Number>1</Number>
+        <Icon imageSize={imageSize} />
+        <Diagonal showFree={showFree} />
+      </Price>
     </Header>
     <Players>
       <PlayerInfo>
@@ -163,6 +211,9 @@ const Fight = ({
       <SwordContainer>
         {
           showClock && <Clock onClick={onClockClick} />
+        }
+        {
+          showFree && <Free />
         }
         <Sword />
       </SwordContainer>
@@ -198,8 +249,11 @@ const Fight = ({
 );
 
 Fight.defaultProps = {
+  imageSize: null,
   onClockClick: null,
   showClock: false,
+  showFree: false,
+  size: null,
   time: null,
   user1Score: null,
   user2Score: null
@@ -210,8 +264,10 @@ Fight.propTypes = {
    * The title background color
    */
   headerBackgroundColor: PropTypes.string.isRequired,
+  imageSize: PropTypes.number,
   onClockClick: PropTypes.func,
   showClock: PropTypes.bool,
+  showFree: PropTypes.bool,
   time: PropTypes.string,
   /**
    * The title text

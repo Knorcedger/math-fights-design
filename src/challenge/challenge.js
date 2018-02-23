@@ -63,6 +63,7 @@ const HeaderText = styled.div`
   margin: 20px 10px 0 0;
 `;
 
+
 const List = styled.div`
   width: 100%;
   background-color: ${colors.linen};
@@ -212,6 +213,7 @@ class Challenge extends Component {
             <Fight
               headerBackgroundColor={colors.blue}
               showClock={false}
+              showFree={true}
               title='Friendly Challenge'
               user1Image={profile}
               user1Name='Knorcedger'
@@ -219,6 +221,8 @@ class Challenge extends Component {
               user2Image={profile2}
               user2Name='Leopold'
               user2Trophies={1543}
+              price='1'
+              imageSize={25}
             />
             <ButtonWrapper>
               <Button
