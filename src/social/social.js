@@ -165,6 +165,10 @@ const LeaguePoints = styled.div`
   font-size: 22px;
 `;
 
+const FreePromo = styled.div`
+  color: #F25F5C;
+`;
+
 /**
  * UserProfile View
  */
@@ -216,6 +220,7 @@ class Social extends Component {
             </Menu>
           </InSmile>
           <Content>
+            <FreePromo>Play with your friends NOW for FREE!</FreePromo>
             <Ribbon text='Online Friends' />
             <List>
               {
