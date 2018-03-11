@@ -18,6 +18,7 @@ import goldChest from '../assets/images/gold-chest.png';
 import gemsPouch from '../assets/images/gems-pouch.png';
 import gemsBucket from '../assets/images/gems-bucket.png';
 import gemsChest from '../assets/images/gems-chest.png';
+import hanger from '../assets/images/hanger.svg';
 
 // modules
 import colors from '../modules/colors';
@@ -83,6 +84,7 @@ const Tile = styled.div`
   border: 2px solid ${colors.gray};
   border-radius: 10px;
   padding: 10px;
+  ${props => props.width && `width: ${props.width};`}
 `;
 
 const Title = styled.div`
@@ -106,6 +108,7 @@ const Icon = styled.div`
 
 const Price = styled.div`
   width: 100%;
+  height: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -266,19 +269,28 @@ class Shop extends Component {
             </TileList>
             <Ribbon text='Game Experience' />
             <TileList>
-              <Tile>
-                <Title>Remove ads</Title>
-                <Icon icon={blockAds} size={80} />
+              <Tile width='140px'>
+                <Title>Wardrobe</Title>
+                <Icon icon={hanger} size={80} />
                 <Price>
-                  <Number>350</Number>
-                  <Icon icon={gem} size={30} />
+                  <Number>FREE</Number>
                 </Price>
               </Tile>
-              <Tile onClick={() => this.setState({show: 'changeUsernameModal'})}>
+              <Tile width='140px' onClick={() => this.setState({show: 'changeUsernameModal'})}>
                 <Title>New Username</Title>
                 <Icon icon={changeUsername} size={80} />
                 <Price>
                   <Number>100</Number>
+                  <Icon icon={gem} size={30} />
+                </Price>
+              </Tile>
+            </TileList>
+            <TileList>
+              <Tile width='140px'>
+                <Title>Remove ads</Title>
+                <Icon icon={blockAds} size={80} />
+                <Price>
+                  <Number>350</Number>
                   <Icon icon={gem} size={30} />
                 </Price>
               </Tile>

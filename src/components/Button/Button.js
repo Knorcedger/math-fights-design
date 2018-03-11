@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Text = styled.div`
-    width: ${props => props.width}px;
-    background-color: ${props => (props.disabled ? 'gray' : props.backgroundColor)};
-    font-size: 20px;
-    font-weight: bold;
-    color: ${props => props.textColor};
-    text-align: center;
-    padding: 17px 20px;
-    ${props => props.borderColor && `border: 3px solid ${props.borderColor}`};
-    border-radius: 30px;
+   width: ${props => props.width}px;
+   height: 20px;
+   background-color: ${props => (props.disabled ? 'gray' : props.backgroundColor)};
+   font-size: 20px;
+   font-weight: bold;
+   color: ${props => props.textColor};
+   text-align: center;
+   padding: 17px 20px;
+   ${props => props.borderColor && `border: 3px solid ${props.borderColor}`};
+   border-radius: 30px;
 `;
 
 const Button = ({backgroundColor, borderColor, clickData, disabled, onClick, text, textColor, width}) => (

@@ -21,6 +21,7 @@ import profile from '../assets/images/tasos.jpg';
 import leaderboard from '../assets/images/leaderboard.svg';
 import logo from '../assets/images/logo.png';
 import user from '../assets/images/user.svg';
+import edit from '../assets/images/edit.svg';
 
 // modules
 import colors from '../modules/colors';
@@ -62,7 +63,8 @@ const ProfileArea = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 10px;
+  padding: 10px 10px 0px 20%;
+  position: relative;
 `;
 
 const ProfileImage = styled.div`
@@ -74,6 +76,15 @@ const ProfileImage = styled.div`
   background: url(${profile});
   background-size: contain;
   border: 2px solid ${colors.white};
+`;
+
+const Extension = styled.div`
+  background: url(${edit});
+  position: absolute;
+  bottom: 0%;
+  right: -6%;
+  width: 50px;
+  height: 50px;
 `;
 
 const Menu = styled.div`
@@ -157,7 +168,10 @@ const Home = () => (
           />
         </Header>
         <ProfileArea>
-          <ProfileImage />
+          <ProfileArea>
+            <ProfileImage />
+            <Extension />
+          </ProfileArea>
           <Hexagon
             bar={true}
             barColor={colors.darkRed}
